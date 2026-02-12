@@ -8,35 +8,43 @@ on:
       - milestone1
     paths:
       - 'src/download_data.py'
+      - '.github/workflows/download_data.yml'
 
 jobs:
   download-data:
     runs-on: ubuntu-latest
-    
+
     steps:
+      # Checkout repository
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      # Set up Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
+      # Install Kaggle CLI
       - name: Install Kaggle
         run: pip install kaggle
 
+      #  Set up Kaggle credentials
       - name: Set up Kaggle credentials
-        run: |say a
+        run: |
           mkdir -p ~/.kaggle
           echo '{"username":"${{ secrets.KAGGLE_USERNAME }}","key":"${{ secrets.KAGGLE_KEY }}"}' > ~/.kaggle/kaggle.json
           chmod 600 ~/.kaggle/kaggle.json
 
+      # Download dataset
       - name: Download dataset
         run: |
           mkdir -p data/raw
-          kaggle datasets download -d hassanjameelahmed/price-of-healthy-diet-clean -p data/raw --unzip
+          kaggle datasets download -d hassanjameelhamed/price-of-healthy-diet-clean -p data/raw --unzip
 
+      # Upload dataset as artifact
       - name: Upload data as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: kaggle-d
+          name: kaggle-data
+          path: data/raw
