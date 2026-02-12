@@ -40,7 +40,7 @@ jobs:
       - name: Download dataset
         run: |
           mkdir -p data/raw
-          kaggle datasets download -d hassanjameelhamed/price-of-healthy-diet-clean -p data/raw --unzip
+          kaggle datasets download -d hassanjameelahmed/price-of-healthy-diet-clean -p data/raw --unzip
 
       # Upload dataset as artifact
       - name: Upload data as artifact
