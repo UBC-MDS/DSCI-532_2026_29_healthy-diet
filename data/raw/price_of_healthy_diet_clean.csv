@@ -1,0 +1,1380 @@
+country_code,country,region,year,cost_healthy_diet_ppp_usd,annual_cost_healthy_diet_usd,cost_vegetables_ppp_usd,cost_fruits_ppp_usd,total_food_components_cost,cost_category,data_quality
+8,Albania,Africa,2017,3.04,1109.6,,,,High Cost,Estimated value
+8,Albania,Africa,2018,3.13,1142.45,,,,High Cost,Estimated value
+8,Albania,Africa,2019,3.32,1211.8,,,,High Cost,Estimated value
+8,Albania,Africa,2020,3.4,1241.0,,,,High Cost,Estimated value
+8,Albania,Africa,2021,3.49,1273.8500000000001,0.6,0.77,1.37,High Cost,Estimated value
+8,Albania,Africa,2022,4.14,1511.1,,,,High Cost,Estimated value
+8,Albania,Africa,2023,4.58,1671.7,,,,High Cost,Estimated value
+8,Albania,Africa,2024,4.77,1741.05,,,,High Cost,Estimated value
+12,Algeria,Africa,2017,4.1,1496.4999999999998,,,,High Cost,Estimated value
+12,Algeria,Africa,2018,4.16,1518.4,,,,High Cost,Estimated value
+12,Algeria,Africa,2019,4.18,1525.6999999999998,,,,High Cost,Estimated value
+12,Algeria,Africa,2020,4.19,1529.3500000000001,,,,High Cost,Estimated value
+12,Algeria,Africa,2021,4.47,1631.55,0.72,1.1,1.82,High Cost,Estimated value
+12,Algeria,Africa,2022,5.01,1828.6499999999999,,,,High Cost,Estimated value
+12,Algeria,Africa,2023,5.41,1974.65,,,,High Cost,Estimated value
+12,Algeria,Africa,2024,5.53,2018.45,,,,High Cost,Estimated value
+24,Angola,Africa,2017,3.18,1160.7,,,,High Cost,Estimated value
+24,Angola,Africa,2018,3.27,1193.55,,,,High Cost,Estimated value
+24,Angola,Africa,2019,3.43,1251.95,,,,High Cost,Estimated value
+24,Angola,Africa,2020,3.7,1350.5,,,,High Cost,Estimated value
+24,Angola,Africa,2021,4.11,1500.15,0.44,0.75,1.19,High Cost,Estimated value
+24,Angola,Africa,2022,4.55,1660.75,,,,High Cost,Estimated value
+24,Angola,Africa,2023,4.72,1722.8,,,,High Cost,Estimated value
+24,Angola,Africa,2024,5.0,1825.0,,,,High Cost,Estimated value
+28,Antigua and Barbuda,Africa,2017,3.77,1376.05,,,,High Cost,Estimated value
+28,Antigua and Barbuda,Africa,2018,4.24,1547.6000000000001,,,,High Cost,Estimated value
+28,Antigua and Barbuda,Africa,2019,4.38,1598.7,,,,High Cost,Estimated value
+28,Antigua and Barbuda,Africa,2020,4.67,1704.55,,,,High Cost,Estimated value
+28,Antigua and Barbuda,Africa,2021,4.92,1795.8,1.26,1.59,2.85,High Cost,Estimated value
+28,Antigua and Barbuda,Africa,2022,5.46,1992.9,,,,High Cost,Estimated value
+28,Antigua and Barbuda,Africa,2023,5.8,2117.0,,,,High Cost,Estimated value
+28,Antigua and Barbuda,Africa,2024,5.9,2153.5,,,,High Cost,Estimated value
+32,Argentina,Africa,2017,3.26,1189.8999999999999,,,,,Estimated value
+51,Armenia,Africa,2017,3.22,1175.3000000000002,,,,High Cost,Estimated value
+51,Armenia,Africa,2018,3.31,1208.15,,,,High Cost,Estimated value
+51,Armenia,Africa,2019,3.44,1255.6,,,,High Cost,Estimated value
+51,Armenia,Africa,2020,3.54,1292.1,,,,High Cost,Estimated value
+51,Armenia,Africa,2021,3.8,1387.0,0.6,0.92,1.52,High Cost,Estimated value
+51,Armenia,Africa,2022,4.27,1558.55,,,,High Cost,Estimated value
+51,Armenia,Africa,2023,4.33,1580.45,,,,High Cost,Estimated value
+51,Armenia,Africa,2024,4.35,1587.7499999999998,,,,High Cost,Estimated value
+533,Aruba,Asia,2017,3.38,1233.7,,,,High Cost,Estimated value
+533,Aruba,Asia,2018,3.55,1295.75,,,,High Cost,Estimated value
+533,Aruba,Asia,2019,3.79,1383.35,,,,High Cost,Estimated value
+533,Aruba,Asia,2020,3.9,1423.5,,,,High Cost,Estimated value
+533,Aruba,Asia,2021,4.0,1460.0,1.0,1.09,2.09,High Cost,Estimated value
+533,Aruba,Asia,2022,4.5,1642.5,,,,High Cost,Estimated value
+533,Aruba,Asia,2023,4.82,1759.3000000000002,,,,High Cost,Estimated value
+533,Aruba,Asia,2024,5.0,1825.0,,,,High Cost,Estimated value
+36,Australia,Africa,2017,2.33,850.45,,,,Medium Cost,Estimated value
+36,Australia,Africa,2018,2.36,861.4,,,,Medium Cost,Estimated value
+36,Australia,Africa,2019,2.4,876.0,,,,Medium Cost,Estimated value
+36,Australia,Africa,2020,2.51,916.15,,,,Medium Cost,Estimated value
+36,Australia,Africa,2021,2.61,952.65,0.73,0.78,1.51,Medium Cost,Estimated value
+36,Australia,Africa,2022,2.88,1051.2,,,,Medium Cost,Estimated value
+36,Australia,Africa,2023,3.1,1131.5,,,,Medium Cost,Estimated value
+36,Australia,Africa,2024,3.2,1168.0,,,,Medium Cost,Estimated value
+40,Austria,Africa,2017,2.06,751.9,,,,Medium Cost,Estimated value
+40,Austria,Africa,2018,2.11,770.15,,,,Medium Cost,Estimated value
+40,Austria,Africa,2019,2.19,799.35,,,,Medium Cost,Estimated value
+40,Austria,Africa,2020,2.3,839.4999999999999,,,,Medium Cost,Estimated value
+40,Austria,Africa,2021,2.42,883.3,0.72,0.72,1.44,Medium Cost,Estimated value
+40,Austria,Africa,2022,2.75,1003.75,,,,Medium Cost,Estimated value
+40,Austria,Africa,2023,2.91,1062.15,,,,Medium Cost,Estimated value
+40,Austria,Africa,2024,2.99,1091.3500000000001,,,,Medium Cost,Estimated value
+31,Azerbaijan,Africa,2017,2.9,1058.5,,,,High Cost,Estimated value
+31,Azerbaijan,Africa,2018,2.95,1076.75,,,,High Cost,Estimated value
+31,Azerbaijan,Africa,2019,3.1,1131.5,,,,High Cost,Estimated value
+31,Azerbaijan,Africa,2020,3.28,1197.1999999999998,,,,High Cost,Estimated value
+31,Azerbaijan,Africa,2021,3.44,1255.6,0.46,0.66,1.12,High Cost,Estimated value
+31,Azerbaijan,Africa,2022,3.92,1430.8,,,,High Cost,Estimated value
+31,Azerbaijan,Africa,2023,4.13,1507.45,,,,High Cost,Estimated value
+31,Azerbaijan,Africa,2024,4.2,1533.0,,,,High Cost,Estimated value
+44,Bahamas,Africa,2017,4.2,1533.0,,,,High Cost,Estimated value
+44,Bahamas,Africa,2018,4.23,1543.95,,,,High Cost,Estimated value
+44,Bahamas,Africa,2019,4.12,1503.8,,,,High Cost,Estimated value
+44,Bahamas,Africa,2020,4.19,1529.3500000000001,,,,High Cost,Estimated value
+44,Bahamas,Africa,2021,4.28,1562.2,,,,High Cost,Estimated value
+44,Bahamas,Africa,2022,4.96,1810.4,,,,High Cost,Estimated value
+44,Bahamas,Africa,2023,5.25,1916.25,,,,High Cost,Estimated value
+44,Bahamas,Africa,2024,5.54,2022.1,,,,High Cost,Estimated value
+48,Bahrain,Africa,2017,3.04,1109.6,,,,High Cost,Estimated value
+48,Bahrain,Africa,2018,3.19,1164.35,,,,High Cost,Estimated value
+48,Bahrain,Africa,2019,3.3,1204.5,,,,High Cost,Estimated value
+48,Bahrain,Africa,2020,3.42,1248.3,,,,High Cost,Estimated value
+48,Bahrain,Africa,2021,3.25,1186.25,0.74,0.41,1.15,High Cost,Estimated value
+48,Bahrain,Africa,2022,3.74,1365.1000000000001,,,,High Cost,Estimated value
+48,Bahrain,Africa,2023,4.12,1503.8,,,,High Cost,Estimated value
+48,Bahrain,Africa,2024,4.33,1580.45,,,,High Cost,Estimated value
+50,Bangladesh,Africa,2017,3.09,1127.85,,,,High Cost,Estimated value
+50,Bangladesh,Africa,2018,3.26,1189.8999999999999,,,,High Cost,Estimated value
+50,Bangladesh,Africa,2019,3.4,1241.0,,,,High Cost,Estimated value
+50,Bangladesh,Africa,2020,3.61,1317.6499999999999,,,,High Cost,Estimated value
+50,Bangladesh,Africa,2021,3.83,1397.95,0.76,0.66,1.42,High Cost,Estimated value
+50,Bangladesh,Africa,2022,4.13,1507.45,,,,High Cost,Estimated value
+50,Bangladesh,Africa,2023,4.33,1580.45,,,,High Cost,Estimated value
+50,Bangladesh,Africa,2024,4.49,1638.8500000000001,,,,High Cost,Estimated value
+112,Belarus,Africa,2017,3.13,1142.45,,,,High Cost,Estimated value
+112,Belarus,Africa,2018,3.13,1142.45,,,,High Cost,Estimated value
+112,Belarus,Africa,2019,3.19,1164.35,,,,High Cost,Estimated value
+112,Belarus,Africa,2020,3.22,1175.3000000000002,,,,High Cost,Estimated value
+112,Belarus,Africa,2021,3.3,1204.5,0.48,0.94,1.42,High Cost,Estimated value
+112,Belarus,Africa,2022,3.6,1314.0,,,,High Cost,Estimated value
+112,Belarus,Africa,2023,3.72,1357.8000000000002,,,,High Cost,Estimated value
+112,Belarus,Africa,2024,3.83,1397.95,,,,High Cost,Estimated value
+56,Belgium,Africa,2017,2.0,730.0,,,,Medium Cost,Estimated value
+56,Belgium,Africa,2018,2.07,755.55,,,,Medium Cost,Estimated value
+56,Belgium,Africa,2019,2.16,788.4000000000001,,,,Medium Cost,Estimated value
+56,Belgium,Africa,2020,2.28,832.1999999999999,,,,Medium Cost,Estimated value
+56,Belgium,Africa,2021,2.26,824.9,0.62,0.74,1.3599999999999999,Medium Cost,Estimated value
+56,Belgium,Africa,2022,2.49,908.85,,,,Medium Cost,Estimated value
+56,Belgium,Africa,2023,2.77,1011.05,,,,Medium Cost,Estimated value
+56,Belgium,Africa,2024,2.81,1025.65,,,,Medium Cost,Estimated value
+84,Belize,Africa,2017,2.56,934.4,,,,High Cost,Estimated value
+84,Belize,Africa,2018,2.69,981.85,,,,High Cost,Estimated value
+84,Belize,Africa,2019,2.9,1058.5,,,,High Cost,Estimated value
+84,Belize,Africa,2020,3.16,1153.4,,,,High Cost,Estimated value
+84,Belize,Africa,2021,3.52,1284.8,1.22,0.28,1.5,High Cost,Estimated value
+84,Belize,Africa,2022,3.85,1405.25,,,,High Cost,Estimated value
+84,Belize,Africa,2023,4.32,1576.8000000000002,,,,High Cost,Estimated value
+84,Belize,Africa,2024,4.54,1657.1,,,,High Cost,Estimated value
+204,Benin,Americas,2017,2.85,1040.25,,,,Medium Cost,Estimated value
+204,Benin,Americas,2018,2.87,1047.55,,,,Medium Cost,Estimated value
+204,Benin,Americas,2019,2.89,1054.8500000000001,,,,Medium Cost,Estimated value
+204,Benin,Americas,2020,2.9,1058.5,,,,Medium Cost,Estimated value
+204,Benin,Americas,2021,3.07,1120.55,0.57,0.36,0.9299999999999999,Medium Cost,Estimated value
+204,Benin,Americas,2022,3.25,1186.25,,,,Medium Cost,Estimated value
+204,Benin,Americas,2023,3.3,1204.5,,,,Medium Cost,Estimated value
+204,Benin,Americas,2024,3.39,1237.3500000000001,,,,Medium Cost,Estimated value
+60,Bermuda,Africa,2017,2.88,1051.2,,,,High Cost,Estimated value
+60,Bermuda,Africa,2018,2.94,1073.1,,,,High Cost,Estimated value
+60,Bermuda,Africa,2019,3.12,1138.8,,,,High Cost,Estimated value
+60,Bermuda,Africa,2020,3.33,1215.45,,,,High Cost,Estimated value
+60,Bermuda,Africa,2021,3.55,1295.75,1.07,0.37,1.44,High Cost,Estimated value
+60,Bermuda,Africa,2022,3.96,1445.4,,,,High Cost,Estimated value
+60,Bermuda,Africa,2023,4.23,1543.95,,,,High Cost,Estimated value
+60,Bermuda,Africa,2024,4.39,1602.35,,,,High Cost,Estimated value
+64,Bhutan,Africa,2017,4.14,1511.1,,,,High Cost,Estimated value
+64,Bhutan,Africa,2018,4.31,1573.1499999999999,,,,High Cost,Estimated value
+64,Bhutan,Africa,2019,4.44,1620.6000000000001,,,,High Cost,Estimated value
+64,Bhutan,Africa,2020,4.86,1773.9,,,,High Cost,Estimated value
+64,Bhutan,Africa,2021,5.14,1876.1,0.99,1.5,2.49,High Cost,Estimated value
+64,Bhutan,Africa,2022,5.48,2000.2,,,,High Cost,Estimated value
+64,Bhutan,Africa,2023,5.69,2076.8500000000004,,,,High Cost,Estimated value
+64,Bhutan,Africa,2024,5.96,2175.4,,,,High Cost,Estimated value
+68,Bolivia (Plurinational State of),Africa,2017,3.62,1321.3,,,,High Cost,Estimated value
+68,Bolivia (Plurinational State of),Africa,2018,3.61,1317.6499999999999,,,,High Cost,Estimated value
+68,Bolivia (Plurinational State of),Africa,2019,3.75,1368.75,,,,High Cost,Estimated value
+68,Bolivia (Plurinational State of),Africa,2020,3.78,1379.6999999999998,,,,High Cost,Estimated value
+68,Bolivia (Plurinational State of),Africa,2021,3.96,1445.4,0.71,0.67,1.38,High Cost,Estimated value
+68,Bolivia (Plurinational State of),Africa,2022,4.3,1569.5,,,,High Cost,Estimated value
+68,Bolivia (Plurinational State of),Africa,2023,4.57,1668.0500000000002,,,,High Cost,Estimated value
+68,Bolivia (Plurinational State of),Africa,2024,4.82,1759.3000000000002,,,,High Cost,Estimated value
+70,Bosnia and Herzegovina,Africa,2017,4.07,1485.5500000000002,,,,High Cost,Estimated value
+70,Bosnia and Herzegovina,Africa,2018,4.13,1507.45,,,,High Cost,Estimated value
+70,Bosnia and Herzegovina,Africa,2019,4.34,1584.1,,,,High Cost,Estimated value
+70,Bosnia and Herzegovina,Africa,2020,4.34,1584.1,,,,High Cost,Estimated value
+70,Bosnia and Herzegovina,Africa,2021,4.54,1657.1,1.17,0.73,1.9,High Cost,Estimated value
+70,Bosnia and Herzegovina,Africa,2022,5.48,2000.2,,,,High Cost,Estimated value
+70,Bosnia and Herzegovina,Africa,2023,5.95,2171.75,,,,High Cost,Estimated value
+70,Bosnia and Herzegovina,Africa,2024,6.15,2244.75,,,,High Cost,Estimated value
+72,Botswana,Africa,2017,3.01,1098.6499999999999,,,,High Cost,Estimated value
+72,Botswana,Africa,2018,3.0,1095.0,,,,High Cost,Estimated value
+72,Botswana,Africa,2019,3.04,1109.6,,,,High Cost,Estimated value
+72,Botswana,Africa,2020,3.21,1171.65,,,,High Cost,Estimated value
+72,Botswana,Africa,2021,3.41,1244.65,0.58,0.43,1.01,High Cost,Estimated value
+72,Botswana,Africa,2022,3.62,1321.3,,,,High Cost,Estimated value
+72,Botswana,Africa,2023,4.01,1463.6499999999999,,,,High Cost,Estimated value
+72,Botswana,Africa,2024,4.21,1536.65,,,,High Cost,Estimated value
+76,Brazil,Africa,2017,3.15,1149.75,,,,High Cost,Estimated value
+76,Brazil,Africa,2018,3.23,1178.95,,,,High Cost,Estimated value
+76,Brazil,Africa,2019,3.39,1237.3500000000001,,,,High Cost,Estimated value
+76,Brazil,Africa,2020,3.69,1346.85,,,,High Cost,Estimated value
+76,Brazil,Africa,2021,3.97,1449.0500000000002,0.69,0.67,1.3599999999999999,High Cost,Estimated value
+76,Brazil,Africa,2022,4.39,1602.35,,,,High Cost,Estimated value
+76,Brazil,Africa,2023,4.55,1660.75,,,,High Cost,Estimated value
+76,Brazil,Africa,2024,4.69,1711.8500000000001,,,,High Cost,Estimated value
+92,British Virgin Islands,Africa,2017,3.5,1277.5,,,,High Cost,Estimated value
+92,British Virgin Islands,Africa,2018,3.53,1288.4499999999998,,,,High Cost,Estimated value
+92,British Virgin Islands,Africa,2019,3.64,1328.6000000000001,,,,High Cost,Estimated value
+92,British Virgin Islands,Africa,2020,3.78,1379.6999999999998,,,,High Cost,Estimated value
+92,British Virgin Islands,Africa,2021,3.94,1438.1,0.97,0.92,1.8900000000000001,High Cost,Estimated value
+92,British Virgin Islands,Africa,2022,4.78,1744.7,,,,High Cost,Estimated value
+92,British Virgin Islands,Africa,2023,5.05,1843.25,,,,High Cost,Estimated value
+92,British Virgin Islands,Africa,2024,5.23,1908.95,,,,High Cost,Estimated value
+96,Brunei Darussalam,Africa,2017,4.11,1500.15,,,,High Cost,Estimated value
+96,Brunei Darussalam,Africa,2018,4.26,1554.8999999999999,,,,High Cost,Estimated value
+96,Brunei Darussalam,Africa,2019,4.36,1591.4,,,,High Cost,Estimated value
+96,Brunei Darussalam,Africa,2020,4.55,1660.75,,,,High Cost,Estimated value
+96,Brunei Darussalam,Africa,2021,4.85,1770.2499999999998,1.3,0.93,2.23,High Cost,Estimated value
+96,Brunei Darussalam,Africa,2022,5.32,1941.8000000000002,,,,High Cost,Estimated value
+96,Brunei Darussalam,Africa,2023,5.67,2069.55,,,,High Cost,Estimated value
+96,Brunei Darussalam,Africa,2024,5.89,2149.85,,,,High Cost,Estimated value
+100,Bulgaria,Africa,2017,3.39,1237.3500000000001,,,,High Cost,Estimated value
+100,Bulgaria,Africa,2018,3.47,1266.5500000000002,,,,High Cost,Estimated value
+100,Bulgaria,Africa,2019,3.67,1339.55,,,,High Cost,Estimated value
+100,Bulgaria,Africa,2020,3.8,1387.0,,,,High Cost,Estimated value
+100,Bulgaria,Africa,2021,3.93,1434.45,0.85,0.87,1.72,High Cost,Estimated value
+100,Bulgaria,Africa,2022,4.72,1722.8,,,,High Cost,Estimated value
+100,Bulgaria,Africa,2023,5.16,1883.4,,,,High Cost,Estimated value
+100,Bulgaria,Africa,2024,5.32,1941.8000000000002,,,,High Cost,Estimated value
+854,Burkina Faso,Europe,2017,2.77,1011.05,,,,High Cost,Estimated value
+854,Burkina Faso,Europe,2018,2.82,1029.3,,,,High Cost,Estimated value
+854,Burkina Faso,Europe,2019,2.72,992.8000000000001,,,,High Cost,Estimated value
+854,Burkina Faso,Europe,2020,2.8,1021.9999999999999,,,,High Cost,Estimated value
+854,Burkina Faso,Europe,2021,2.97,1084.0500000000002,0.57,0.39,0.96,High Cost,Estimated value
+854,Burkina Faso,Europe,2022,3.48,1270.2,,,,High Cost,Estimated value
+854,Burkina Faso,Europe,2023,3.55,1295.75,,,,High Cost,Estimated value
+854,Burkina Faso,Europe,2024,3.73,1361.45,,,,High Cost,Estimated value
+108,Burundi,Africa,2017,3.4,1241.0,,,,High Cost,Estimated value
+108,Burundi,Africa,2018,3.12,1138.8,,,,High Cost,Estimated value
+108,Burundi,Africa,2019,3.1,1131.5,,,,High Cost,Estimated value
+108,Burundi,Africa,2020,3.33,1215.45,,,,High Cost,Estimated value
+108,Burundi,Africa,2021,3.54,1292.1,0.42,0.45,0.87,High Cost,Estimated value
+108,Burundi,Africa,2022,4.0,1460.0,,,,High Cost,Estimated value
+108,Burundi,Africa,2023,4.5,1642.5,,,,High Cost,Estimated value
+108,Burundi,Africa,2024,4.55,1660.75,,,,High Cost,Estimated value
+132,Cabo Verde,Africa,2017,3.16,1153.4,,,,High Cost,Estimated value
+132,Cabo Verde,Africa,2018,2.92,1065.8,,,,High Cost,Estimated value
+132,Cabo Verde,Africa,2019,2.86,1043.8999999999999,,,,High Cost,Estimated value
+132,Cabo Verde,Africa,2020,2.83,1032.95,,,,High Cost,Estimated value
+132,Cabo Verde,Africa,2021,2.92,1065.8,0.96,0.51,1.47,High Cost,Estimated value
+132,Cabo Verde,Africa,2022,3.38,1233.7,,,,High Cost,Estimated value
+132,Cabo Verde,Africa,2023,3.69,1346.85,,,,High Cost,Estimated value
+132,Cabo Verde,Africa,2024,3.81,1390.65,,,,High Cost,Estimated value
+116,Cambodia,Africa,2017,3.55,1295.75,,,,High Cost,Estimated value
+116,Cambodia,Africa,2018,3.62,1321.3,,,,High Cost,Estimated value
+116,Cambodia,Africa,2019,3.68,1343.2,,,,High Cost,Estimated value
+116,Cambodia,Africa,2020,3.84,1401.6,,,,High Cost,Estimated value
+116,Cambodia,Africa,2021,3.95,1441.75,1.03,0.56,1.59,High Cost,Estimated value
+116,Cambodia,Africa,2022,4.25,1551.25,,,,High Cost,Estimated value
+116,Cambodia,Africa,2023,4.47,1631.55,,,,High Cost,Estimated value
+116,Cambodia,Africa,2024,4.6,1678.9999999999998,,,,High Cost,Estimated value
+120,Cameroon,Africa,2017,2.6,949.0,,,,High Cost,Estimated value
+120,Cameroon,Africa,2018,2.74,1000.1,,,,High Cost,Estimated value
+120,Cameroon,Africa,2019,2.9,1058.5,,,,High Cost,Estimated value
+120,Cameroon,Africa,2020,3.1,1131.5,,,,High Cost,Estimated value
+120,Cameroon,Africa,2021,3.41,1244.65,0.39,0.27,0.66,High Cost,Estimated value
+120,Cameroon,Africa,2022,3.9,1423.5,,,,High Cost,Estimated value
+120,Cameroon,Africa,2023,4.2,1533.0,,,,High Cost,Estimated value
+120,Cameroon,Africa,2024,4.38,1598.7,,,,High Cost,Estimated value
+124,Canada,Africa,2017,3.08,1124.2,,,,High Cost,Estimated value
+124,Canada,Africa,2018,3.13,1142.45,,,,High Cost,Estimated value
+124,Canada,Africa,2019,3.19,1164.35,,,,High Cost,Estimated value
+124,Canada,Africa,2020,3.33,1215.45,,,,High Cost,Estimated value
+124,Canada,Africa,2021,3.52,1284.8,0.88,0.91,1.79,High Cost,Estimated value
+124,Canada,Africa,2022,3.92,1430.8,,,,High Cost,Estimated value
+124,Canada,Africa,2023,4.27,1558.55,,,,High Cost,Estimated value
+124,Canada,Africa,2024,4.39,1602.35,,,,High Cost,Estimated value
+136,Cayman Islands,Africa,2017,3.5,1277.5,,,,High Cost,Estimated value
+136,Cayman Islands,Africa,2018,3.64,1328.6000000000001,,,,High Cost,Estimated value
+136,Cayman Islands,Africa,2019,3.61,1317.6499999999999,,,,High Cost,Estimated value
+136,Cayman Islands,Africa,2020,3.81,1390.65,,,,High Cost,Estimated value
+136,Cayman Islands,Africa,2021,4.09,1492.85,0.89,1.19,2.08,High Cost,Estimated value
+136,Cayman Islands,Africa,2022,4.33,1580.45,,,,High Cost,Estimated value
+136,Cayman Islands,Africa,2023,4.61,1682.65,,,,High Cost,Estimated value
+136,Cayman Islands,Africa,2024,4.7,1715.5,,,,High Cost,Estimated value
+140,Central African Republic,Africa,2017,2.95,1076.75,,,,High Cost,Estimated value
+140,Central African Republic,Africa,2018,3.08,1124.2,,,,High Cost,Estimated value
+140,Central African Republic,Africa,2019,3.22,1175.3000000000002,,,,High Cost,Estimated value
+140,Central African Republic,Africa,2020,3.38,1233.7,,,,High Cost,Estimated value
+140,Central African Republic,Africa,2021,3.63,1324.95,0.94,0.23,1.17,High Cost,Estimated value
+140,Central African Republic,Africa,2022,3.92,1430.8,,,,High Cost,Estimated value
+140,Central African Republic,Africa,2023,4.08,1489.2,,,,High Cost,Estimated value
+140,Central African Republic,Africa,2024,4.21,1536.65,,,,High Cost,Estimated value
+148,Chad,Africa,2017,2.82,1029.3,,,,High Cost,Estimated value
+148,Chad,Africa,2018,2.8,1021.9999999999999,,,,High Cost,Estimated value
+148,Chad,Africa,2019,2.8,1021.9999999999999,,,,High Cost,Estimated value
+148,Chad,Africa,2020,2.95,1076.75,,,,High Cost,Estimated value
+148,Chad,Africa,2021,3.04,1109.6,0.43,0.27,0.7,High Cost,Estimated value
+148,Chad,Africa,2022,3.49,1273.8500000000001,,,,High Cost,Estimated value
+148,Chad,Africa,2023,3.77,1376.05,,,,High Cost,Estimated value
+148,Chad,Africa,2024,3.94,1438.1,,,,High Cost,Estimated value
+152,Chile,Africa,2017,3.38,1233.7,,,,High Cost,Estimated value
+152,Chile,Africa,2018,3.52,1284.8,,,,High Cost,Estimated value
+152,Chile,Africa,2019,3.66,1335.9,,,,High Cost,Estimated value
+152,Chile,Africa,2020,3.79,1383.35,,,,High Cost,Estimated value
+152,Chile,Africa,2021,3.87,1412.55,1.05,0.75,1.8,High Cost,Estimated value
+152,Chile,Africa,2022,4.42,1613.3,,,,High Cost,Estimated value
+152,Chile,Africa,2023,5.04,1839.6,,,,High Cost,Estimated value
+152,Chile,Africa,2024,5.22,1905.3,,,,High Cost,Estimated value
+344,"China, Hong Kong SAR",Americas,2017,3.33,1215.45,,,,High Cost,Estimated value
+344,"China, Hong Kong SAR",Americas,2018,3.44,1255.6,,,,High Cost,Estimated value
+344,"China, Hong Kong SAR",Americas,2019,3.78,1379.6999999999998,,,,High Cost,Estimated value
+344,"China, Hong Kong SAR",Americas,2020,4.04,1474.6,,,,High Cost,Estimated value
+344,"China, Hong Kong SAR",Americas,2021,4.2,1533.0,0.92,0.81,1.73,High Cost,Estimated value
+344,"China, Hong Kong SAR",Americas,2022,4.65,1697.2500000000002,,,,High Cost,Estimated value
+344,"China, Hong Kong SAR",Americas,2023,4.77,1741.05,,,,High Cost,Estimated value
+344,"China, Hong Kong SAR",Americas,2024,4.81,1755.6499999999999,,,,High Cost,Estimated value
+158,"China, Taiwan Province of",Africa,2017,4.0,1460.0,,,,,Estimated value
+158,"China, Taiwan Province of",Africa,2021,4.95,1806.75,1.15,0.75,1.9,,Estimated value
+156,"China, mainland",Africa,2017,2.8,1021.9999999999999,,,,High Cost,Estimated value
+156,"China, mainland",Africa,2018,2.82,1029.3,,,,High Cost,Estimated value
+156,"China, mainland",Africa,2019,3.0,1095.0,,,,High Cost,Estimated value
+156,"China, mainland",Africa,2020,3.25,1186.25,,,,High Cost,Estimated value
+156,"China, mainland",Africa,2021,3.13,1142.45,0.6,0.74,1.3399999999999999,High Cost,Estimated value
+156,"China, mainland",Africa,2022,3.41,1244.65,,,,High Cost,Estimated value
+156,"China, mainland",Africa,2023,3.53,1288.4499999999998,,,,High Cost,Estimated value
+156,"China, mainland",Africa,2024,3.6,1314.0,,,,High Cost,Estimated value
+170,Colombia,Africa,2017,2.84,1036.6,,,,High Cost,Estimated value
+170,Colombia,Africa,2018,2.87,1047.55,,,,High Cost,Estimated value
+170,Colombia,Africa,2019,2.95,1076.75,,,,High Cost,Estimated value
+170,Colombia,Africa,2020,3.15,1149.75,,,,High Cost,Estimated value
+170,Colombia,Africa,2021,3.3,1204.5,0.8,0.53,1.33,High Cost,Estimated value
+170,Colombia,Africa,2022,4.06,1481.8999999999999,,,,High Cost,Estimated value
+170,Colombia,Africa,2023,4.69,1711.8500000000001,,,,High Cost,Estimated value
+170,Colombia,Africa,2024,4.67,1704.55,,,,High Cost,Estimated value
+174,Comoros,Africa,2017,4.61,1682.65,,,,High Cost,Estimated value
+174,Comoros,Africa,2018,4.55,1660.75,,,,High Cost,Estimated value
+174,Comoros,Africa,2019,4.54,1657.1,,,,High Cost,Estimated value
+174,Comoros,Africa,2020,4.49,1638.8500000000001,,,,High Cost,Estimated value
+174,Comoros,Africa,2021,4.48,1635.2,1.14,0.47,1.6099999999999999,High Cost,Estimated value
+174,Comoros,Africa,2022,4.75,1733.75,,,,High Cost,Estimated value
+174,Comoros,Africa,2023,4.93,1799.4499999999998,,,,High Cost,Estimated value
+174,Comoros,Africa,2024,5.14,1876.1,,,,High Cost,Estimated value
+178,Congo,Africa,2017,3.04,1109.6,,,,High Cost,Estimated value
+178,Congo,Africa,2018,3.16,1153.4,,,,High Cost,Estimated value
+178,Congo,Africa,2019,3.24,1182.6000000000001,,,,High Cost,Estimated value
+178,Congo,Africa,2020,3.43,1251.95,,,,High Cost,Estimated value
+178,Congo,Africa,2021,3.74,1365.1000000000001,0.77,0.41,1.18,High Cost,Estimated value
+178,Congo,Africa,2022,4.16,1518.4,,,,High Cost,Estimated value
+178,Congo,Africa,2023,4.33,1580.45,,,,High Cost,Estimated value
+178,Congo,Africa,2024,4.43,1616.9499999999998,,,,High Cost,Estimated value
+188,Costa Rica,Africa,2017,3.54,1292.1,,,,High Cost,Estimated value
+188,Costa Rica,Africa,2018,3.58,1306.7,,,,High Cost,Estimated value
+188,Costa Rica,Africa,2019,3.67,1339.55,,,,High Cost,Estimated value
+188,Costa Rica,Africa,2020,3.56,1299.4,,,,High Cost,Estimated value
+188,Costa Rica,Africa,2021,3.7,1350.5,0.86,0.58,1.44,High Cost,Estimated value
+188,Costa Rica,Africa,2022,4.13,1507.45,,,,High Cost,Estimated value
+188,Costa Rica,Africa,2023,4.52,1649.8,,,,High Cost,Estimated value
+188,Costa Rica,Africa,2024,4.62,1686.3,,,,High Cost,Estimated value
+191,Croatia,Africa,2017,3.31,1208.15,,,,High Cost,Estimated value
+191,Croatia,Africa,2018,3.35,1222.75,,,,High Cost,Estimated value
+191,Croatia,Africa,2019,3.44,1255.6,,,,High Cost,Estimated value
+191,Croatia,Africa,2020,3.53,1288.4499999999998,,,,High Cost,Estimated value
+191,Croatia,Africa,2021,3.71,1354.15,0.88,0.76,1.6400000000000001,High Cost,Estimated value
+191,Croatia,Africa,2022,4.21,1536.65,,,,High Cost,Estimated value
+191,Croatia,Africa,2023,4.52,1649.8,,,,High Cost,Estimated value
+191,Croatia,Africa,2024,4.7,1715.5,,,,High Cost,Estimated value
+531,Curaçao,Asia,2017,2.95,1076.75,,,,High Cost,Estimated value
+531,Curaçao,Asia,2018,3.13,1142.45,,,,High Cost,Estimated value
+531,Curaçao,Asia,2019,3.35,1222.75,,,,High Cost,Estimated value
+531,Curaçao,Asia,2020,3.65,1332.25,,,,High Cost,Estimated value
+531,Curaçao,Asia,2021,4.0,1460.0,0.97,1.0,1.97,High Cost,Estimated value
+531,Curaçao,Asia,2022,4.44,1620.6000000000001,,,,High Cost,Estimated value
+531,Curaçao,Asia,2023,5.01,1828.6499999999999,,,,High Cost,Estimated value
+531,Curaçao,Asia,2024,5.54,2022.1,,,,High Cost,Estimated value
+196,Cyprus,Africa,2017,2.89,1054.8500000000001,,,,High Cost,Estimated value
+196,Cyprus,Africa,2018,2.93,1069.45,,,,High Cost,Estimated value
+196,Cyprus,Africa,2019,3.04,1109.6,,,,High Cost,Estimated value
+196,Cyprus,Africa,2020,3.14,1146.1000000000001,,,,High Cost,Estimated value
+196,Cyprus,Africa,2021,3.1,1131.5,0.72,0.73,1.45,High Cost,Estimated value
+196,Cyprus,Africa,2022,3.44,1255.6,,,,High Cost,Estimated value
+196,Cyprus,Africa,2023,3.65,1332.25,,,,High Cost,Estimated value
+196,Cyprus,Africa,2024,3.82,1394.3,,,,High Cost,Estimated value
+203,Czechia,Americas,2017,2.81,1025.65,,,,High Cost,Estimated value
+203,Czechia,Americas,2018,2.83,1032.95,,,,High Cost,Estimated value
+203,Czechia,Americas,2019,2.97,1084.0500000000002,,,,High Cost,Estimated value
+203,Czechia,Americas,2020,3.0,1095.0,,,,High Cost,Estimated value
+203,Czechia,Americas,2021,2.9,1058.5,0.72,0.61,1.33,High Cost,Estimated value
+203,Czechia,Americas,2022,3.36,1226.3999999999999,,,,High Cost,Estimated value
+203,Czechia,Americas,2023,3.65,1332.25,,,,High Cost,Estimated value
+203,Czechia,Americas,2024,3.58,1306.7,,,,High Cost,Estimated value
+384,Côte d'Ivoire,Americas,2017,2.66,970.9000000000001,,,,High Cost,Estimated value
+384,Côte d'Ivoire,Americas,2018,2.69,981.85,,,,High Cost,Estimated value
+384,Côte d'Ivoire,Americas,2019,2.66,970.9000000000001,,,,High Cost,Estimated value
+384,Côte d'Ivoire,Americas,2020,2.73,996.45,,,,High Cost,Estimated value
+384,Côte d'Ivoire,Americas,2021,2.91,1062.15,0.31,0.27,0.5800000000000001,High Cost,Estimated value
+384,Côte d'Ivoire,Americas,2022,3.25,1186.25,,,,High Cost,Estimated value
+384,Côte d'Ivoire,Americas,2023,3.45,1259.25,,,,High Cost,Estimated value
+384,Côte d'Ivoire,Americas,2024,3.58,1306.7,,,,High Cost,Estimated value
+180,Democratic Republic of the Congo,Africa,2017,4.27,1558.55,,,,Medium Cost,Estimated value
+180,Democratic Republic of the Congo,Africa,2018,3.46,1262.9,,,,Medium Cost,Estimated value
+180,Democratic Republic of the Congo,Africa,2019,3.44,1255.6,,,,Medium Cost,Estimated value
+180,Democratic Republic of the Congo,Africa,2020,3.21,1171.65,,,,Medium Cost,Estimated value
+180,Democratic Republic of the Congo,Africa,2021,3.11,1135.1499999999999,0.3,0.27,0.5700000000000001,Medium Cost,Estimated value
+180,Democratic Republic of the Congo,Africa,2022,3.38,1233.7,,,,Medium Cost,Estimated value
+180,Democratic Republic of the Congo,Africa,2023,3.55,1295.75,,,,Medium Cost,Estimated value
+180,Democratic Republic of the Congo,Africa,2024,3.46,1262.9,,,,Medium Cost,Estimated value
+208,Denmark,Americas,2017,2.2,803.0000000000001,,,,Medium Cost,Estimated value
+208,Denmark,Americas,2018,2.26,824.9,,,,Medium Cost,Estimated value
+208,Denmark,Americas,2019,2.34,854.0999999999999,,,,Medium Cost,Estimated value
+208,Denmark,Americas,2020,2.41,879.6500000000001,,,,Medium Cost,Estimated value
+208,Denmark,Americas,2021,2.49,908.85,0.66,0.6,1.26,Medium Cost,Estimated value
+208,Denmark,Americas,2022,2.72,992.8000000000001,,,,Medium Cost,Estimated value
+208,Denmark,Americas,2023,2.94,1073.1,,,,Medium Cost,Estimated value
+208,Denmark,Americas,2024,3.03,1105.9499999999998,,,,Medium Cost,Estimated value
+262,Djibouti,Americas,2017,2.97,1084.0500000000002,,,,High Cost,Estimated value
+262,Djibouti,Americas,2018,3.0,1095.0,,,,High Cost,Estimated value
+262,Djibouti,Americas,2019,3.1,1131.5,,,,High Cost,Estimated value
+262,Djibouti,Americas,2020,3.24,1182.6000000000001,,,,High Cost,Estimated value
+262,Djibouti,Americas,2021,3.4,1241.0,0.64,0.46,1.1,High Cost,Estimated value
+262,Djibouti,Americas,2022,3.86,1408.8999999999999,,,,High Cost,Estimated value
+262,Djibouti,Americas,2023,4.06,1481.8999999999999,,,,High Cost,Estimated value
+262,Djibouti,Americas,2024,4.2,1533.0,,,,High Cost,Estimated value
+212,Dominica,Americas,2017,4.28,1562.2,,,,High Cost,Estimated value
+212,Dominica,Americas,2018,4.55,1660.75,,,,High Cost,Estimated value
+212,Dominica,Americas,2019,4.75,1733.75,,,,High Cost,Estimated value
+212,Dominica,Americas,2020,5.0,1825.0,,,,High Cost,Estimated value
+212,Dominica,Americas,2021,5.26,1919.8999999999999,1.62,0.9,2.52,High Cost,Estimated value
+212,Dominica,Americas,2022,5.69,2076.8500000000004,,,,High Cost,Estimated value
+212,Dominica,Americas,2023,6.08,2219.2,,,,High Cost,Estimated value
+212,Dominica,Americas,2024,6.36,2321.4,,,,High Cost,Estimated value
+214,Dominican Republic,Americas,2017,3.39,1237.3500000000001,,,,High Cost,Estimated value
+214,Dominican Republic,Americas,2018,3.48,1270.2,,,,High Cost,Estimated value
+214,Dominican Republic,Americas,2019,3.74,1365.1000000000001,,,,High Cost,Estimated value
+214,Dominican Republic,Americas,2020,4.05,1478.25,,,,High Cost,Estimated value
+214,Dominican Republic,Americas,2021,4.41,1609.65,0.95,0.58,1.5299999999999998,High Cost,Estimated value
+214,Dominican Republic,Americas,2022,4.87,1777.55,,,,High Cost,Estimated value
+214,Dominican Republic,Americas,2023,5.21,1901.65,,,,High Cost,Estimated value
+214,Dominican Republic,Americas,2024,5.4,1971.0000000000002,,,,High Cost,Estimated value
+218,Ecuador,Americas,2017,2.5,912.5,,,,High Cost,Estimated value
+218,Ecuador,Americas,2018,2.54,927.1,,,,High Cost,Estimated value
+218,Ecuador,Americas,2019,2.63,959.9499999999999,,,,High Cost,Estimated value
+218,Ecuador,Americas,2020,2.77,1011.05,,,,High Cost,Estimated value
+218,Ecuador,Americas,2021,2.91,1062.15,0.44,0.38,0.8200000000000001,High Cost,Estimated value
+218,Ecuador,Americas,2022,3.19,1164.35,,,,High Cost,Estimated value
+218,Ecuador,Americas,2023,3.43,1251.95,,,,High Cost,Estimated value
+218,Ecuador,Americas,2024,3.56,1299.4,,,,High Cost,Estimated value
+818,Egypt,Europe,2017,3.81,1390.65,,,,High Cost,Estimated value
+818,Egypt,Europe,2018,4.02,1467.3,,,,High Cost,Estimated value
+818,Egypt,Europe,2019,3.98,1452.7,,,,High Cost,Estimated value
+818,Egypt,Europe,2020,3.88,1416.2,,,,High Cost,Estimated value
+818,Egypt,Europe,2021,4.01,1463.6499999999999,0.52,0.42,0.94,High Cost,Estimated value
+818,Egypt,Europe,2022,4.69,1711.8500000000001,,,,High Cost,Estimated value
+818,Egypt,Europe,2023,5.96,2175.4,,,,High Cost,Estimated value
+818,Egypt,Europe,2024,6.38,2328.7,,,,High Cost,Estimated value
+226,Equatorial Guinea,Americas,2017,3.7,1350.5,,,,High Cost,Estimated value
+226,Equatorial Guinea,Americas,2018,3.77,1376.05,,,,High Cost,Estimated value
+226,Equatorial Guinea,Americas,2019,3.81,1390.65,,,,High Cost,Estimated value
+226,Equatorial Guinea,Americas,2020,3.93,1434.45,,,,High Cost,Estimated value
+226,Equatorial Guinea,Americas,2021,4.07,1485.5500000000002,1.08,0.38,1.46,High Cost,Estimated value
+226,Equatorial Guinea,Americas,2022,4.43,1616.9499999999998,,,,High Cost,Estimated value
+226,Equatorial Guinea,Americas,2023,4.62,1686.3,,,,High Cost,Estimated value
+226,Equatorial Guinea,Americas,2024,4.79,1748.35,,,,High Cost,Estimated value
+233,Estonia,Americas,2017,3.14,1146.1000000000001,,,,High Cost,Estimated value
+233,Estonia,Americas,2018,3.21,1171.65,,,,High Cost,Estimated value
+233,Estonia,Americas,2019,3.35,1222.75,,,,High Cost,Estimated value
+233,Estonia,Americas,2020,3.43,1251.95,,,,High Cost,Estimated value
+233,Estonia,Americas,2021,3.34,1219.1,0.81,0.64,1.4500000000000002,High Cost,Estimated value
+233,Estonia,Americas,2022,3.76,1372.3999999999999,,,,High Cost,Estimated value
+233,Estonia,Americas,2023,4.21,1536.65,,,,High Cost,Estimated value
+233,Estonia,Americas,2024,4.32,1576.8000000000002,,,,High Cost,Estimated value
+748,Eswatini,Europe,2017,3.36,1226.3999999999999,,,,High Cost,Estimated value
+748,Eswatini,Europe,2018,3.31,1208.15,,,,High Cost,Estimated value
+748,Eswatini,Europe,2019,3.33,1215.45,,,,High Cost,Estimated value
+748,Eswatini,Europe,2020,3.41,1244.65,,,,High Cost,Estimated value
+748,Eswatini,Europe,2021,3.62,1321.3,0.82,0.32,1.14,High Cost,Estimated value
+748,Eswatini,Europe,2022,3.96,1445.4,,,,High Cost,Estimated value
+748,Eswatini,Europe,2023,4.09,1492.85,,,,High Cost,Estimated value
+748,Eswatini,Europe,2024,4.21,1536.65,,,,High Cost,Estimated value
+231,Ethiopia,Americas,2017,2.94,1073.1,,,,High Cost,Estimated value
+231,Ethiopia,Americas,2018,3.03,1105.9499999999998,,,,High Cost,Estimated value
+231,Ethiopia,Americas,2019,3.27,1193.55,,,,High Cost,Estimated value
+231,Ethiopia,Americas,2020,3.52,1284.8,,,,High Cost,Estimated value
+231,Ethiopia,Americas,2021,3.88,1416.2,0.39,0.83,1.22,High Cost,Estimated value
+231,Ethiopia,Americas,2022,4.29,1565.85,,,,High Cost,Estimated value
+231,Ethiopia,Americas,2023,4.41,1609.65,,,,High Cost,Estimated value
+231,Ethiopia,Americas,2024,4.78,1744.7,,,,High Cost,Estimated value
+242,Fiji,Americas,2017,3.2,1168.0,,,,High Cost,Estimated value
+242,Fiji,Americas,2018,3.26,1189.8999999999999,,,,High Cost,Estimated value
+242,Fiji,Americas,2019,3.41,1244.65,,,,High Cost,Estimated value
+242,Fiji,Americas,2020,3.48,1270.2,,,,High Cost,Estimated value
+242,Fiji,Americas,2021,3.81,1390.65,0.99,0.68,1.67,High Cost,Estimated value
+242,Fiji,Americas,2022,4.18,1525.6999999999998,,,,High Cost,Estimated value
+242,Fiji,Americas,2023,4.58,1671.7,,,,High Cost,Estimated value
+242,Fiji,Americas,2024,4.82,1759.3000000000002,,,,High Cost,Estimated value
+246,Finland,Americas,2017,2.53,923.4499999999999,,,,High Cost,Estimated value
+246,Finland,Americas,2018,2.61,952.65,,,,High Cost,Estimated value
+246,Finland,Americas,2019,2.72,992.8000000000001,,,,High Cost,Estimated value
+246,Finland,Americas,2020,2.81,1025.65,,,,High Cost,Estimated value
+246,Finland,Americas,2021,2.87,1047.55,0.89,0.61,1.5,High Cost,Estimated value
+246,Finland,Americas,2022,3.25,1186.25,,,,High Cost,Estimated value
+246,Finland,Americas,2023,3.52,1284.8,,,,High Cost,Estimated value
+246,Finland,Americas,2024,3.57,1303.05,,,,High Cost,Estimated value
+250,France,Americas,2017,2.58,941.7,,,,High Cost,Estimated value
+250,France,Americas,2018,2.65,967.25,,,,High Cost,Estimated value
+250,France,Americas,2019,2.83,1032.95,,,,High Cost,Estimated value
+250,France,Americas,2020,2.94,1073.1,,,,High Cost,Estimated value
+250,France,Americas,2021,2.96,1080.4,0.92,0.86,1.78,High Cost,Estimated value
+250,France,Americas,2022,3.32,1211.8,,,,High Cost,Estimated value
+250,France,Americas,2023,3.67,1339.55,,,,High Cost,Estimated value
+250,France,Americas,2024,3.75,1368.75,,,,High Cost,Estimated value
+266,Gabon,Americas,2017,3.24,1182.6000000000001,,,,High Cost,Estimated value
+266,Gabon,Americas,2018,3.31,1208.15,,,,High Cost,Estimated value
+266,Gabon,Americas,2019,3.44,1255.6,,,,High Cost,Estimated value
+266,Gabon,Americas,2020,3.6,1314.0,,,,High Cost,Estimated value
+266,Gabon,Americas,2021,3.81,1390.65,1.09,0.47,1.56,High Cost,Estimated value
+266,Gabon,Americas,2022,4.18,1525.6999999999998,,,,High Cost,Estimated value
+266,Gabon,Americas,2023,4.45,1624.25,,,,High Cost,Estimated value
+266,Gabon,Americas,2024,4.64,1693.6,,,,High Cost,Estimated value
+270,Gambia,Americas,2017,2.69,981.85,,,,High Cost,Estimated value
+270,Gambia,Americas,2018,2.86,1043.8999999999999,,,,High Cost,Estimated value
+270,Gambia,Americas,2019,2.98,1087.7,,,,High Cost,Estimated value
+270,Gambia,Americas,2020,3.18,1160.7,,,,High Cost,Estimated value
+270,Gambia,Americas,2021,3.45,1259.25,0.38,0.47,0.85,High Cost,Estimated value
+270,Gambia,Americas,2022,3.81,1390.65,,,,High Cost,Estimated value
+270,Gambia,Americas,2023,4.13,1507.45,,,,High Cost,Estimated value
+270,Gambia,Americas,2024,4.43,1616.9499999999998,,,,High Cost,Estimated value
+276,Germany,Americas,2017,2.64,963.6,,,,High Cost,Estimated value
+276,Germany,Americas,2018,2.76,1007.4,,,,High Cost,Estimated value
+276,Germany,Americas,2019,2.87,1047.55,,,,High Cost,Estimated value
+276,Germany,Americas,2020,2.97,1084.0500000000002,,,,High Cost,Estimated value
+276,Germany,Americas,2021,3.1,1131.5,0.86,0.89,1.75,High Cost,Estimated value
+276,Germany,Americas,2022,3.54,1292.1,,,,High Cost,Estimated value
+276,Germany,Americas,2023,3.89,1419.8500000000001,,,,High Cost,Estimated value
+276,Germany,Americas,2024,4.0,1460.0,,,,High Cost,Estimated value
+288,Ghana,Americas,2017,3.54,1292.1,,,,High Cost,Estimated value
+288,Ghana,Americas,2018,3.51,1281.1499999999999,,,,High Cost,Estimated value
+288,Ghana,Americas,2019,3.48,1270.2,,,,High Cost,Estimated value
+288,Ghana,Americas,2020,3.46,1262.9,,,,High Cost,Estimated value
+288,Ghana,Americas,2021,3.5,1277.5,0.46,0.25,0.71,High Cost,Estimated value
+288,Ghana,Americas,2022,3.83,1397.95,,,,High Cost,Estimated value
+288,Ghana,Americas,2023,4.29,1565.85,,,,High Cost,Estimated value
+288,Ghana,Americas,2024,4.49,1638.8500000000001,,,,High Cost,Estimated value
+300,Greece,Americas,2017,2.93,1069.45,,,,High Cost,Estimated value
+300,Greece,Americas,2018,2.99,1091.3500000000001,,,,High Cost,Estimated value
+300,Greece,Americas,2019,3.1,1131.5,,,,High Cost,Estimated value
+300,Greece,Americas,2020,3.13,1142.45,,,,High Cost,Estimated value
+300,Greece,Americas,2021,3.25,1186.25,0.8,0.66,1.46,High Cost,Estimated value
+300,Greece,Americas,2022,3.73,1361.45,,,,High Cost,Estimated value
+300,Greece,Americas,2023,4.16,1518.4,,,,High Cost,Estimated value
+300,Greece,Americas,2024,4.31,1573.1499999999999,,,,High Cost,Estimated value
+308,Grenada,Americas,2017,4.43,1616.9499999999998,,,,High Cost,Estimated value
+308,Grenada,Americas,2018,4.5,1642.5,,,,High Cost,Estimated value
+308,Grenada,Americas,2019,4.44,1620.6000000000001,,,,High Cost,Estimated value
+308,Grenada,Americas,2020,4.5,1642.5,,,,High Cost,Estimated value
+308,Grenada,Americas,2021,4.59,1675.35,1.29,1.07,2.3600000000000003,High Cost,Estimated value
+308,Grenada,Americas,2022,5.11,1865.15,,,,High Cost,Estimated value
+308,Grenada,Americas,2023,5.58,2036.7,,,,High Cost,Estimated value
+308,Grenada,Americas,2024,5.83,2127.95,,,,High Cost,Estimated value
+320,Guatemala,Americas,2017,2.88,1051.2,,,,High Cost,Estimated value
+320,Guatemala,Americas,2018,3.12,1138.8,,,,High Cost,Estimated value
+320,Guatemala,Americas,2019,3.45,1259.25,,,,High Cost,Estimated value
+320,Guatemala,Americas,2020,3.74,1365.1000000000001,,,,High Cost,Estimated value
+320,Guatemala,Americas,2021,4.01,1463.6499999999999,0.64,0.47,1.1099999999999999,High Cost,Estimated value
+320,Guatemala,Americas,2022,4.43,1616.9499999999998,,,,High Cost,Estimated value
+320,Guatemala,Americas,2023,4.78,1744.7,,,,High Cost,Estimated value
+320,Guatemala,Americas,2024,5.03,1835.95,,,,High Cost,Estimated value
+324,Guinea,Americas,2017,2.59,945.3499999999999,,,,High Cost,Estimated value
+324,Guinea,Americas,2018,2.84,1036.6,,,,High Cost,Estimated value
+324,Guinea,Americas,2019,3.05,1113.25,,,,High Cost,Estimated value
+324,Guinea,Americas,2020,3.35,1222.75,,,,High Cost,Estimated value
+324,Guinea,Americas,2021,3.72,1357.8000000000002,0.48,0.44,0.9199999999999999,High Cost,Estimated value
+324,Guinea,Americas,2022,4.14,1511.1,,,,High Cost,Estimated value
+324,Guinea,Americas,2023,4.65,1697.2500000000002,,,,High Cost,Estimated value
+324,Guinea,Americas,2024,5.1,1861.4999999999998,,,,High Cost,Estimated value
+624,Guinea-Bissau,Europe,2017,3.01,1098.6499999999999,,,,High Cost,Estimated value
+624,Guinea-Bissau,Europe,2018,3.04,1109.6,,,,High Cost,Estimated value
+624,Guinea-Bissau,Europe,2019,3.14,1146.1000000000001,,,,High Cost,Estimated value
+624,Guinea-Bissau,Europe,2020,3.24,1182.6000000000001,,,,High Cost,Estimated value
+624,Guinea-Bissau,Europe,2021,3.45,1259.25,0.85,0.45,1.3,High Cost,Estimated value
+624,Guinea-Bissau,Europe,2022,3.74,1365.1000000000001,,,,High Cost,Estimated value
+624,Guinea-Bissau,Europe,2023,3.98,1452.7,,,,High Cost,Estimated value
+624,Guinea-Bissau,Europe,2024,4.09,1492.85,,,,High Cost,Estimated value
+328,Guyana,Americas,2017,4.62,1686.3,,,,High Cost,Estimated value
+328,Guyana,Americas,2018,4.79,1748.35,,,,High Cost,Estimated value
+328,Guyana,Americas,2019,5.06,1846.8999999999999,,,,High Cost,Estimated value
+328,Guyana,Americas,2020,5.41,1974.65,,,,High Cost,Estimated value
+328,Guyana,Americas,2021,5.9,2153.5,,,,High Cost,Estimated value
+328,Guyana,Americas,2022,6.37,2325.05,,,,High Cost,Estimated value
+328,Guyana,Americas,2023,6.64,2423.6,,,,High Cost,Estimated value
+328,Guyana,Americas,2024,6.83,2492.95,,,,High Cost,Estimated value
+332,Haiti,Americas,2017,3.93,1434.45,,,,High Cost,Estimated value
+332,Haiti,Americas,2018,4.05,1478.25,,,,High Cost,Estimated value
+332,Haiti,Americas,2019,4.28,1562.2,,,,High Cost,Estimated value
+332,Haiti,Americas,2020,4.57,1668.0500000000002,,,,High Cost,Estimated value
+332,Haiti,Americas,2021,4.88,1781.2,,,,High Cost,Estimated value
+332,Haiti,Americas,2022,5.3,1934.5,,,,High Cost,Estimated value
+332,Haiti,Americas,2023,5.53,2018.45,,,,High Cost,Estimated value
+332,Haiti,Americas,2024,6.21,2266.65,,,,High Cost,Estimated value
+340,Honduras,Americas,2017,3.69,1346.85,,,,High Cost,Estimated value
+340,Honduras,Americas,2018,3.66,1335.9,,,,High Cost,Estimated value
+340,Honduras,Americas,2019,3.64,1328.6000000000001,,,,High Cost,Estimated value
+340,Honduras,Americas,2020,3.76,1372.3999999999999,,,,High Cost,Estimated value
+340,Honduras,Americas,2021,3.81,1390.65,0.77,0.79,1.56,High Cost,Estimated value
+340,Honduras,Americas,2022,4.28,1562.2,,,,High Cost,Estimated value
+340,Honduras,Americas,2023,4.64,1693.6,,,,High Cost,Estimated value
+340,Honduras,Americas,2024,4.75,1733.75,,,,High Cost,Estimated value
+348,Hungary,Americas,2017,3.36,1226.3999999999999,,,,High Cost,Estimated value
+348,Hungary,Americas,2018,3.45,1259.25,,,,High Cost,Estimated value
+348,Hungary,Americas,2019,3.6,1314.0,,,,High Cost,Estimated value
+348,Hungary,Americas,2020,3.69,1346.85,,,,High Cost,Estimated value
+348,Hungary,Americas,2021,3.68,1343.2,0.98,0.82,1.7999999999999998,High Cost,Estimated value
+348,Hungary,Americas,2022,4.46,1627.9,,,,High Cost,Estimated value
+348,Hungary,Americas,2023,5.08,1854.2,,,,High Cost,Estimated value
+348,Hungary,Americas,2024,5.08,1854.2,,,,High Cost,Estimated value
+352,Iceland,Americas,2017,2.37,865.0500000000001,,,,Medium Cost,Estimated value
+352,Iceland,Americas,2018,2.41,879.6500000000001,,,,Medium Cost,Estimated value
+352,Iceland,Americas,2019,2.52,919.8,,,,Medium Cost,Estimated value
+352,Iceland,Americas,2020,2.69,981.85,,,,Medium Cost,Estimated value
+352,Iceland,Americas,2021,2.77,1011.05,0.79,0.54,1.33,Medium Cost,Estimated value
+352,Iceland,Americas,2022,3.0,1095.0,,,,Medium Cost,Estimated value
+352,Iceland,Americas,2023,3.21,1171.65,,,,Medium Cost,Estimated value
+352,Iceland,Americas,2024,3.29,1200.85,,,,Medium Cost,Estimated value
+356,India,Americas,2017,2.77,1011.05,,,,High Cost,Estimated value
+356,India,Americas,2018,2.86,1043.8999999999999,,,,High Cost,Estimated value
+356,India,Americas,2019,3.01,1098.6499999999999,,,,High Cost,Estimated value
+356,India,Americas,2020,3.23,1178.95,,,,High Cost,Estimated value
+356,India,Americas,2021,3.4,1241.0,0.7,0.58,1.2799999999999998,High Cost,Estimated value
+356,India,Americas,2022,3.67,1339.55,,,,High Cost,Estimated value
+356,India,Americas,2023,3.86,1408.8999999999999,,,,High Cost,Estimated value
+356,India,Americas,2024,4.07,1485.5500000000002,,,,High Cost,Estimated value
+360,Indonesia,Americas,2017,3.61,1317.6499999999999,,,,High Cost,Estimated value
+360,Indonesia,Americas,2018,3.68,1343.2,,,,High Cost,Estimated value
+360,Indonesia,Americas,2019,3.68,1343.2,,,,High Cost,Estimated value
+360,Indonesia,Americas,2020,3.86,1408.8999999999999,,,,High Cost,Estimated value
+360,Indonesia,Americas,2021,4.0,1460.0,0.73,0.86,1.5899999999999999,High Cost,Estimated value
+360,Indonesia,Americas,2022,4.39,1602.35,,,,High Cost,Estimated value
+360,Indonesia,Americas,2023,4.63,1689.95,,,,High Cost,Estimated value
+360,Indonesia,Americas,2024,4.75,1733.75,,,,High Cost,Estimated value
+364,Iran (Islamic Republic of),Americas,2017,3.01,1098.6499999999999,,,,High Cost,Estimated value
+364,Iran (Islamic Republic of),Americas,2018,3.11,1135.1499999999999,,,,High Cost,Estimated value
+364,Iran (Islamic Republic of),Americas,2019,3.35,1222.75,,,,High Cost,Estimated value
+364,Iran (Islamic Republic of),Americas,2020,3.15,1149.75,,,,High Cost,Estimated value
+364,Iran (Islamic Republic of),Americas,2021,3.37,1230.05,,,,High Cost,Estimated value
+364,Iran (Islamic Republic of),Americas,2022,4.09,1492.85,,,,High Cost,Estimated value
+364,Iran (Islamic Republic of),Americas,2023,4.46,1627.9,,,,High Cost,Estimated value
+364,Iran (Islamic Republic of),Americas,2024,4.39,1602.35,,,,High Cost,Estimated value
+368,Iraq,Americas,2017,3.32,1211.8,,,,High Cost,Estimated value
+368,Iraq,Americas,2018,3.48,1270.2,,,,High Cost,Estimated value
+368,Iraq,Americas,2019,3.5,1277.5,,,,High Cost,Estimated value
+368,Iraq,Americas,2020,3.5,1277.5,,,,High Cost,Estimated value
+368,Iraq,Americas,2021,3.42,1248.3,0.53,0.54,1.07,High Cost,Estimated value
+368,Iraq,Americas,2022,3.76,1372.3999999999999,,,,High Cost,Estimated value
+368,Iraq,Americas,2023,3.97,1449.0500000000002,,,,High Cost,Estimated value
+368,Iraq,Americas,2024,4.1,1496.4999999999998,,,,High Cost,Estimated value
+372,Ireland,Americas,2017,2.33,850.45,,,,Medium Cost,Estimated value
+372,Ireland,Americas,2018,2.27,828.55,,,,Medium Cost,Estimated value
+372,Ireland,Americas,2019,2.3,839.4999999999999,,,,Medium Cost,Estimated value
+372,Ireland,Americas,2020,2.22,810.3000000000001,,,,Medium Cost,Estimated value
+372,Ireland,Americas,2021,2.29,835.85,0.57,0.67,1.24,Medium Cost,Estimated value
+372,Ireland,Americas,2022,2.52,919.8,,,,Medium Cost,Estimated value
+372,Ireland,Americas,2023,2.74,1000.1,,,,Medium Cost,Estimated value
+372,Ireland,Americas,2024,2.83,1032.95,,,,Medium Cost,Estimated value
+376,Israel,Americas,2017,2.51,916.15,,,,Medium Cost,Estimated value
+376,Israel,Americas,2018,2.58,941.7,,,,Medium Cost,Estimated value
+376,Israel,Americas,2019,2.6,949.0,,,,Medium Cost,Estimated value
+376,Israel,Americas,2020,2.61,952.65,,,,Medium Cost,Estimated value
+376,Israel,Americas,2021,2.75,1003.75,0.56,0.71,1.27,Medium Cost,Estimated value
+376,Israel,Americas,2022,3.13,1142.45,,,,Medium Cost,Estimated value
+376,Israel,Americas,2023,3.23,1178.95,,,,Medium Cost,Estimated value
+376,Israel,Americas,2024,3.41,1244.65,,,,Medium Cost,Estimated value
+380,Italy,Americas,2017,2.74,1000.1,,,,High Cost,Estimated value
+380,Italy,Americas,2018,2.83,1032.95,,,,High Cost,Estimated value
+380,Italy,Americas,2019,3.01,1098.6499999999999,,,,High Cost,Estimated value
+380,Italy,Americas,2020,3.09,1127.85,,,,High Cost,Estimated value
+380,Italy,Americas,2021,3.17,1157.05,0.8,0.93,1.73,High Cost,Estimated value
+380,Italy,Americas,2022,3.6,1314.0,,,,High Cost,Estimated value
+380,Italy,Americas,2023,3.96,1445.4,,,,High Cost,Estimated value
+380,Italy,Americas,2024,4.14,1511.1,,,,High Cost,Estimated value
+388,Jamaica,Americas,2017,4.88,1781.2,,,,High Cost,Estimated value
+388,Jamaica,Americas,2018,4.78,1744.7,,,,High Cost,Estimated value
+388,Jamaica,Americas,2019,4.83,1762.95,,,,High Cost,Estimated value
+388,Jamaica,Americas,2020,4.9,1788.5000000000002,,,,High Cost,Estimated value
+388,Jamaica,Americas,2021,4.9,1788.5000000000002,1.69,1.24,2.9299999999999997,High Cost,Estimated value
+388,Jamaica,Americas,2022,5.41,1974.65,,,,High Cost,Estimated value
+388,Jamaica,Americas,2023,5.83,2127.95,,,,High Cost,Estimated value
+388,Jamaica,Americas,2024,6.02,2197.2999999999997,,,,High Cost,Estimated value
+392,Japan,Americas,2017,5.48,2000.2,,,,High Cost,Estimated value
+392,Japan,Americas,2018,5.65,2062.25,,,,High Cost,Estimated value
+392,Japan,Americas,2019,5.57,2033.0500000000002,,,,High Cost,Estimated value
+392,Japan,Americas,2020,5.8,2117.0,,,,High Cost,Estimated value
+392,Japan,Americas,2021,5.98,2182.7000000000003,1.57,1.3,2.87,High Cost,Estimated value
+392,Japan,Americas,2022,6.66,2430.9,,,,High Cost,Estimated value
+392,Japan,Americas,2023,7.29,2660.85,,,,High Cost,Estimated value
+392,Japan,Americas,2024,7.62,2781.3,,,,High Cost,Estimated value
+400,Jordan,Asia,2017,2.88,1051.2,,,,Medium Cost,Estimated value
+400,Jordan,Asia,2018,2.9,1058.5,,,,Medium Cost,Estimated value
+400,Jordan,Asia,2019,2.94,1073.1,,,,Medium Cost,Estimated value
+400,Jordan,Asia,2020,3.02,1102.3,,,,Medium Cost,Estimated value
+400,Jordan,Asia,2021,2.99,1091.3500000000001,0.55,0.58,1.13,Medium Cost,Estimated value
+400,Jordan,Asia,2022,3.2,1168.0,,,,Medium Cost,Estimated value
+400,Jordan,Asia,2023,3.28,1197.1999999999998,,,,Medium Cost,Estimated value
+400,Jordan,Asia,2024,3.37,1230.05,,,,Medium Cost,Estimated value
+398,Kazakhstan,Americas,2017,2.12,773.8000000000001,,,,Medium Cost,Estimated value
+398,Kazakhstan,Americas,2018,2.13,777.4499999999999,,,,Medium Cost,Estimated value
+398,Kazakhstan,Americas,2019,2.28,832.1999999999999,,,,Medium Cost,Estimated value
+398,Kazakhstan,Americas,2020,2.43,886.95,,,,Medium Cost,Estimated value
+398,Kazakhstan,Americas,2021,2.59,945.3499999999999,0.3,0.64,0.94,Medium Cost,Estimated value
+398,Kazakhstan,Americas,2022,2.88,1051.2,,,,Medium Cost,Estimated value
+398,Kazakhstan,Americas,2023,3.02,1102.3,,,,Medium Cost,Estimated value
+398,Kazakhstan,Americas,2024,3.06,1116.9,,,,Medium Cost,Estimated value
+404,Kenya,Asia,2017,2.56,934.4,,,,High Cost,Estimated value
+404,Kenya,Asia,2018,2.62,956.3000000000001,,,,High Cost,Estimated value
+404,Kenya,Asia,2019,2.83,1032.95,,,,High Cost,Estimated value
+404,Kenya,Asia,2020,3.09,1127.85,,,,High Cost,Estimated value
+404,Kenya,Asia,2021,3.42,1248.3,0.38,0.34,0.72,High Cost,Estimated value
+404,Kenya,Asia,2022,3.86,1408.8999999999999,,,,High Cost,Estimated value
+404,Kenya,Asia,2023,4.1,1496.4999999999998,,,,High Cost,Estimated value
+404,Kenya,Asia,2024,4.26,1554.8999999999999,,,,High Cost,Estimated value
+414,Kuwait,Asia,2017,2.13,777.4499999999999,,,,Medium Cost,Estimated value
+414,Kuwait,Asia,2018,2.18,795.7,,,,Medium Cost,Estimated value
+414,Kuwait,Asia,2019,2.19,799.35,,,,Medium Cost,Estimated value
+414,Kuwait,Asia,2020,2.22,810.3000000000001,,,,Medium Cost,Estimated value
+414,Kuwait,Asia,2021,2.46,897.9,0.87,0.58,1.45,Medium Cost,Estimated value
+414,Kuwait,Asia,2022,2.74,1000.1,,,,Medium Cost,Estimated value
+414,Kuwait,Asia,2023,2.93,1069.45,,,,Medium Cost,Estimated value
+414,Kuwait,Asia,2024,3.09,1127.85,,,,Medium Cost,Estimated value
+417,Kyrgyzstan,Asia,2017,3.23,1178.95,,,,High Cost,Estimated value
+417,Kyrgyzstan,Asia,2018,2.98,1087.7,,,,High Cost,Estimated value
+417,Kyrgyzstan,Asia,2019,2.94,1073.1,,,,High Cost,Estimated value
+417,Kyrgyzstan,Asia,2020,3.21,1171.65,,,,High Cost,Estimated value
+417,Kyrgyzstan,Asia,2021,3.36,1226.3999999999999,0.48,0.9,1.38,High Cost,Estimated value
+417,Kyrgyzstan,Asia,2022,3.7,1350.5,,,,High Cost,Estimated value
+417,Kyrgyzstan,Asia,2023,3.77,1376.05,,,,High Cost,Estimated value
+417,Kyrgyzstan,Asia,2024,3.76,1372.3999999999999,,,,High Cost,Estimated value
+418,Lao People's Democratic Republic,Asia,2017,3.74,1365.1000000000001,,,,High Cost,Estimated value
+418,Lao People's Democratic Republic,Asia,2018,3.77,1376.05,,,,High Cost,Estimated value
+418,Lao People's Democratic Republic,Asia,2019,3.91,1427.15,,,,High Cost,Estimated value
+418,Lao People's Democratic Republic,Asia,2020,4.22,1540.3,,,,High Cost,Estimated value
+418,Lao People's Democratic Republic,Asia,2021,4.33,1580.45,0.73,1.02,1.75,High Cost,Estimated value
+418,Lao People's Democratic Republic,Asia,2022,4.6,1678.9999999999998,,,,High Cost,Estimated value
+418,Lao People's Democratic Republic,Asia,2023,5.07,1850.5500000000002,,,,High Cost,Estimated value
+418,Lao People's Democratic Republic,Asia,2024,5.19,1894.3500000000001,,,,High Cost,Estimated value
+428,Latvia,Asia,2017,3.04,1109.6,,,,High Cost,Estimated value
+428,Latvia,Asia,2018,3.03,1105.9499999999998,,,,High Cost,Estimated value
+428,Latvia,Asia,2019,3.19,1164.35,,,,High Cost,Estimated value
+428,Latvia,Asia,2020,3.28,1197.1999999999998,,,,High Cost,Estimated value
+428,Latvia,Asia,2021,3.55,1295.75,0.85,0.81,1.6600000000000001,High Cost,Estimated value
+428,Latvia,Asia,2022,4.13,1507.45,,,,High Cost,Estimated value
+428,Latvia,Asia,2023,4.51,1646.1499999999999,,,,High Cost,Estimated value
+428,Latvia,Asia,2024,4.72,1722.8,,,,High Cost,Estimated value
+422,Lebanon,Asia,2017,1.71,624.15,,,,High Cost,Estimated value
+422,Lebanon,Asia,2018,1.86,678.9000000000001,,,,High Cost,Estimated value
+422,Lebanon,Asia,2019,1.88,686.1999999999999,,,,High Cost,Estimated value
+422,Lebanon,Asia,2020,3.15,1149.75,,,,High Cost,Estimated value
+422,Lebanon,Asia,2021,3.71,1354.15,0.41,0.74,1.15,High Cost,Estimated value
+422,Lebanon,Asia,2022,5.58,2036.7,,,,High Cost,Estimated value
+422,Lebanon,Asia,2023,6.46,2357.9,,,,High Cost,Estimated value
+422,Lebanon,Asia,2024,6.25,2281.25,,,,High Cost,Estimated value
+426,Lesotho,Asia,2017,3.59,1310.35,,,,High Cost,Estimated value
+426,Lesotho,Asia,2018,3.63,1324.95,,,,High Cost,Estimated value
+426,Lesotho,Asia,2019,3.74,1365.1000000000001,,,,High Cost,Estimated value
+426,Lesotho,Asia,2020,4.0,1460.0,,,,High Cost,Estimated value
+426,Lesotho,Asia,2021,4.31,1573.1499999999999,0.96,0.64,1.6,High Cost,Estimated value
+426,Lesotho,Asia,2022,4.68,1708.1999999999998,,,,High Cost,Estimated value
+426,Lesotho,Asia,2023,4.96,1810.4,,,,High Cost,Estimated value
+426,Lesotho,Asia,2024,5.24,1912.6000000000001,,,,High Cost,Estimated value
+430,Liberia,Asia,2017,3.24,1182.6000000000001,,,,High Cost,Estimated value
+430,Liberia,Asia,2018,3.3,1204.5,,,,High Cost,Estimated value
+430,Liberia,Asia,2019,3.51,1281.1499999999999,,,,High Cost,Estimated value
+430,Liberia,Asia,2020,3.78,1379.6999999999998,,,,High Cost,Estimated value
+430,Liberia,Asia,2021,3.67,1339.55,1.04,0.4,1.44,High Cost,Estimated value
+430,Liberia,Asia,2022,3.94,1438.1,,,,High Cost,Estimated value
+430,Liberia,Asia,2023,4.17,1522.05,,,,High Cost,Estimated value
+430,Liberia,Asia,2024,4.52,1649.8,,,,High Cost,Estimated value
+440,Lithuania,Asia,2017,2.85,1040.25,,,,High Cost,Estimated value
+440,Lithuania,Asia,2018,2.87,1047.55,,,,High Cost,Estimated value
+440,Lithuania,Asia,2019,3.04,1109.6,,,,High Cost,Estimated value
+440,Lithuania,Asia,2020,3.07,1120.55,,,,High Cost,Estimated value
+440,Lithuania,Asia,2021,3.12,1138.8,0.88,0.61,1.49,High Cost,Estimated value
+440,Lithuania,Asia,2022,3.66,1335.9,,,,High Cost,Estimated value
+440,Lithuania,Asia,2023,3.97,1449.0500000000002,,,,High Cost,Estimated value
+440,Lithuania,Asia,2024,4.03,1470.95,,,,High Cost,Estimated value
+442,Luxembourg,Asia,2017,2.46,897.9,,,,Medium Cost,Estimated value
+442,Luxembourg,Asia,2018,2.59,945.3499999999999,,,,Medium Cost,Estimated value
+442,Luxembourg,Asia,2019,2.62,956.3000000000001,,,,Medium Cost,Estimated value
+442,Luxembourg,Asia,2020,2.62,956.3000000000001,,,,Medium Cost,Estimated value
+442,Luxembourg,Asia,2021,2.65,967.25,0.72,0.76,1.48,Medium Cost,Estimated value
+442,Luxembourg,Asia,2022,2.95,1076.75,,,,Medium Cost,Estimated value
+442,Luxembourg,Asia,2023,3.27,1193.55,,,,Medium Cost,Estimated value
+442,Luxembourg,Asia,2024,3.37,1230.05,,,,Medium Cost,Estimated value
+450,Madagascar,Asia,2017,3.08,1124.2,,,,High Cost,Estimated value
+450,Madagascar,Asia,2018,3.18,1160.7,,,,High Cost,Estimated value
+450,Madagascar,Asia,2019,3.21,1171.65,,,,High Cost,Estimated value
+450,Madagascar,Asia,2020,3.2,1168.0,,,,High Cost,Estimated value
+450,Madagascar,Asia,2021,3.34,1219.1,0.41,0.43,0.84,High Cost,Estimated value
+450,Madagascar,Asia,2022,3.65,1332.25,,,,High Cost,Estimated value
+450,Madagascar,Asia,2023,3.87,1412.55,,,,High Cost,Estimated value
+450,Madagascar,Asia,2024,3.96,1445.4,,,,High Cost,Estimated value
+454,Malawi,Asia,2017,2.38,868.6999999999999,,,,High Cost,Estimated value
+454,Malawi,Asia,2018,2.52,919.8,,,,High Cost,Estimated value
+454,Malawi,Asia,2019,2.77,1011.05,,,,High Cost,Estimated value
+454,Malawi,Asia,2020,3.09,1127.85,,,,High Cost,Estimated value
+454,Malawi,Asia,2021,3.43,1251.95,0.42,0.37,0.79,High Cost,Estimated value
+454,Malawi,Asia,2022,3.88,1416.2,,,,High Cost,Estimated value
+454,Malawi,Asia,2023,4.29,1565.85,,,,High Cost,Estimated value
+454,Malawi,Asia,2024,4.64,1693.6,,,,High Cost,Estimated value
+458,Malaysia,Asia,2017,3.1,1131.5,,,,High Cost,Estimated value
+458,Malaysia,Asia,2018,3.2,1168.0,,,,High Cost,Estimated value
+458,Malaysia,Asia,2019,3.3,1204.5,,,,High Cost,Estimated value
+458,Malaysia,Asia,2020,3.43,1251.95,,,,High Cost,Estimated value
+458,Malaysia,Asia,2021,3.52,1284.8,0.73,0.88,1.6099999999999999,High Cost,Estimated value
+458,Malaysia,Asia,2022,3.89,1419.8500000000001,,,,High Cost,Estimated value
+458,Malaysia,Asia,2023,4.15,1514.7500000000002,,,,High Cost,Estimated value
+458,Malaysia,Asia,2024,4.27,1558.55,,,,High Cost,Estimated value
+462,Maldives,Asia,2017,3.36,1226.3999999999999,,,,High Cost,Estimated value
+462,Maldives,Asia,2018,3.34,1219.1,,,,High Cost,Estimated value
+462,Maldives,Asia,2019,3.28,1197.1999999999998,,,,High Cost,Estimated value
+462,Maldives,Asia,2020,3.33,1215.45,,,,High Cost,Estimated value
+462,Maldives,Asia,2021,3.39,1237.3500000000001,1.08,0.85,1.9300000000000002,High Cost,Estimated value
+462,Maldives,Asia,2022,3.74,1365.1000000000001,,,,High Cost,Estimated value
+462,Maldives,Asia,2023,4.01,1463.6499999999999,,,,High Cost,Estimated value
+462,Maldives,Asia,2024,4.3,1569.5,,,,High Cost,Estimated value
+466,Mali,Asia,2017,2.97,1084.0500000000002,,,,High Cost,Estimated value
+466,Mali,Asia,2018,2.96,1080.4,,,,High Cost,Estimated value
+466,Mali,Asia,2019,2.97,1084.0500000000002,,,,High Cost,Estimated value
+466,Mali,Asia,2020,3.04,1109.6,,,,High Cost,Estimated value
+466,Mali,Asia,2021,3.16,1153.4,0.47,0.35,0.82,High Cost,Estimated value
+466,Mali,Asia,2022,3.56,1299.4,,,,High Cost,Estimated value
+466,Mali,Asia,2023,3.72,1357.8000000000002,,,,High Cost,Estimated value
+466,Mali,Asia,2024,3.86,1408.8999999999999,,,,High Cost,Estimated value
+470,Malta,Asia,2017,3.35,1222.75,,,,High Cost,Estimated value
+470,Malta,Asia,2018,3.49,1273.8500000000001,,,,High Cost,Estimated value
+470,Malta,Asia,2019,3.75,1368.75,,,,High Cost,Estimated value
+470,Malta,Asia,2020,3.74,1365.1000000000001,,,,High Cost,Estimated value
+470,Malta,Asia,2021,3.79,1383.35,0.79,1.06,1.85,High Cost,Estimated value
+470,Malta,Asia,2022,4.28,1562.2,,,,High Cost,Estimated value
+470,Malta,Asia,2023,4.66,1700.9,,,,High Cost,Estimated value
+470,Malta,Asia,2024,4.89,1784.85,,,,High Cost,Estimated value
+478,Mauritania,Asia,2017,3.86,1408.8999999999999,,,,High Cost,Estimated value
+478,Mauritania,Asia,2018,3.92,1430.8,,,,High Cost,Estimated value
+478,Mauritania,Asia,2019,4.02,1467.3,,,,High Cost,Estimated value
+478,Mauritania,Asia,2020,4.13,1507.45,,,,High Cost,Estimated value
+478,Mauritania,Asia,2021,4.43,1616.9499999999998,0.9,0.92,1.82,High Cost,Estimated value
+478,Mauritania,Asia,2022,5.04,1839.6,,,,High Cost,Estimated value
+478,Mauritania,Asia,2023,5.28,1927.2,,,,High Cost,Estimated value
+478,Mauritania,Asia,2024,5.4,1971.0000000000002,,,,High Cost,Estimated value
+480,Mauritius,Asia,2017,3.38,1233.7,,,,High Cost,Estimated value
+480,Mauritius,Asia,2018,3.41,1244.65,,,,High Cost,Estimated value
+480,Mauritius,Asia,2019,3.46,1262.9,,,,High Cost,Estimated value
+480,Mauritius,Asia,2020,3.64,1328.6000000000001,,,,High Cost,Estimated value
+480,Mauritius,Asia,2021,3.77,1376.05,1.26,0.49,1.75,High Cost,Estimated value
+480,Mauritius,Asia,2022,4.21,1536.65,,,,High Cost,Estimated value
+480,Mauritius,Asia,2023,4.42,1613.3,,,,High Cost,Estimated value
+480,Mauritius,Asia,2024,4.72,1722.8,,,,High Cost,Estimated value
+484,Mexico,Asia,2017,2.9,1058.5,,,,High Cost,Estimated value
+484,Mexico,Asia,2018,2.97,1084.0500000000002,,,,High Cost,Estimated value
+484,Mexico,Asia,2019,2.98,1087.7,,,,High Cost,Estimated value
+484,Mexico,Asia,2020,3.07,1120.55,,,,High Cost,Estimated value
+484,Mexico,Asia,2021,3.27,1193.55,0.79,0.57,1.3599999999999999,High Cost,Estimated value
+484,Mexico,Asia,2022,3.85,1405.25,,,,High Cost,Estimated value
+484,Mexico,Asia,2023,4.2,1533.0,,,,High Cost,Estimated value
+484,Mexico,Asia,2024,4.41,1609.65,,,,High Cost,Estimated value
+496,Mongolia,Asia,2017,4.11,1500.15,,,,High Cost,Estimated value
+496,Mongolia,Asia,2018,4.26,1554.8999999999999,,,,High Cost,Estimated value
+496,Mongolia,Asia,2019,4.56,1664.3999999999999,,,,High Cost,Estimated value
+496,Mongolia,Asia,2020,5.01,1828.6499999999999,,,,High Cost,Estimated value
+496,Mongolia,Asia,2021,5.55,2025.75,0.9,2.5,3.4,High Cost,Estimated value
+496,Mongolia,Asia,2022,6.17,2252.05,,,,High Cost,Estimated value
+496,Mongolia,Asia,2023,6.74,2460.1,,,,High Cost,Estimated value
+496,Mongolia,Asia,2024,7.02,2562.2999999999997,,,,High Cost,Estimated value
+499,Montenegro,Asia,2017,3.21,1171.65,,,,High Cost,Estimated value
+499,Montenegro,Asia,2018,3.24,1182.6000000000001,,,,High Cost,Estimated value
+499,Montenegro,Asia,2019,3.49,1273.8500000000001,,,,High Cost,Estimated value
+499,Montenegro,Asia,2020,3.43,1251.95,,,,High Cost,Estimated value
+499,Montenegro,Asia,2021,3.63,1324.95,0.88,0.69,1.5699999999999998,High Cost,Estimated value
+499,Montenegro,Asia,2022,4.4,1606.0000000000002,,,,High Cost,Estimated value
+499,Montenegro,Asia,2023,4.74,1730.1000000000001,,,,High Cost,Estimated value
+499,Montenegro,Asia,2024,4.78,1744.7,,,,High Cost,Estimated value
+504,Morocco,Asia,2017,2.63,959.9499999999999,,,,High Cost,Estimated value
+504,Morocco,Asia,2018,2.5,912.5,,,,High Cost,Estimated value
+504,Morocco,Asia,2019,2.47,901.5500000000001,,,,High Cost,Estimated value
+504,Morocco,Asia,2020,2.47,901.5500000000001,,,,High Cost,Estimated value
+504,Morocco,Asia,2021,2.76,1007.4,0.52,0.45,0.97,High Cost,Estimated value
+504,Morocco,Asia,2022,3.11,1135.1499999999999,,,,High Cost,Estimated value
+504,Morocco,Asia,2023,3.45,1259.25,,,,High Cost,Estimated value
+504,Morocco,Asia,2024,3.54,1292.1,,,,High Cost,Estimated value
+508,Mozambique,Asia,2017,2.74,1000.1,,,,High Cost,Estimated value
+508,Mozambique,Asia,2018,2.71,989.15,,,,High Cost,Estimated value
+508,Mozambique,Asia,2019,2.77,1011.05,,,,High Cost,Estimated value
+508,Mozambique,Asia,2020,2.93,1069.45,,,,High Cost,Estimated value
+508,Mozambique,Asia,2021,3.23,1178.95,0.54,0.22,0.76,High Cost,Estimated value
+508,Mozambique,Asia,2022,3.57,1303.05,,,,High Cost,Estimated value
+508,Mozambique,Asia,2023,3.81,1390.65,,,,High Cost,Estimated value
+508,Mozambique,Asia,2024,4.14,1511.1,,,,High Cost,Estimated value
+104,Myanmar,Africa,2017,3.56,1299.4,,,,Medium Cost,Estimated value
+104,Myanmar,Africa,2018,3.7,1350.5,,,,Medium Cost,Estimated value
+104,Myanmar,Africa,2019,3.93,1434.45,,,,Medium Cost,Estimated value
+104,Myanmar,Africa,2020,3.96,1445.4,,,,Medium Cost,Estimated value
+104,Myanmar,Africa,2021,3.64,1328.6000000000001,,,,Medium Cost,Estimated value
+104,Myanmar,Africa,2022,3.88,1416.2,,,,Medium Cost,Estimated value
+104,Myanmar,Africa,2023,3.72,1357.8000000000002,,,,Medium Cost,Estimated value
+104,Myanmar,Africa,2024,3.49,1273.8500000000001,,,,Medium Cost,Estimated value
+516,Namibia,Asia,2017,3.26,1189.8999999999999,,,,High Cost,Estimated value
+516,Namibia,Asia,2018,3.26,1189.8999999999999,,,,High Cost,Estimated value
+516,Namibia,Asia,2019,3.33,1215.45,,,,High Cost,Estimated value
+516,Namibia,Asia,2020,3.51,1281.1499999999999,,,,High Cost,Estimated value
+516,Namibia,Asia,2021,3.75,1368.75,0.95,0.66,1.6099999999999999,High Cost,Estimated value
+516,Namibia,Asia,2022,4.11,1500.15,,,,High Cost,Estimated value
+516,Namibia,Asia,2023,4.5,1642.5,,,,High Cost,Estimated value
+516,Namibia,Asia,2024,4.67,1704.55,,,,High Cost,Estimated value
+524,Nepal,Asia,2017,3.35,1222.75,,,,High Cost,Estimated value
+524,Nepal,Asia,2018,3.32,1211.8,,,,High Cost,Estimated value
+524,Nepal,Asia,2019,3.36,1226.3999999999999,,,,High Cost,Estimated value
+524,Nepal,Asia,2020,3.51,1281.1499999999999,,,,High Cost,Estimated value
+524,Nepal,Asia,2021,3.62,1321.3,0.78,0.71,1.49,High Cost,Estimated value
+524,Nepal,Asia,2022,3.89,1419.8500000000001,,,,High Cost,Estimated value
+524,Nepal,Asia,2023,4.01,1463.6499999999999,,,,High Cost,Estimated value
+524,Nepal,Asia,2024,4.2,1533.0,,,,High Cost,Estimated value
+528,Netherlands (Kingdom of the),Asia,2017,2.21,806.65,,,,Medium Cost,Estimated value
+528,Netherlands (Kingdom of the),Asia,2018,2.27,828.55,,,,Medium Cost,Estimated value
+528,Netherlands (Kingdom of the),Asia,2019,2.39,872.35,,,,Medium Cost,Estimated value
+528,Netherlands (Kingdom of the),Asia,2020,2.49,908.85,,,,Medium Cost,Estimated value
+528,Netherlands (Kingdom of the),Asia,2021,2.54,927.1,0.59,0.69,1.2799999999999998,Medium Cost,Estimated value
+528,Netherlands (Kingdom of the),Asia,2022,2.9,1058.5,,,,Medium Cost,Estimated value
+528,Netherlands (Kingdom of the),Asia,2023,3.13,1142.45,,,,Medium Cost,Estimated value
+528,Netherlands (Kingdom of the),Asia,2024,3.17,1157.05,,,,Medium Cost,Estimated value
+554,New Zealand,Asia,2017,2.65,967.25,,,,High Cost,Estimated value
+554,New Zealand,Asia,2018,2.57,938.05,,,,High Cost,Estimated value
+554,New Zealand,Asia,2019,2.7,985.5000000000001,,,,High Cost,Estimated value
+554,New Zealand,Asia,2020,2.83,1032.95,,,,High Cost,Estimated value
+554,New Zealand,Asia,2021,2.86,1043.8999999999999,0.61,0.86,1.47,High Cost,Estimated value
+554,New Zealand,Asia,2022,3.28,1197.1999999999998,,,,High Cost,Estimated value
+554,New Zealand,Asia,2023,3.56,1299.4,,,,High Cost,Estimated value
+554,New Zealand,Asia,2024,3.56,1299.4,,,,High Cost,Estimated value
+558,Nicaragua,Asia,2017,3.72,1357.8000000000002,,,,,Estimated value
+558,Nicaragua,Asia,2018,3.73,1361.45,,,,,Estimated value
+558,Nicaragua,Asia,2019,3.78,1379.6999999999998,,,,,Estimated value
+558,Nicaragua,Asia,2020,3.89,1419.8500000000001,,,,,Estimated value
+558,Nicaragua,Asia,2021,4.06,1481.8999999999999,0.89,0.54,1.4300000000000002,,Estimated value
+558,Nicaragua,Asia,2022,4.59,1675.35,,,,,Estimated value
+558,Nicaragua,Asia,2023,4.9,1788.5000000000002,,,,,Estimated value
+562,Niger,Asia,2017,3.25,1186.25,,,,High Cost,Estimated value
+562,Niger,Asia,2018,3.27,1193.55,,,,High Cost,Estimated value
+562,Niger,Asia,2019,3.34,1219.1,,,,High Cost,Estimated value
+562,Niger,Asia,2020,3.6,1314.0,,,,High Cost,Estimated value
+562,Niger,Asia,2021,4.02,1467.3,0.53,0.81,1.34,High Cost,Estimated value
+562,Niger,Asia,2022,4.48,1635.2,,,,High Cost,Estimated value
+562,Niger,Asia,2023,4.68,1708.1999999999998,,,,High Cost,Estimated value
+562,Niger,Asia,2024,4.98,1817.7,,,,High Cost,Estimated value
+566,Nigeria,Asia,2017,2.78,1014.6999999999999,,,,High Cost,Estimated value
+566,Nigeria,Asia,2018,2.96,1080.4,,,,High Cost,Estimated value
+566,Nigeria,Asia,2019,3.16,1153.4,,,,High Cost,Estimated value
+566,Nigeria,Asia,2020,3.41,1244.65,,,,High Cost,Estimated value
+566,Nigeria,Asia,2021,3.76,1372.3999999999999,0.8,0.37,1.17,High Cost,Estimated value
+566,Nigeria,Asia,2022,4.12,1503.8,,,,High Cost,Estimated value
+566,Nigeria,Asia,2023,4.39,1602.35,,,,High Cost,Estimated value
+566,Nigeria,Asia,2024,4.72,1722.8,,,,High Cost,Estimated value
+807,North Macedonia,Europe,2017,3.29,1200.85,,,,High Cost,Estimated value
+807,North Macedonia,Europe,2018,3.3,1204.5,,,,High Cost,Estimated value
+807,North Macedonia,Europe,2019,3.48,1270.2,,,,High Cost,Estimated value
+807,North Macedonia,Europe,2020,3.51,1281.1499999999999,,,,High Cost,Estimated value
+807,North Macedonia,Europe,2021,3.84,1401.6,0.77,0.78,1.55,High Cost,Estimated value
+807,North Macedonia,Europe,2022,4.47,1631.55,,,,High Cost,Estimated value
+807,North Macedonia,Europe,2023,4.74,1730.1000000000001,,,,High Cost,Estimated value
+807,North Macedonia,Europe,2024,4.85,1770.2499999999998,,,,High Cost,Estimated value
+578,Norway,Asia,2017,3.32,1211.8,,,,High Cost,Estimated value
+578,Norway,Asia,2018,3.43,1251.95,,,,High Cost,Estimated value
+578,Norway,Asia,2019,3.53,1288.4499999999998,,,,High Cost,Estimated value
+578,Norway,Asia,2020,3.61,1317.6499999999999,,,,High Cost,Estimated value
+578,Norway,Asia,2021,3.63,1324.95,0.93,0.78,1.71,High Cost,Estimated value
+578,Norway,Asia,2022,3.98,1452.7,,,,High Cost,Estimated value
+578,Norway,Asia,2023,4.33,1580.45,,,,High Cost,Estimated value
+578,Norway,Asia,2024,4.55,1660.75,,,,High Cost,Estimated value
+512,Oman,Asia,2017,2.29,835.85,,,,Medium Cost,Estimated value
+512,Oman,Asia,2018,2.39,872.35,,,,Medium Cost,Estimated value
+512,Oman,Asia,2019,2.49,908.85,,,,Medium Cost,Estimated value
+512,Oman,Asia,2020,2.48,905.2,,,,Medium Cost,Estimated value
+512,Oman,Asia,2021,2.45,894.2500000000001,0.44,0.41,0.85,Medium Cost,Estimated value
+512,Oman,Asia,2022,2.7,985.5000000000001,,,,Medium Cost,Estimated value
+512,Oman,Asia,2023,2.87,1047.55,,,,Medium Cost,Estimated value
+512,Oman,Asia,2024,3.03,1105.9499999999998,,,,Medium Cost,Estimated value
+586,Pakistan,Asia,2017,2.97,1084.0500000000002,,,,High Cost,Estimated value
+586,Pakistan,Asia,2018,2.91,1062.15,,,,High Cost,Estimated value
+586,Pakistan,Asia,2019,2.95,1076.75,,,,High Cost,Estimated value
+586,Pakistan,Asia,2020,3.18,1160.7,,,,High Cost,Estimated value
+586,Pakistan,Asia,2021,3.3,1204.5,0.39,0.77,1.1600000000000001,High Cost,Estimated value
+586,Pakistan,Asia,2022,3.7,1350.5,,,,High Cost,Estimated value
+586,Pakistan,Asia,2023,4.08,1489.2,,,,High Cost,Estimated value
+586,Pakistan,Asia,2024,3.95,1441.75,,,,High Cost,Estimated value
+275,Palestine,Americas,2017,2.52,919.8,,,,Medium Cost,Estimated value
+275,Palestine,Americas,2018,2.65,967.25,,,,Medium Cost,Estimated value
+275,Palestine,Americas,2019,2.76,1007.4,,,,Medium Cost,Estimated value
+275,Palestine,Americas,2020,2.77,1011.05,,,,Medium Cost,Estimated value
+275,Palestine,Americas,2021,2.72,992.8000000000001,0.45,0.48,0.9299999999999999,Medium Cost,Estimated value
+275,Palestine,Americas,2022,3.03,1105.9499999999998,,,,Medium Cost,Estimated value
+275,Palestine,Americas,2023,3.16,1153.4,,,,Medium Cost,Estimated value
+275,Palestine,Americas,2024,3.33,1215.45,,,,Medium Cost,Estimated value
+591,Panama,Asia,2017,4.19,1529.3500000000001,,,,High Cost,Estimated value
+591,Panama,Asia,2018,3.88,1416.2,,,,High Cost,Estimated value
+591,Panama,Asia,2019,3.78,1379.6999999999998,,,,High Cost,Estimated value
+591,Panama,Asia,2020,3.65,1332.25,,,,High Cost,Estimated value
+591,Panama,Asia,2021,3.63,1324.95,0.92,0.62,1.54,High Cost,Estimated value
+591,Panama,Asia,2022,3.96,1445.4,,,,High Cost,Estimated value
+591,Panama,Asia,2023,4.2,1533.0,,,,High Cost,Estimated value
+591,Panama,Asia,2024,4.34,1584.1,,,,High Cost,Estimated value
+600,Paraguay,Europe,2017,3.74,1365.1000000000001,,,,High Cost,Estimated value
+600,Paraguay,Europe,2018,3.73,1361.45,,,,High Cost,Estimated value
+600,Paraguay,Europe,2019,3.71,1354.15,,,,High Cost,Estimated value
+600,Paraguay,Europe,2020,3.73,1361.45,,,,High Cost,Estimated value
+600,Paraguay,Europe,2021,3.95,1441.75,0.97,0.7,1.67,High Cost,Estimated value
+600,Paraguay,Europe,2022,4.47,1631.55,,,,High Cost,Estimated value
+600,Paraguay,Europe,2023,4.71,1719.15,,,,High Cost,Estimated value
+600,Paraguay,Europe,2024,5.04,1839.6,,,,High Cost,Estimated value
+604,Peru,Europe,2017,3.25,1186.25,,,,High Cost,Estimated value
+604,Peru,Europe,2018,3.19,1164.35,,,,High Cost,Estimated value
+604,Peru,Europe,2019,3.24,1182.6000000000001,,,,High Cost,Estimated value
+604,Peru,Europe,2020,3.34,1219.1,,,,High Cost,Estimated value
+604,Peru,Europe,2021,3.5,1277.5,0.6,0.61,1.21,High Cost,Estimated value
+604,Peru,Europe,2022,3.94,1438.1,,,,High Cost,Estimated value
+604,Peru,Europe,2023,4.3,1569.5,,,,High Cost,Estimated value
+604,Peru,Europe,2024,4.34,1584.1,,,,High Cost,Estimated value
+608,Philippines,Europe,2017,3.26,1189.8999999999999,,,,High Cost,Estimated value
+608,Philippines,Europe,2018,3.4,1241.0,,,,High Cost,Estimated value
+608,Philippines,Europe,2019,3.47,1266.5500000000002,,,,High Cost,Estimated value
+608,Philippines,Europe,2020,3.55,1295.75,,,,High Cost,Estimated value
+608,Philippines,Europe,2021,3.73,1361.45,0.99,0.74,1.73,High Cost,Estimated value
+608,Philippines,Europe,2022,3.97,1449.0500000000002,,,,High Cost,Estimated value
+608,Philippines,Europe,2023,4.21,1536.65,,,,High Cost,Estimated value
+608,Philippines,Europe,2024,4.39,1602.35,,,,High Cost,Estimated value
+616,Poland,Europe,2017,2.95,1076.75,,,,High Cost,Estimated value
+616,Poland,Europe,2018,3.03,1105.9499999999998,,,,High Cost,Estimated value
+616,Poland,Europe,2019,3.25,1186.25,,,,High Cost,Estimated value
+616,Poland,Europe,2020,3.38,1233.7,,,,High Cost,Estimated value
+616,Poland,Europe,2021,3.35,1222.75,1.03,0.63,1.6600000000000001,High Cost,Estimated value
+616,Poland,Europe,2022,3.8,1387.0,,,,High Cost,Estimated value
+616,Poland,Europe,2023,4.04,1474.6,,,,High Cost,Estimated value
+616,Poland,Europe,2024,4.14,1511.1,,,,High Cost,Estimated value
+620,Portugal,Europe,2017,2.64,963.6,,,,High Cost,Estimated value
+620,Portugal,Europe,2018,2.73,996.45,,,,High Cost,Estimated value
+620,Portugal,Europe,2019,2.85,1040.25,,,,High Cost,Estimated value
+620,Portugal,Europe,2020,2.87,1047.55,,,,High Cost,Estimated value
+620,Portugal,Europe,2021,2.99,1091.3500000000001,0.82,0.62,1.44,High Cost,Estimated value
+620,Portugal,Europe,2022,3.51,1281.1499999999999,,,,High Cost,Estimated value
+620,Portugal,Europe,2023,3.82,1394.3,,,,High Cost,Estimated value
+620,Portugal,Europe,2024,3.93,1434.45,,,,High Cost,Estimated value
+634,Qatar,Europe,2017,2.32,846.8,,,,Medium Cost,Estimated value
+634,Qatar,Europe,2018,2.43,886.95,,,,Medium Cost,Estimated value
+634,Qatar,Europe,2019,2.45,894.2500000000001,,,,Medium Cost,Estimated value
+634,Qatar,Europe,2020,2.44,890.6,,,,Medium Cost,Estimated value
+634,Qatar,Europe,2021,2.35,857.75,0.43,0.41,0.84,Medium Cost,Estimated value
+634,Qatar,Europe,2022,2.52,919.8,,,,Medium Cost,Estimated value
+634,Qatar,Europe,2023,2.58,941.7,,,,Medium Cost,Estimated value
+634,Qatar,Europe,2024,2.66,970.9000000000001,,,,Medium Cost,Estimated value
+410,Republic of Korea,Asia,2017,4.73,1726.45,,,,High Cost,Estimated value
+410,Republic of Korea,Asia,2018,4.92,1795.8,,,,High Cost,Estimated value
+410,Republic of Korea,Asia,2019,4.9,1788.5000000000002,,,,High Cost,Estimated value
+410,Republic of Korea,Asia,2020,5.18,1890.6999999999998,,,,High Cost,Estimated value
+410,Republic of Korea,Asia,2021,5.55,2025.75,1.62,1.39,3.01,High Cost,Estimated value
+410,Republic of Korea,Asia,2022,6.05,2208.25,,,,High Cost,Estimated value
+410,Republic of Korea,Asia,2023,6.39,2332.35,,,,High Cost,Estimated value
+410,Republic of Korea,Asia,2024,6.68,2438.2,,,,High Cost,Estimated value
+498,Republic of Moldova,Asia,2017,2.34,854.0999999999999,,,,High Cost,Estimated value
+498,Republic of Moldova,Asia,2018,2.47,901.5500000000001,,,,High Cost,Estimated value
+498,Republic of Moldova,Asia,2019,2.65,967.25,,,,High Cost,Estimated value
+498,Republic of Moldova,Asia,2020,2.9,1058.5,,,,High Cost,Estimated value
+498,Republic of Moldova,Asia,2021,3.08,1124.2,0.44,0.81,1.25,High Cost,Estimated value
+498,Republic of Moldova,Asia,2022,3.42,1248.3,,,,High Cost,Estimated value
+498,Republic of Moldova,Asia,2023,3.56,1299.4,,,,High Cost,Estimated value
+498,Republic of Moldova,Asia,2024,3.69,1346.85,,,,High Cost,Estimated value
+642,Romania,Europe,2017,2.79,1018.35,,,,High Cost,Estimated value
+642,Romania,Europe,2018,2.84,1036.6,,,,High Cost,Estimated value
+642,Romania,Europe,2019,3.03,1105.9499999999998,,,,High Cost,Estimated value
+642,Romania,Europe,2020,3.17,1157.05,,,,High Cost,Estimated value
+642,Romania,Europe,2021,3.22,1175.3000000000002,0.52,0.71,1.23,High Cost,Estimated value
+642,Romania,Europe,2022,3.57,1303.05,,,,High Cost,Estimated value
+642,Romania,Europe,2023,3.93,1434.45,,,,High Cost,Estimated value
+642,Romania,Europe,2024,4.39,1602.35,,,,High Cost,Estimated value
+643,Russian Federation,Europe,2017,2.25,821.25,,,,Medium Cost,Estimated value
+643,Russian Federation,Europe,2018,2.28,832.1999999999999,,,,Medium Cost,Estimated value
+643,Russian Federation,Europe,2019,2.45,894.2500000000001,,,,Medium Cost,Estimated value
+643,Russian Federation,Europe,2020,2.57,938.05,,,,Medium Cost,Estimated value
+643,Russian Federation,Europe,2021,2.77,1011.05,0.55,0.65,1.2000000000000002,Medium Cost,Estimated value
+643,Russian Federation,Europe,2022,3.09,1127.85,,,,Medium Cost,Estimated value
+643,Russian Federation,Europe,2023,3.17,1157.05,,,,Medium Cost,Estimated value
+643,Russian Federation,Europe,2024,3.29,1200.85,,,,Medium Cost,Estimated value
+646,Rwanda,Europe,2017,3.05,1113.25,,,,High Cost,Estimated value
+646,Rwanda,Europe,2018,2.89,1054.8500000000001,,,,High Cost,Estimated value
+646,Rwanda,Europe,2019,2.98,1087.7,,,,High Cost,Estimated value
+646,Rwanda,Europe,2020,3.3,1204.5,,,,High Cost,Estimated value
+646,Rwanda,Europe,2021,3.31,1208.15,0.33,0.41,0.74,High Cost,Estimated value
+646,Rwanda,Europe,2022,3.87,1412.55,,,,High Cost,Estimated value
+646,Rwanda,Europe,2023,4.59,1675.35,,,,High Cost,Estimated value
+646,Rwanda,Europe,2024,4.52,1649.8,,,,High Cost,Estimated value
+659,Saint Kitts and Nevis,Europe,2017,3.37,1230.05,,,,High Cost,Estimated value
+659,Saint Kitts and Nevis,Europe,2018,3.51,1281.1499999999999,,,,High Cost,Estimated value
+659,Saint Kitts and Nevis,Europe,2019,3.65,1332.25,,,,High Cost,Estimated value
+659,Saint Kitts and Nevis,Europe,2020,3.81,1390.65,,,,High Cost,Estimated value
+659,Saint Kitts and Nevis,Europe,2021,3.95,1441.75,1.16,0.9,2.06,High Cost,Estimated value
+659,Saint Kitts and Nevis,Europe,2022,4.59,1675.35,,,,High Cost,Estimated value
+659,Saint Kitts and Nevis,Europe,2023,4.84,1766.6,,,,High Cost,Estimated value
+659,Saint Kitts and Nevis,Europe,2024,5.04,1839.6,,,,High Cost,Estimated value
+662,Saint Lucia,Europe,2017,3.6,1314.0,,,,High Cost,Estimated value
+662,Saint Lucia,Europe,2018,3.8,1387.0,,,,High Cost,Estimated value
+662,Saint Lucia,Europe,2019,4.03,1470.95,,,,High Cost,Estimated value
+662,Saint Lucia,Europe,2020,4.41,1609.65,,,,High Cost,Estimated value
+662,Saint Lucia,Europe,2021,4.57,1668.0500000000002,1.28,0.6,1.88,High Cost,Estimated value
+662,Saint Lucia,Europe,2022,4.9,1788.5000000000002,,,,High Cost,Estimated value
+662,Saint Lucia,Europe,2023,5.22,1905.3,,,,High Cost,Estimated value
+662,Saint Lucia,Europe,2024,5.16,1883.4,,,,High Cost,Estimated value
+670,Saint Vincent and the Grenadines,Europe,2017,4.3,1569.5,,,,High Cost,Estimated value
+670,Saint Vincent and the Grenadines,Europe,2018,4.44,1620.6000000000001,,,,High Cost,Estimated value
+670,Saint Vincent and the Grenadines,Europe,2019,4.48,1635.2,,,,High Cost,Estimated value
+670,Saint Vincent and the Grenadines,Europe,2020,4.65,1697.2500000000002,,,,High Cost,Estimated value
+670,Saint Vincent and the Grenadines,Europe,2021,4.87,1777.55,1.53,0.72,2.25,High Cost,Estimated value
+670,Saint Vincent and the Grenadines,Europe,2022,5.48,2000.2,,,,High Cost,Estimated value
+670,Saint Vincent and the Grenadines,Europe,2023,6.03,2200.9500000000003,,,,High Cost,Estimated value
+670,Saint Vincent and the Grenadines,Europe,2024,6.43,2346.95,,,,High Cost,Estimated value
+678,Sao Tome and Principe,Europe,2017,2.31,843.15,,,,High Cost,Estimated value
+678,Sao Tome and Principe,Europe,2018,2.63,959.9499999999999,,,,High Cost,Estimated value
+678,Sao Tome and Principe,Europe,2019,2.98,1087.7,,,,High Cost,Estimated value
+678,Sao Tome and Principe,Europe,2020,3.29,1200.85,,,,High Cost,Estimated value
+678,Sao Tome and Principe,Europe,2021,3.8,1387.0,1.09,0.22,1.31,High Cost,Estimated value
+678,Sao Tome and Principe,Europe,2022,4.17,1522.05,,,,High Cost,Estimated value
+678,Sao Tome and Principe,Europe,2023,4.43,1616.9499999999998,,,,High Cost,Estimated value
+678,Sao Tome and Principe,Europe,2024,4.64,1693.6,,,,High Cost,Estimated value
+682,Saudi Arabia,Europe,2017,2.46,897.9,,,,Medium Cost,Estimated value
+682,Saudi Arabia,Europe,2018,2.46,897.9,,,,Medium Cost,Estimated value
+682,Saudi Arabia,Europe,2019,2.48,905.2,,,,Medium Cost,Estimated value
+682,Saudi Arabia,Europe,2020,2.43,886.95,,,,Medium Cost,Estimated value
+682,Saudi Arabia,Europe,2021,2.62,956.3000000000001,0.37,0.65,1.02,Medium Cost,Estimated value
+682,Saudi Arabia,Europe,2022,2.87,1047.55,,,,Medium Cost,Estimated value
+682,Saudi Arabia,Europe,2023,2.96,1080.4,,,,Medium Cost,Estimated value
+682,Saudi Arabia,Europe,2024,3.02,1102.3,,,,Medium Cost,Estimated value
+686,Senegal,Europe,2017,2.65,967.25,,,,High Cost,Estimated value
+686,Senegal,Europe,2018,2.72,992.8000000000001,,,,High Cost,Estimated value
+686,Senegal,Europe,2019,2.79,1018.35,,,,High Cost,Estimated value
+686,Senegal,Europe,2020,2.88,1051.2,,,,High Cost,Estimated value
+686,Senegal,Europe,2021,3.04,1109.6,0.63,0.3,0.9299999999999999,High Cost,Estimated value
+686,Senegal,Europe,2022,3.44,1255.6,,,,High Cost,Estimated value
+686,Senegal,Europe,2023,3.63,1324.95,,,,High Cost,Estimated value
+686,Senegal,Europe,2024,3.73,1361.45,,,,High Cost,Estimated value
+688,Serbia,Europe,2017,3.56,1299.4,,,,High Cost,Estimated value
+688,Serbia,Europe,2018,3.64,1328.6000000000001,,,,High Cost,Estimated value
+688,Serbia,Europe,2019,3.84,1401.6,,,,High Cost,Estimated value
+688,Serbia,Europe,2020,3.86,1408.8999999999999,,,,High Cost,Estimated value
+688,Serbia,Europe,2021,4.01,1463.6499999999999,0.86,0.75,1.6099999999999999,High Cost,Estimated value
+688,Serbia,Europe,2022,4.64,1693.6,,,,High Cost,Estimated value
+688,Serbia,Europe,2023,5.19,1894.3500000000001,,,,High Cost,Estimated value
+688,Serbia,Europe,2024,5.28,1927.2,,,,High Cost,Estimated value
+690,Seychelles,Europe,2017,3.53,1288.4499999999998,,,,High Cost,Estimated value
+690,Seychelles,Europe,2018,3.5,1277.5,,,,High Cost,Estimated value
+690,Seychelles,Europe,2019,3.53,1288.4499999999998,,,,High Cost,Estimated value
+690,Seychelles,Europe,2020,3.46,1262.9,,,,High Cost,Estimated value
+690,Seychelles,Europe,2021,3.79,1383.35,1.2,0.33,1.53,High Cost,Estimated value
+690,Seychelles,Europe,2022,4.05,1478.25,,,,High Cost,Estimated value
+690,Seychelles,Europe,2023,4.22,1540.3,,,,High Cost,Estimated value
+690,Seychelles,Europe,2024,4.31,1573.1499999999999,,,,High Cost,Estimated value
+694,Sierra Leone,Europe,2017,2.64,963.6,,,,High Cost,Estimated value
+694,Sierra Leone,Europe,2018,2.8,1021.9999999999999,,,,High Cost,Estimated value
+694,Sierra Leone,Europe,2019,2.76,1007.4,,,,High Cost,Estimated value
+694,Sierra Leone,Europe,2020,2.83,1032.95,,,,High Cost,Estimated value
+694,Sierra Leone,Europe,2021,3.08,1124.2,0.43,0.26,0.69,High Cost,Estimated value
+694,Sierra Leone,Europe,2022,3.39,1237.3500000000001,,,,High Cost,Estimated value
+694,Sierra Leone,Europe,2023,3.74,1365.1000000000001,,,,High Cost,Estimated value
+694,Sierra Leone,Europe,2024,3.84,1401.6,,,,High Cost,Estimated value
+702,Singapore,Europe,2017,2.78,1014.6999999999999,,,,High Cost,Estimated value
+702,Singapore,Europe,2018,2.86,1043.8999999999999,,,,High Cost,Estimated value
+702,Singapore,Europe,2019,2.92,1065.8,,,,High Cost,Estimated value
+702,Singapore,Europe,2020,3.0,1095.0,,,,High Cost,Estimated value
+702,Singapore,Europe,2021,3.09,1127.85,0.72,0.78,1.5,High Cost,Estimated value
+702,Singapore,Europe,2022,3.31,1208.15,,,,High Cost,Estimated value
+702,Singapore,Europe,2023,3.46,1262.9,,,,High Cost,Estimated value
+702,Singapore,Europe,2024,3.52,1284.8,,,,High Cost,Estimated value
+534,Sint Maarten (Dutch part),Asia,2017,4.43,1616.9499999999998,,,,High Cost,Estimated value
+534,Sint Maarten (Dutch part),Asia,2018,4.58,1671.7,,,,High Cost,Estimated value
+534,Sint Maarten (Dutch part),Asia,2019,4.67,1704.55,,,,High Cost,Estimated value
+534,Sint Maarten (Dutch part),Asia,2020,4.78,1744.7,,,,High Cost,Estimated value
+534,Sint Maarten (Dutch part),Asia,2021,4.82,1759.3000000000002,,,,High Cost,Estimated value
+534,Sint Maarten (Dutch part),Asia,2022,4.93,1799.4499999999998,,,,High Cost,Estimated value
+534,Sint Maarten (Dutch part),Asia,2023,5.06,1846.8999999999999,,,,High Cost,Estimated value
+534,Sint Maarten (Dutch part),Asia,2024,5.17,1887.05,,,,High Cost,Estimated value
+703,Slovakia,Europe,2017,2.46,897.9,,,,High Cost,Estimated value
+703,Slovakia,Europe,2018,2.53,923.4499999999999,,,,High Cost,Estimated value
+703,Slovakia,Europe,2019,2.69,981.85,,,,High Cost,Estimated value
+703,Slovakia,Europe,2020,2.89,1054.8500000000001,,,,High Cost,Estimated value
+703,Slovakia,Europe,2021,3.01,1098.6499999999999,0.93,0.65,1.58,High Cost,Estimated value
+703,Slovakia,Europe,2022,3.54,1292.1,,,,High Cost,Estimated value
+703,Slovakia,Europe,2023,4.14,1511.1,,,,High Cost,Estimated value
+703,Slovakia,Europe,2024,4.25,1551.25,,,,High Cost,Estimated value
+705,Slovenia,Europe,2017,2.6,949.0,,,,High Cost,Estimated value
+705,Slovenia,Europe,2018,2.7,985.5000000000001,,,,High Cost,Estimated value
+705,Slovenia,Europe,2019,2.85,1040.25,,,,High Cost,Estimated value
+705,Slovenia,Europe,2020,2.98,1087.7,,,,High Cost,Estimated value
+705,Slovenia,Europe,2021,3.01,1098.6499999999999,0.76,0.74,1.5,High Cost,Estimated value
+705,Slovenia,Europe,2022,3.42,1248.3,,,,High Cost,Estimated value
+705,Slovenia,Europe,2023,3.72,1357.8000000000002,,,,High Cost,Estimated value
+705,Slovenia,Europe,2024,3.81,1390.65,,,,High Cost,Estimated value
+706,Somalia,Europe,2017,3.61,1317.6499999999999,,,,High Cost,Estimated value
+706,Somalia,Europe,2018,3.88,1416.2,,,,High Cost,Estimated value
+706,Somalia,Europe,2019,3.98,1452.7,,,,High Cost,Estimated value
+706,Somalia,Europe,2020,3.93,1434.45,,,,High Cost,Estimated value
+706,Somalia,Europe,2021,4.08,1489.2,0.78,0.36,1.1400000000000001,High Cost,Estimated value
+706,Somalia,Europe,2022,4.65,1697.2500000000002,,,,High Cost,Estimated value
+706,Somalia,Europe,2023,4.65,1697.2500000000002,,,,High Cost,Estimated value
+706,Somalia,Europe,2024,4.47,1631.55,,,,High Cost,Estimated value
+710,South Africa,Europe,2017,3.0,1095.0,,,,High Cost,Estimated value
+710,South Africa,Europe,2018,2.94,1073.1,,,,High Cost,Estimated value
+710,South Africa,Europe,2019,2.94,1073.1,,,,High Cost,Estimated value
+710,South Africa,Europe,2020,3.0,1095.0,,,,High Cost,Estimated value
+710,South Africa,Europe,2021,3.14,1146.1000000000001,0.63,0.61,1.24,High Cost,Estimated value
+710,South Africa,Europe,2022,3.46,1262.9,,,,High Cost,Estimated value
+710,South Africa,Europe,2023,3.76,1372.3999999999999,,,,High Cost,Estimated value
+710,South Africa,Europe,2024,3.89,1419.8500000000001,,,,High Cost,Estimated value
+728,South Sudan,Europe,2017,3.13,1142.45,,,,High Cost,Estimated value
+728,South Sudan,Europe,2018,3.11,1135.1499999999999,,,,High Cost,Estimated value
+728,South Sudan,Europe,2019,3.55,1295.75,,,,High Cost,Estimated value
+728,South Sudan,Europe,2020,3.41,1244.65,,,,High Cost,Estimated value
+728,South Sudan,Europe,2021,3.9,1423.5,0.69,0.4,1.0899999999999999,High Cost,Estimated value
+728,South Sudan,Europe,2022,4.09,1492.85,,,,High Cost,Estimated value
+728,South Sudan,Europe,2023,5.33,1945.45,,,,High Cost,Estimated value
+728,South Sudan,Europe,2024,8.39,3062.3500000000004,,,,High Cost,Estimated value
+724,Spain,Europe,2017,2.53,923.4499999999999,,,,High Cost,Estimated value
+724,Spain,Europe,2018,2.57,938.05,,,,High Cost,Estimated value
+724,Spain,Europe,2019,2.7,985.5000000000001,,,,High Cost,Estimated value
+724,Spain,Europe,2020,2.75,1003.75,,,,High Cost,Estimated value
+724,Spain,Europe,2021,2.94,1073.1,0.8,0.84,1.6400000000000001,High Cost,Estimated value
+724,Spain,Europe,2022,3.4,1241.0,,,,High Cost,Estimated value
+724,Spain,Europe,2023,3.83,1397.95,,,,High Cost,Estimated value
+724,Spain,Europe,2024,3.98,1452.7,,,,High Cost,Estimated value
+144,Sri Lanka,Africa,2017,3.86,1408.8999999999999,,,,High Cost,Estimated value
+144,Sri Lanka,Africa,2018,3.81,1390.65,,,,High Cost,Estimated value
+144,Sri Lanka,Africa,2019,3.7,1350.5,,,,High Cost,Estimated value
+144,Sri Lanka,Africa,2020,3.65,1332.25,,,,High Cost,Estimated value
+144,Sri Lanka,Africa,2021,4.27,1558.55,0.97,1.01,1.98,High Cost,Estimated value
+144,Sri Lanka,Africa,2022,4.87,1777.55,,,,High Cost,Estimated value
+144,Sri Lanka,Africa,2023,4.89,1784.85,,,,High Cost,Estimated value
+144,Sri Lanka,Africa,2024,5.16,1883.4,,,,High Cost,Estimated value
+729,Sudan,Europe,2017,2.59,945.3499999999999,,,,Medium Cost,Estimated value
+729,Sudan,Europe,2018,2.77,1011.05,,,,Medium Cost,Estimated value
+729,Sudan,Europe,2019,2.87,1047.55,,,,Medium Cost,Estimated value
+729,Sudan,Europe,2020,2.86,1043.8999999999999,,,,Medium Cost,Estimated value
+729,Sudan,Europe,2021,3.03,1105.9499999999998,0.6,0.36,0.96,Medium Cost,Estimated value
+729,Sudan,Europe,2022,2.75,1003.75,,,,Medium Cost,Estimated value
+729,Sudan,Europe,2023,2.94,1073.1,,,,Medium Cost,Estimated value
+729,Sudan,Europe,2024,3.32,1211.8,,,,Medium Cost,Estimated value
+740,Suriname,Europe,2017,4.4,1606.0000000000002,,,,High Cost,Estimated value
+740,Suriname,Europe,2018,4.33,1580.45,,,,High Cost,Estimated value
+740,Suriname,Europe,2019,4.67,1704.55,,,,High Cost,Estimated value
+740,Suriname,Europe,2020,4.94,1803.1000000000001,,,,High Cost,Estimated value
+740,Suriname,Europe,2021,5.44,1985.6000000000001,1.45,1.07,2.52,High Cost,Estimated value
+740,Suriname,Europe,2022,5.88,2146.2,,,,High Cost,Estimated value
+740,Suriname,Europe,2023,6.4,2336.0,,,,High Cost,Estimated value
+740,Suriname,Europe,2024,6.16,2248.4,,,,High Cost,Estimated value
+752,Sweden,Europe,2017,2.71,989.15,,,,High Cost,Estimated value
+752,Sweden,Europe,2018,2.77,1011.05,,,,High Cost,Estimated value
+752,Sweden,Europe,2019,2.91,1062.15,,,,High Cost,Estimated value
+752,Sweden,Europe,2020,3.0,1095.0,,,,High Cost,Estimated value
+752,Sweden,Europe,2021,3.06,1116.9,0.89,0.8,1.69,High Cost,Estimated value
+752,Sweden,Europe,2022,3.5,1277.5,,,,High Cost,Estimated value
+752,Sweden,Europe,2023,3.83,1397.95,,,,High Cost,Estimated value
+752,Sweden,Europe,2024,3.89,1419.8500000000001,,,,High Cost,Estimated value
+756,Switzerland,Europe,2017,2.39,872.35,,,,Medium Cost,Estimated value
+756,Switzerland,Europe,2018,2.45,894.2500000000001,,,,Medium Cost,Estimated value
+756,Switzerland,Europe,2019,2.55,930.7499999999999,,,,Medium Cost,Estimated value
+756,Switzerland,Europe,2020,2.59,945.3499999999999,,,,Medium Cost,Estimated value
+756,Switzerland,Europe,2021,2.63,959.9499999999999,0.69,0.63,1.3199999999999998,Medium Cost,Estimated value
+756,Switzerland,Europe,2022,2.84,1036.6,,,,Medium Cost,Estimated value
+756,Switzerland,Europe,2023,3.01,1098.6499999999999,,,,Medium Cost,Estimated value
+756,Switzerland,Europe,2024,3.07,1120.55,,,,Medium Cost,Estimated value
+760,Syrian Arab Republic,Europe,2017,2.5,912.5,,,,High Cost,Estimated value
+760,Syrian Arab Republic,Europe,2018,2.54,927.1,,,,High Cost,Estimated value
+760,Syrian Arab Republic,Europe,2019,2.61,952.65,,,,High Cost,Estimated value
+760,Syrian Arab Republic,Europe,2020,3.91,1427.15,,,,High Cost,Estimated value
+760,Syrian Arab Republic,Europe,2021,5.01,1828.6499999999999,0.36,0.83,1.19,High Cost,Estimated value
+760,Syrian Arab Republic,Europe,2022,5.4,1971.0000000000002,,,,High Cost,Estimated value
+760,Syrian Arab Republic,Europe,2023,5.61,2047.65,,,,High Cost,Estimated value
+760,Syrian Arab Republic,Europe,2024,5.77,2106.0499999999997,,,,High Cost,Estimated value
+762,Tajikistan,Europe,2017,2.99,1091.3500000000001,,,,High Cost,Estimated value
+762,Tajikistan,Europe,2018,2.99,1091.3500000000001,,,,High Cost,Estimated value
+762,Tajikistan,Europe,2019,3.17,1157.05,,,,High Cost,Estimated value
+762,Tajikistan,Europe,2020,3.43,1251.95,,,,High Cost,Estimated value
+762,Tajikistan,Europe,2021,3.53,1288.4499999999998,0.51,0.84,1.35,High Cost,Estimated value
+762,Tajikistan,Europe,2022,3.68,1343.2,,,,High Cost,Estimated value
+762,Tajikistan,Europe,2023,3.68,1343.2,,,,High Cost,Estimated value
+762,Tajikistan,Europe,2024,3.62,1321.3,,,,High Cost,Estimated value
+764,Thailand,Europe,2017,4.27,1558.55,,,,High Cost,Estimated value
+764,Thailand,Europe,2018,4.34,1584.1,,,,High Cost,Estimated value
+764,Thailand,Europe,2019,4.5,1642.5,,,,High Cost,Estimated value
+764,Thailand,Europe,2020,4.65,1697.2500000000002,,,,High Cost,Estimated value
+764,Thailand,Europe,2021,4.75,1733.75,0.94,0.83,1.77,High Cost,Estimated value
+764,Thailand,Europe,2022,5.17,1887.05,,,,High Cost,Estimated value
+764,Thailand,Europe,2023,5.46,1992.9,,,,High Cost,Estimated value
+764,Thailand,Europe,2024,5.65,2062.25,,,,High Cost,Estimated value
+768,Togo,Europe,2017,2.54,927.1,,,,High Cost,Estimated value
+768,Togo,Europe,2018,2.6,949.0,,,,High Cost,Estimated value
+768,Togo,Europe,2019,2.65,967.25,,,,High Cost,Estimated value
+768,Togo,Europe,2020,2.81,1025.65,,,,High Cost,Estimated value
+768,Togo,Europe,2021,3.12,1138.8,0.38,0.3,0.6799999999999999,High Cost,Estimated value
+768,Togo,Europe,2022,3.5,1277.5,,,,High Cost,Estimated value
+768,Togo,Europe,2023,3.58,1306.7,,,,High Cost,Estimated value
+768,Togo,Europe,2024,3.76,1372.3999999999999,,,,High Cost,Estimated value
+780,Trinidad and Tobago,Europe,2017,3.72,1357.8000000000002,,,,High Cost,Estimated value
+780,Trinidad and Tobago,Europe,2018,3.87,1412.55,,,,High Cost,Estimated value
+780,Trinidad and Tobago,Europe,2019,3.93,1434.45,,,,High Cost,Estimated value
+780,Trinidad and Tobago,Europe,2020,4.11,1500.15,,,,High Cost,Estimated value
+780,Trinidad and Tobago,Europe,2021,4.43,1616.9499999999998,1.08,1.19,2.27,High Cost,Estimated value
+780,Trinidad and Tobago,Europe,2022,4.98,1817.7,,,,High Cost,Estimated value
+780,Trinidad and Tobago,Europe,2023,5.35,1952.7499999999998,,,,High Cost,Estimated value
+780,Trinidad and Tobago,Europe,2024,5.56,2029.3999999999999,,,,High Cost,Estimated value
+788,Tunisia,Europe,2017,3.66,1335.9,,,,High Cost,Estimated value
+788,Tunisia,Europe,2018,3.72,1357.8000000000002,,,,High Cost,Estimated value
+788,Tunisia,Europe,2019,3.79,1383.35,,,,High Cost,Estimated value
+788,Tunisia,Europe,2020,3.81,1390.65,,,,High Cost,Estimated value
+788,Tunisia,Europe,2021,3.97,1449.0500000000002,0.6,1.17,1.77,High Cost,Estimated value
+788,Tunisia,Europe,2022,4.38,1598.7,,,,High Cost,Estimated value
+788,Tunisia,Europe,2023,4.77,1741.05,,,,High Cost,Estimated value
+788,Tunisia,Europe,2024,5.02,1832.3,,,,High Cost,Estimated value
+796,Turks and Caicos Islands,Europe,2017,2.8,1021.9999999999999,,,,High Cost,Estimated value
+796,Turks and Caicos Islands,Europe,2018,2.91,1062.15,,,,High Cost,Estimated value
+796,Turks and Caicos Islands,Europe,2019,2.99,1091.3500000000001,,,,High Cost,Estimated value
+796,Turks and Caicos Islands,Europe,2020,3.13,1142.45,,,,High Cost,Estimated value
+796,Turks and Caicos Islands,Europe,2021,3.27,1193.55,,,,High Cost,Estimated value
+796,Turks and Caicos Islands,Europe,2022,3.63,1324.95,,,,High Cost,Estimated value
+796,Turks and Caicos Islands,Europe,2023,3.88,1416.2,,,,High Cost,Estimated value
+796,Turks and Caicos Islands,Europe,2024,4.05,1478.25,,,,High Cost,Estimated value
+792,Türkiye,Europe,2017,3.45,1259.25,,,,High Cost,Estimated value
+792,Türkiye,Europe,2018,3.59,1310.35,,,,High Cost,Estimated value
+792,Türkiye,Europe,2019,3.88,1416.2,,,,High Cost,Estimated value
+792,Türkiye,Europe,2020,3.73,1361.45,,,,High Cost,Estimated value
+792,Türkiye,Europe,2021,3.8,1387.0,0.6,0.96,1.56,High Cost,Estimated value
+792,Türkiye,Europe,2022,4.44,1620.6000000000001,,,,High Cost,Estimated value
+792,Türkiye,Europe,2023,4.65,1697.2500000000002,,,,High Cost,Estimated value
+792,Türkiye,Europe,2024,4.77,1741.05,,,,High Cost,Estimated value
+800,Uganda,Europe,2017,3.12,1138.8,,,,High Cost,Estimated value
+800,Uganda,Europe,2018,3.03,1105.9499999999998,,,,High Cost,Estimated value
+800,Uganda,Europe,2019,2.93,1069.45,,,,High Cost,Estimated value
+800,Uganda,Europe,2020,2.9,1058.5,,,,High Cost,Estimated value
+800,Uganda,Europe,2021,2.95,1076.75,0.4,0.28,0.68,High Cost,Estimated value
+800,Uganda,Europe,2022,3.36,1226.3999999999999,,,,High Cost,Estimated value
+800,Uganda,Europe,2023,3.68,1343.2,,,,High Cost,Estimated value
+800,Uganda,Europe,2024,3.65,1332.25,,,,High Cost,Estimated value
+784,United Arab Emirates,Europe,2017,2.46,897.9,,,,Medium Cost,Estimated value
+784,United Arab Emirates,Europe,2018,2.74,1000.1,,,,Medium Cost,Estimated value
+784,United Arab Emirates,Europe,2019,2.87,1047.55,,,,Medium Cost,Estimated value
+784,United Arab Emirates,Europe,2020,2.85,1040.25,,,,Medium Cost,Estimated value
+784,United Arab Emirates,Europe,2021,2.66,970.9000000000001,0.3,0.45,0.75,Medium Cost,Estimated value
+784,United Arab Emirates,Europe,2022,2.93,1069.45,,,,Medium Cost,Estimated value
+784,United Arab Emirates,Europe,2023,3.11,1135.1499999999999,,,,Medium Cost,Estimated value
+784,United Arab Emirates,Europe,2024,3.22,1175.3000000000002,,,,Medium Cost,Estimated value
+826,United Kingdom of Great Britain and Northern Ireland,Europe,2017,1.7,620.5,,,,Medium Cost,Estimated value
+826,United Kingdom of Great Britain and Northern Ireland,Europe,2018,1.75,638.75,,,,Medium Cost,Estimated value
+826,United Kingdom of Great Britain and Northern Ireland,Europe,2019,1.83,667.95,,,,Medium Cost,Estimated value
+826,United Kingdom of Great Britain and Northern Ireland,Europe,2020,1.86,678.9000000000001,,,,Medium Cost,Estimated value
+826,United Kingdom of Great Britain and Northern Ireland,Europe,2021,1.9,693.5,0.43,0.57,1.0,Medium Cost,Estimated value
+826,United Kingdom of Great Britain and Northern Ireland,Europe,2022,2.21,806.65,,,,Medium Cost,Estimated value
+826,United Kingdom of Great Britain and Northern Ireland,Europe,2023,2.5,912.5,,,,Medium Cost,Estimated value
+826,United Kingdom of Great Britain and Northern Ireland,Europe,2024,2.56,934.4,,,,Medium Cost,Estimated value
+834,United Republic of Tanzania,Europe,2017,2.14,781.1,,,,Medium Cost,Estimated value
+834,United Republic of Tanzania,Europe,2018,2.3,839.4999999999999,,,,Medium Cost,Estimated value
+834,United Republic of Tanzania,Europe,2019,2.45,894.2500000000001,,,,Medium Cost,Estimated value
+834,United Republic of Tanzania,Europe,2020,2.64,963.6,,,,Medium Cost,Estimated value
+834,United Republic of Tanzania,Europe,2021,2.79,1018.35,0.21,0.17,0.38,Medium Cost,Estimated value
+834,United Republic of Tanzania,Europe,2022,3.1,1131.5,,,,Medium Cost,Estimated value
+834,United Republic of Tanzania,Europe,2023,3.32,1211.8,,,,Medium Cost,Estimated value
+834,United Republic of Tanzania,Europe,2024,3.37,1230.05,,,,Medium Cost,Estimated value
+840,United States of America,Europe,2017,2.17,792.05,,,,Medium Cost,Estimated value
+840,United States of America,Europe,2018,2.18,795.7,,,,Medium Cost,Estimated value
+840,United States of America,Europe,2019,2.2,803.0000000000001,,,,Medium Cost,Estimated value
+840,United States of America,Europe,2020,2.28,832.1999999999999,,,,Medium Cost,Estimated value
+840,United States of America,Europe,2021,2.36,861.4,0.74,0.53,1.27,Medium Cost,Estimated value
+840,United States of America,Europe,2022,2.63,959.9499999999999,,,,Medium Cost,Estimated value
+840,United States of America,Europe,2023,2.76,1007.4,,,,Medium Cost,Estimated value
+840,United States of America,Europe,2024,2.79,1018.35,,,,Medium Cost,Estimated value
+858,Uruguay,Europe,2017,2.78,1014.6999999999999,,,,High Cost,Estimated value
+858,Uruguay,Europe,2018,2.93,1069.45,,,,High Cost,Estimated value
+858,Uruguay,Europe,2019,3.08,1124.2,,,,High Cost,Estimated value
+858,Uruguay,Europe,2020,3.45,1259.25,,,,High Cost,Estimated value
+858,Uruguay,Europe,2021,3.65,1332.25,0.74,0.9,1.6400000000000001,High Cost,Estimated value
+858,Uruguay,Europe,2022,4.01,1463.6499999999999,,,,High Cost,Estimated value
+858,Uruguay,Europe,2023,4.29,1565.85,,,,High Cost,Estimated value
+858,Uruguay,Europe,2024,4.41,1609.65,,,,High Cost,Estimated value
+860,Uzbekistan,Europe,2017,4.11,1500.15,,,,High Cost,Estimated value
+860,Uzbekistan,Europe,2018,4.06,1481.8999999999999,,,,High Cost,Estimated value
+860,Uzbekistan,Europe,2019,4.0,1460.0,,,,High Cost,Estimated value
+860,Uzbekistan,Europe,2020,3.97,1449.0500000000002,,,,High Cost,Estimated value
+860,Uzbekistan,Europe,2021,4.06,1481.8999999999999,0.47,1.03,1.5,High Cost,Estimated value
+860,Uzbekistan,Europe,2022,4.52,1649.8,,,,High Cost,Estimated value
+860,Uzbekistan,Europe,2023,4.78,1744.7,,,,High Cost,Estimated value
+860,Uzbekistan,Europe,2024,4.67,1704.55,,,,High Cost,Estimated value
+704,Viet Nam,Europe,2017,3.27,1193.55,,,,High Cost,Estimated value
+704,Viet Nam,Europe,2018,3.33,1215.45,,,,High Cost,Estimated value
+704,Viet Nam,Europe,2019,3.47,1266.5500000000002,,,,High Cost,Estimated value
+704,Viet Nam,Europe,2020,3.79,1383.35,,,,High Cost,Estimated value
+704,Viet Nam,Europe,2021,3.88,1416.2,0.65,0.63,1.28,High Cost,Estimated value
+704,Viet Nam,Europe,2022,4.17,1522.05,,,,High Cost,Estimated value
+704,Viet Nam,Europe,2023,4.35,1587.7499999999998,,,,High Cost,Estimated value
+704,Viet Nam,Europe,2024,4.49,1638.8500000000001,,,,High Cost,Estimated value
+894,Zambia,Europe,2017,2.73,996.45,,,,High Cost,Estimated value
+894,Zambia,Europe,2018,2.79,1018.35,,,,High Cost,Estimated value
+894,Zambia,Europe,2019,2.88,1051.2,,,,High Cost,Estimated value
+894,Zambia,Europe,2020,2.96,1080.4,,,,High Cost,Estimated value
+894,Zambia,Europe,2021,3.28,1197.1999999999998,0.31,0.36,0.6699999999999999,High Cost,Estimated value
+894,Zambia,Europe,2022,3.61,1317.6499999999999,,,,High Cost,Estimated value
+894,Zambia,Europe,2023,3.81,1390.65,,,,High Cost,Estimated value
+894,Zambia,Europe,2024,3.99,1456.3500000000001,,,,High Cost,Estimated value
+716,Zimbabwe,Europe,2017,3.54,1292.1,,,,,Estimated value
