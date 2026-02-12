@@ -1,0 +1,44 @@
+name: Download Kaggle Data
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - milestone1
+    paths:
+      - 'data/download_data.py'
+
+jobs:
+  download-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install kaggle
+        run: pip install kaggle
+
+      - name: Set up Kaggle credentials
+        run: |
+          mkdir -p ~/.kaggle
+          echo '{"username":"${{ secrets.KAGGLE_USERNAME }}","key":"${{ secrets.KAGGLE_KEY }}"}' > ~/.kaggle/kaggle.json
+          chmod 600 ~/.kaggle/kaggle.json
+
+      - name: Download dataset
+        run: |
+          mkdir -p data/raw
+          kaggle datasets download -d hassanjameelahmed/price-of-healthy-diet-clean -p data/raw --unzip
+
+      - name: Upload data as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kaggle-data
+          path: data/raw/
+          retention-days: 90
