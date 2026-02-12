@@ -7,7 +7,7 @@ on:
       - main
       - milestone1
     paths:
-      - 'data/download_data.py'
+      - 'src/download_data.py'
 
 jobs:
   download-data:
@@ -22,11 +22,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install kaggle
+      - name: Install Kaggle
         run: pip install kaggle
 
       - name: Set up Kaggle credentials
-        run: |
+        run: |say a
           mkdir -p ~/.kaggle
           echo '{"username":"${{ secrets.KAGGLE_USERNAME }}","key":"${{ secrets.KAGGLE_KEY }}"}' > ~/.kaggle/kaggle.json
           chmod 600 ~/.kaggle/kaggle.json
@@ -39,6 +39,4 @@ jobs:
       - name: Upload data as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: kaggle-data
-          path: data/raw/
-          retention-days: 90
+          name: kaggle-d
