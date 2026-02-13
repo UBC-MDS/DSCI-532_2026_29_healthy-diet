@@ -1,0 +1,1 @@
+This dashboard visualizes the cost of a healthy diet (PPP-adjusted USD) across 175 countries from 2017 to 2024. It supports regional and country comparisons, time trend exploration, and quick identification of high-cost versus low-cost contexts to inform affordability discussions.
