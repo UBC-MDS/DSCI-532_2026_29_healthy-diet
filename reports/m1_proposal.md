@@ -63,7 +63,7 @@ Using the dashboard, the analyst filters by region, compares countries within th
 ![Cost of a Healthy Diet by Region (Boxplot)](../img/cost_healthy_diet_boxplot_by_region.png)
 
 **Cost of a Healthy Diet by Region (Boxplot)**  
-The distribution of `cost_healthy_diet_ppp_usd` varies by region, with Europe and the Americas generally showing higher medians and greater upper-end outliers compared to Africa and Asia. This indicates meaningful regional disparities in affordability levels. 
+The distribution of `cost_healthy_diet_ppp_usd` varies by region, with Africa showing a higher median, and America showing greater upper-end outliers. This indicates meaningful regional disparities in affordability levels. 
 
 ![Cost of a Healthy Diet by Region (Density Plot)](../img/cost_healthy_diet_density_by_region.png)
 
@@ -93,7 +93,7 @@ Observations are relatively balanced across regions, with Europe having slightly
 ![Count of country](../img/count_of_country.png)
 
 **Count of Country**  
-Each country appears multiple times across years, reflecting the panel structure of the dataset from 2017 to 2024. This enables consistent time-series comparisons within countries.  
+Most countries appear approximately 8 times across years, wth Zimbabwe, Argentina, Tawian, and Nicaragua having lower counts.
 
 ![Numerical distributions](../img/numerical_distributions.png)
 
@@ -106,9 +106,9 @@ The main variable `cost_healthy_diet_ppp_usd` and its annualized counterpart are
 
 ![App sketch](../img/sketch.png)
 
-The app is structured around a central choropleth world map displaying `cost_healthy_diet_ppp_usd`, with interactive filters for year, region, country, and cost category placed in a left-side control panel. Below the map, a time-series line chart allows users to compare trends for selected countries, while a stacked bar chart summarizes component costs by region. A faceted boxplot section shows regional distributions over time to support deeper comparison.  
+The app is structured around a central choropleth world map displaying Cost of a Healthy Diet (PPP, USD), with interactive filters for year, region, country, and cost category placed in a left-side control panel. Below the map, a time-series line chart allows users to compare trends for selected countries, while a stacked bar chart summarizes component costs by region. A faceted boxplot section shows regional distributions over time to support deeper comparison.  
 
-Users can dynamically filter by year using both a dropdown and slider, enabling rapid temporal exploration from 2017 to 2024. Hover tooltips on the map provide country-level detail, including cost values and region classification. Together, the layout supports global overview, regional comparison, and country-level trend analysis within a single interactive interface.  
+Users can filter by year using both a dropdown and slider, enabling temporal exploration from 2017 to 2024. Hover tooltips on the map provide country-level detail, including cost values and region classification. This supports global overview, regional comparison, and country-level trend analysis.
 
 ---
 
