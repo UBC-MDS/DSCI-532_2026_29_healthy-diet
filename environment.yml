@@ -1,4 +1,4 @@
-name: dsci532
+name: 532-healthy-diet
 
 
 channels:
@@ -15,6 +15,7 @@ dependencies:
   # Visualization
   - plotly>=5.18
   - altair>=5.0
+  - vl-convert-python>=1.0
 
   # Dashboard
   - shiny>=0.7
