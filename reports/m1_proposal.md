@@ -104,7 +104,11 @@ The main variable `cost_healthy_diet_ppp_usd` and its annualized counterpart are
 
 # Section 5: App Sketch & Description  
 
-TODO
+![App sketch](../img/sketch.png)
+
+The app is structured around a central choropleth world map displaying `cost_healthy_diet_ppp_usd`, with interactive filters for year, region, country, and cost category placed in a left-side control panel. Below the map, a time-series line chart allows users to compare trends for selected countries, while a stacked bar chart summarizes component costs by region. A faceted boxplot section shows regional distributions over time to support deeper comparison.  
+
+Users can dynamically filter by year using both a dropdown and slider, enabling rapid temporal exploration from 2017 to 2024. Hover tooltips on the map provide country-level detail, including cost values and region classification. Together, the layout supports global overview, regional comparison, and country-level trend analysis within a single interactive interface.  
 
 ---
 
