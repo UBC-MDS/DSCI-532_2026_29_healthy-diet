@@ -1,1 +1,3 @@
-# DSCI-532_2026_29_appname
+# Healthy Diet Dashboard
+
+This dashboard enables cross-country and regional comparisons of the cost of a healthy diet from 2017 to 2024 using PPP-adjusted USD. Users can explore geographic patterns on a world map, compare trends over time for selected countries, and examine regional distributions to understand disparities in affordability. The app also supports quick identification of high-cost versus low-cost contexts using the dataset's `cost_category` classification. Intended users include policy analysts, public health researchers, and international development organizations.
