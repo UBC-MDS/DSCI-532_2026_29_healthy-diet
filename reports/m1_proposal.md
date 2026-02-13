@@ -31,26 +31,26 @@ The ordinal variable `cost_category` contains the final classification of the da
 
 # Section 3: Research Questions & Usage Scenario  
 
-## Usage Scenario
+### Usage Scenario
 
 A policy analyst at an international development organization is preparing a regional briefing on food affordability. They need to identify which countries have the highest costs of a healthy diet, how those costs have changed from 2017 to 2024, and whether certain regions are experiencing faster increases than others. They also want to understand whether fruit and vegetable costs contribute substantially to total diet cost in selected countries.  
 
 Using the dashboard, the analyst filters by region, compares countries within that region, examines time trends in `cost_healthy_diet_ppp_usd`, and checks `cost_category` classifications to quickly identify high-cost contexts. They may also review component costs to contextualize differences across countries. The dashboard supports rapid comparison and evidence synthesis for reporting and policy discussion.  
 
-## Research Questions
+### Research Questions
 
 - How does the cost of a healthy diet (`cost_healthy_diet_ppp_usd`) vary across countries and regions?  
 - How have healthy diet costs changed over time from 2017 to 2024?  
 - Which regions or countries consistently fall into high-cost versus low-cost categories?  
 - To what extent do fruit and vegetable costs contribute to overall healthy diet cost in selected countries?  
 
-## User Stories
+### User Stories
 
 - As a policy analyst, I want to compare healthy diet costs across countries within a region so that I can identify which countries face relatively higher affordability challenges.  
 - As a public health researcher, I want to examine trends over time in healthy diet costs so that I can assess whether affordability is improving or worsening between 2017 and 2024.  
 - As a development practitioner, I want to explore the contribution of fruits and vegetables to total diet cost so that I can better understand potential drivers of high overall costs.  
 
-## Jobs to Be Done
+### Jobs to Be Done
 
 - When preparing a regional or global report, help me quickly identify high-cost countries and compare them across regions so that I can support evidence-based recommendations.  
 - When evaluating changes over time, help me visualize trends in healthy diet costs so that I can detect patterns, increases, or relative stability.  
@@ -60,13 +60,51 @@ Using the dashboard, the analyst filters by region, compares countries within th
 
 # Section 4: Exploratory Data Analysis  
 
-TODO  
+![Cost of a Healthy Diet by Region (Boxplot)](../img/cost_healthy_diet_boxplot_by_region.png)
+
+**Cost of a Healthy Diet by Region (Boxplot)**  
+The distribution of `cost_healthy_diet_ppp_usd` varies by region, with Europe and the Americas generally showing higher medians and greater upper-end outliers compared to Africa and Asia. This indicates meaningful regional disparities in affordability levels. 
+
+![Cost of a Healthy Diet by Region (Density Plot)](../img/cost_healthy_diet_density_by_region.png)
+
+**Cost of a Healthy Diet by Region (Density Plot)**  
+Density curves show right-skewed distributions in all regions, with most countries clustering around 3–4 PPP USD per day and a small number of high-cost outliers. The Americas and Europe display slightly wider spreads, suggesting more variability across countries.  
+
+![Cost by Region × Year (Faceted Boxplots)](../img/cost_healthy_diet_boxplot_by_year_faceted_by_region.png)
+
+**Cost by Region × Year (Faceted Boxplots)**  
+Across all regions, median costs increase steadily from 2017 to 2024, with a noticeable upward shift after 2020. This pattern suggests a broad global rise in healthy diet costs rather than region-specific fluctuations.  
+
+![Cost Over Time (Selected Countries)](../img/cost_healthy_diet_over_time_selected_countries.png)
+
+**Cost Over Time (Selected Countries)**  
+Selected countries show consistent upward trends, though the magnitude of increase differs substantially across contexts. Some countries experience sharp post-2021 increases, highlighting heterogeneity in cost trajectories.  
+
+![Count of cost_category](../img/count_of_cost_category.png)
+
+**Count of Cost Category**  
+The majority of observations are classified as "High cost," indicating that most country-year combinations fall into the higher affordability bracket. This imbalance suggests that high cost contexts dominate the dataset.  
+
+![Count of region](../img/count_of_region.png)
+
+**Count of Region**  
+Observations are relatively balanced across regions, with Europe having slightly more entries. This supports fair cross-regional comparisons in the dashboard.  
+
+![Count of country](../img/count_of_country.png)
+
+**Count of Country**  
+Each country appears multiple times across years, reflecting the panel structure of the dataset from 2017 to 2024. This enables consistent time-series comparisons within countries.  
+
+![Numerical distributions](../img/numerical_distributions.png)
+
+**Numerical Distributions**  
+The main variable `cost_healthy_diet_ppp_usd` and its annualized counterpart are right-skewed, with most values concentrated around moderate levels and fewer extreme high-cost cases. Component variables such as fruit and vegetable costs show narrower ranges but also mild right skew.  
 
 ---
 
 # Section 5: App Sketch & Description  
 
-TODO  
+TODO
 
 ---
 
