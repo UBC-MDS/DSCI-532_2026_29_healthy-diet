@@ -1,9 +1,12 @@
 from shiny import App, ui, render, reactive
 import plotly.express as px
-from download_data import get_data
+import pandas as pd
+from data.download_data import download_dataset
 
-df = get_data()
-regions = ["All"] + sorted(df["region"].dropna().unique().tolist())
+download_dataset()
+
+df = pd.read_csv("data/raw/price_of_healthy_diet_clean.csv")
+regions = ["All"] + sorted(df["region"].dropna().unique().tolist()) #
 years = sorted(df["year"].unique().tolist())
 countries = ["All"] + sorted(df["country"].dropna().unique().tolist())
 cost_cats = ["All"] + [c for c in df["cost_category"].dropna().unique().tolist()]
@@ -21,10 +24,26 @@ app_ui = ui.page_sidebar(
     
     # Row 1: 4 stat boxes
     ui.layout_columns(
-        ui.card(ui.card_header("Countries"), ui.output_text("n_countries")),
-        ui.card(ui.card_header("Avg Cost (USD/day)"), ui.output_text("avg_cost")),
-        ui.card(ui.card_header("Min Cost"), ui.output_text("min_cost")),
-        ui.card(ui.card_header("Max Cost"), ui.output_text("max_cost")),
+        ui.value_box( 
+            "Countries", 
+            ui.output_text("n_countries"), 
+            theme = "bg-gradient-indigo-purple" 
+        ),
+        ui.value_box( 
+            "Avg Cost (USD/day)", 
+            ui.output_text("avg_cost"), 
+            theme = "bg-gradient-indigo-purple" 
+        ),
+        ui.value_box( 
+            "Min Cost", 
+            ui.output_text("min_cost"), 
+            theme = "bg-gradient-indigo-purple" 
+        ),
+        ui.value_box( 
+            "Max Cost", 
+            ui.output_text("max_cost"), 
+            theme = "bg-gradient-indigo-purple" 
+        ),
         col_widths=(3, 3, 3, 3)
     ),
     
