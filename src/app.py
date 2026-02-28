@@ -1,8 +1,8 @@
 from shiny import App, ui, render, reactive, req
 import plotly.express as px
 import pandas as pd
-from data.download_data import download_dataset
-from data.clean_data import clean_dataset
+from scripts.download_data import download_dataset
+from scripts.clean_data import clean_dataset
 
 download_dataset()
 clean_dataset()

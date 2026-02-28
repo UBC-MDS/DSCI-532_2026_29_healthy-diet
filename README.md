@@ -33,7 +33,7 @@ The dataset contains **1,379 records** of country-year observations covering **1
 ## Repository structure
 
 - `src/app.py`: Shiny for Python application entry point
-- `src/download_data.py`: helper used by the app to load and return the dataset (via `get_data()`)
+- `scripts/download_data.py`: helper used by the app to load and return the dataset (via `get_data()`)
 - `reports/`: project report materials (proposal, figures)
 - `img/`: figures used in the proposal and documentation
 
@@ -66,8 +66,6 @@ Open the app in your browser at the URL printed in the terminal (for example, `h
 ```bash
 Uvicorn running on http://127.0.0.1:8000
 ```
-
-* If your app relies on local data files, ensure `download_data.get_data()` can find them when run from the repository root.
 
 ## How the app works (high level)
 
