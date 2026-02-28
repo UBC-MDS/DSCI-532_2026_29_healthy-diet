@@ -2,10 +2,12 @@ from shiny import App, ui, render, reactive
 import plotly.express as px
 import pandas as pd
 from data.download_data import download_dataset
+from data.clean_data import clean_dataset
 
 download_dataset()
+clean_dataset()
 
-df = pd.read_csv("data/raw/price_of_healthy_diet_clean.csv")
+df = pd.read_csv("data/processed/cleaned_price_of_healthy_diet.csv")
 regions = ["All"] + sorted(df["region"].dropna().unique().tolist()) #
 years = sorted(df["year"].unique().tolist())
 countries = ["All"] + sorted(df["country"].dropna().unique().tolist())
@@ -17,7 +19,7 @@ app_ui = ui.page_sidebar(
         ui.input_slider("year", "Year", min(years), max(years), [min(years), max(years)], sep=""),
         ui.input_select("region", "Region", choices=regions),
         ui.input_select("country", "Country", choices=countries),
-        ui.input_select("cost_cat", "Cost Category", choices=cost_cats),
+        ui.input_radio_buttons("cost_cat", "Cost Category", choices=cost_cats),
         title="Filters"
     ),
     ui.h2("Global Cost of Healthy Diet Dashboard"),
@@ -86,25 +88,25 @@ def server(input, output, session):
             data = data[data["cost_category"] == input.cost_cat()]
         return data
     
-    # @reactive.calc
-    # def avg_data():
-    #     year_range = input.year()
-    #     data = df[(df["year"] >= year_range[0]) & (df["year"] <= year_range[1])]
-    #     if input.region() != "All":
-    #         data = data[data["region"] == input.region()]
-    #     if input.country() != "All":
-    #         data = data[data["country"] == input.country()]
-    #     if input.cost_cat() != "All":
-    #         data = data[data["cost_category"] == input.cost_cat()]
+    @reactive.calc
+    def avg_data():
+        year_range = input.year()
+        data = df[(df["year"] >= year_range[0]) & (df["year"] <= year_range[1])]
+        if input.region() != "All":
+            data = data[data["region"] == input.region()]
+        if input.country() != "All":
+            data = data[data["country"] == input.country()]
+        if input.cost_cat() != "All":
+            data = data[data["cost_category"] == input.cost_cat()]
 
-    #     plot_data = (
-    #         data.groupby("country")["cost_healthy_diet_ppp_usd"]
-    #         .mean()
-    #         .sort_values(ascending=False)
-    #         .head(10)
-    #         .reset_index()
-    #     )
-    #     return plot_data
+        plot_data = (
+            data.groupby("country")["cost_healthy_diet_ppp_usd"]
+            .mean()
+            .sort_values(ascending=False)
+            .head(10)
+            .reset_index()
+        )
+        return plot_data
 
     @render.text
     def n_countries():
@@ -126,17 +128,17 @@ def server(input, output, session):
     @render.ui
     def plot_map():
         data = filtered()
-        agg = data.groupby("region")["cost_healthy_diet_ppp_usd"].mean().reset_index()
+        # agg = data.groupby("region")["cost_healthy_diet_ppp_usd"].mean().reset_index()
         
-        if agg.empty:
-            return ui.markdown("No data for the selected period.")
+        # if agg.empty:
+        #     return ui.markdown("No data for the selected period.")
 
         fig = px.choropleth(
-            agg,
-            locations="region",
-            # color="cost_healthy_diet_ppp_usd", 
-            hover_name="region", 
-            # color_continuous_scale="Viridis",
+            data,
+            locations=data["Alpha-3 code"],
+            color="cost_healthy_diet_ppp_usd", 
+            hover_name="country", 
+            color_continuous_scale="Viridis",
             projection="natural earth",
             title="Healthy Diet Cost Index by Country"
         )
