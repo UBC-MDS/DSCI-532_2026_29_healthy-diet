@@ -35,6 +35,14 @@ def download_dataset():
         "-p", str(lookup_data_path),
         "--unzip"
     ], check=True)
+
+    # rename file to snake_case
+    original_file = lookup_data_path / "Countries by continents.csv"
+    renamed_file = lookup_data_path / "countries_by_continents.csv"
+
+    if original_file.exists():
+        original_file.rename(renamed_file)
+        print("Renamed to countries_by_continents.csv")
     
     print("Done!")
 
