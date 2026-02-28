@@ -65,19 +65,16 @@ flowchart TD
 
 ## 4. Calculation Details
 
-| Reactive Calculation | Inputs It Depends On | Transformation Performed | Outputs Consuming It |
-|---------------------|---------------------|--------------------------|---------------------|
-| `filtered()` | `year`, `region`, `country`, `cost_cat` | 1. Filter `df` where `year` is within slider range (`year[0] ≤ y ≤ year[1]`). 2. If `region ≠ "All"`, filter by selected region. 3. If `country ≠ "All"`, filter by selected country. 4. If `cost_cat ≠ "All"`, filter by selected cost category. 5. Return filtered DataFrame. | `n_countries`, `avg_cost`, `min_cost`, `max_cost`, `plot_map`, `plot_trend`, `bar_chart`, `plot_box` |
-| `n_countries` | `filtered()` | `filtered()["country"].nunique()` — count of unique countries | Value box (text) |
-| `avg_cost` | `filtered()` | `filtered()["cost_healthy_diet_ppp_usd"].mean()` formatted as `$X.XX` | Value box (text) |
-| `min_cost` | `filtered()` | `filtered()["cost_healthy_diet_ppp_usd"].min()` formatted as `$X.XX` | Value box (text) |
-| `max_cost` | `filtered()` | `filtered()["cost_healthy_diet_ppp_usd"].max()` formatted as `$X.XX` | Value box (text) |
-| `plot_map` | `filtered()` | `groupby("region")` , `.mean()` on cost column , `px.choropleth()` with natural earth projection | Choropleth map card |
-| `plot_trend` | `filtered()` | `px.line()` with `x="year"`, `y="cost_healthy_diet_ppp_usd"`, `color="country"` | Line chart card |
-| `bar_chart` | `filtered()` | `groupby("region")` , `.mean()` on cost column , `px.bar()` with `color="region"` | Bar chart card |
-| `plot_box` | `filtered()` | `px.box()` with `x="year"`, `y="cost_healthy_diet_ppp_usd"`, `color="region"` | Box plot card |
-
-
-
+| Reactive calculation | Transformation performed | Outputs consuming it |
+|---------------------|--------------------------|---------------------|
+| `filtered()` | Takes the four sidebar inputs (`year`, `region`, `country`, `cost_cat`) and filters the full dataset by the selected year range, then optionally narrows by region, country, and cost category if any are not set to "All". Returns the filtered DataFrame. | `n_countries`, `avg_cost`, `min_cost`, `max_cost`, `plot_map`, `plot_trend`, `bar_chart`, `plot_box` |
+| `n_countries` | Takes the `filtered()` DataFrame and counts the number of distinct countries. | Value box (text) |
+| `avg_cost` | Takes the `filtered()` DataFrame and computes the mean healthy diet cost (USD/day). | Value box (text) |
+| `min_cost` | Takes the `filtered()` DataFrame and finds the lowest healthy diet cost (USD/day). | Value box (text) |
+| `max_cost` | Takes the `filtered()` DataFrame and finds the highest healthy diet cost (USD/day). | Value box (text) |
+| `plot_map` | Takes the `filtered()` DataFrame, groups by region, computes the average cost per region, and renders a choropleth world map. | Choropleth map card |
+| `plot_trend` | Takes the `filtered()` DataFrame and plots healthy diet cost over time as a line chart, with each country shown as a separate colored line. | Line chart card |
+| `bar_chart` | Takes the `filtered()` DataFrame, groups by region, computes the average cost per region, and displays it as a bar chart. | Bar chart card |
+| `plot_box` | Takes the `filtered()` DataFrame and displays the distribution of healthy diet costs by year, colored by region, as a box plot. | Box plot card |
 
 
