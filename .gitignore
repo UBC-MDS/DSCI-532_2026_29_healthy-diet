@@ -209,3 +209,6 @@ __marimo__/
 .virtual_documents/
 Untitled.ipynb
 anaconda_projects/
+
+# vscode
+.vscode/
