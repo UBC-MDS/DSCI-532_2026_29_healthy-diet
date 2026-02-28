@@ -654,10 +654,10 @@ country_code,country,region,year,cost_healthy_diet_ppp_usd,annual_cost_healthy_d
 388,Jamaica,North America,2018,4.78,1744.7,,,,High Cost,Estimated value,JAM
 388,Jamaica,North America,2019,4.83,1762.95,,,,High Cost,Estimated value,JAM
 388,Jamaica,North America,2020,4.9,1788.5000000000002,,,,High Cost,Estimated value,JAM
-388,Jamaica,North America,2021,4.9,1788.5000000000002,1.69,1.24,2.9299999999999997,High Cost,Estimated value,JAM
+388,Jamaica,North America,2021,4.9,1788.5000000000002,1.69,1.24,2.93,High Cost,Estimated value,JAM
 388,Jamaica,North America,2022,5.41,1974.65,,,,High Cost,Estimated value,JAM
 388,Jamaica,North America,2023,5.83,2127.95,,,,High Cost,Estimated value,JAM
-388,Jamaica,North America,2024,6.02,2197.2999999999997,,,,High Cost,Estimated value,JAM
+388,Jamaica,North America,2024,6.02,2197.3,,,,High Cost,Estimated value,JAM
 392,Japan,Asia,2017,5.48,2000.2,,,,High Cost,Estimated value,JPN
 392,Japan,Asia,2018,5.65,2062.25,,,,High Cost,Estimated value,JPN
 392,Japan,Asia,2019,5.57,2033.05,,,,High Cost,Estimated value,JPN
@@ -841,7 +841,7 @@ country_code,country,region,year,cost_healthy_diet_ppp_usd,annual_cost_healthy_d
 496,Mongolia,Asia,2021,5.55,2025.75,0.9,2.5,3.4,High Cost,Estimated value,MNG
 496,Mongolia,Asia,2022,6.17,2252.05,,,,High Cost,Estimated value,MNG
 496,Mongolia,Asia,2023,6.74,2460.1,,,,High Cost,Estimated value,MNG
-496,Mongolia,Asia,2024,7.02,2562.2999999999997,,,,High Cost,Estimated value,MNG
+496,Mongolia,Asia,2024,7.02,2562.3,,,,High Cost,Estimated value,MNG
 499,Montenegro,Europe,2017,3.21,1171.65,,,,High Cost,Estimated value,MNE
 499,Montenegro,Europe,2018,3.24,1182.6,,,,High Cost,Estimated value,MNE
 499,Montenegro,Europe,2019,3.49,1273.85,,,,High Cost,Estimated value,MNE
@@ -1248,7 +1248,7 @@ country_code,country,region,year,cost_healthy_diet_ppp_usd,annual_cost_healthy_d
 760,Syria,Asia,2021,5.01,1828.65,0.36,0.83,1.19,High Cost,Estimated value,SYR
 760,Syria,Asia,2022,5.4,1971.0,,,,High Cost,Estimated value,SYR
 760,Syria,Asia,2023,5.61,2047.65,,,,High Cost,Estimated value,SYR
-760,Syria,Asia,2024,5.77,2106.0499999999997,,,,High Cost,Estimated value,SYR
+760,Syria,Asia,2024,5.77,2106.05,,,,High Cost,Estimated value,SYR
 762,Tajikistan,Asia,2017,2.99,1091.35,,,,High Cost,Estimated value,TJK
 762,Tajikistan,Asia,2018,2.99,1091.35,,,,High Cost,Estimated value,TJK
 762,Tajikistan,Asia,2019,3.17,1157.05,,,,High Cost,Estimated value,TJK
