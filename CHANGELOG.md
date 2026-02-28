@@ -19,16 +19,22 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - Box plot of cost distribution by year and region (`plot_box`)
 - Dynamic country dropdown that updates based on selected region
 - `requirements.txt` and `environment.yml` with pinned versions for deployment and local dev
+- Demo GIF (`img/demo.gif`)
+- Countries-by-continent lookup data (Kaggle) and support for downloading it
+- Countries-by-continent lookup file stored in `data/lookups/` (snake_case filename)
 - **Complexity Enhancement:** Reset button using `@reactive.event(input.reset)` to restore all filters to defaults
 
 ### Changed
 - Moved data scripts from `data/` to `scripts/`
 - `cost_cat` filter changed from dropdown to radio buttons for better usability
 - Country dropdown now filters dynamically by selected region
+- Added/updated country name normalization to improve join consistency across sources
 
 ### Fixed
+- Removed unused `__init__.py`
 - Removed non-existent `shinywidgets==0.3.5` from `requirements.txt` — package not used in app
 - Fixed `shiny==1.2.1` to `shiny==1.3.0` after Posit Connect Cloud deployment failure
+- Fixed region assignment issues introduced by inconsistent country naming (via normalization + updated lookup)
 
 ### Known Issues
 - `plot_trend` color map uses region names but colors by country — lines fall back to default Plotly colors
