@@ -22,7 +22,8 @@ app_ui = ui.page_sidebar(
         ui.input_radio_buttons("cost_cat", "Cost Category", choices=cost_cats),
         title="Filters"
     ),
-    ui.h2("Global Cost of Healthy Diet Dashboard"),
+    ui.h1("Global Cost of a Healthy Diet"),
+    ui.h5("Measured in Purchase Power Parity, normalized to $USD"),
     
     # Row 1: 4 stat boxes
     ui.layout_columns(
@@ -128,10 +129,8 @@ def server(input, output, session):
     @render.ui
     def plot_map():
         data = filtered()
-        # agg = data.groupby("region")["cost_healthy_diet_ppp_usd"].mean().reset_index()
-        
-        # if agg.empty:
-        #     return ui.markdown("No data for the selected period.")
+        latest_year = max(data["year"])
+        data = data[ data["year"] == latest_year ]
 
         fig = px.choropleth(
             data,
