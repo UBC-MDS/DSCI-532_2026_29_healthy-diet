@@ -9,7 +9,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 ## [0.2.0] - 2026-02-28
 
 ### Added
-- 
+- App specification report (`reports/m2_spec.md`) with job stories, component inventory, reactivity diagram (Mermaid), and calculation details
 - 
 
 ### Changed
