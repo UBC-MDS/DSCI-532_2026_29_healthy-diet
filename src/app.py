@@ -1,8 +1,8 @@
 from shiny import App, ui, render, reactive, req
 import plotly.express as px
 import pandas as pd
-from data.download_data import download_dataset
-from data.clean_data import clean_dataset
+from scripts.download_data import download_dataset
+from scripts.clean_data import clean_dataset
 
 download_dataset()
 clean_dataset()
@@ -158,10 +158,9 @@ def server(input, output, session):
 
         fig = px.choropleth(
             data,
-            locations="country",
-            locationmode="country names",
-            color="cost_healthy_diet_ppp_usd",
-            hover_name="country",
+            locations=data["Alpha-3 code"],
+            color="cost_healthy_diet_ppp_usd", 
+            hover_name="country", 
             color_continuous_scale="rdylbu_r",
             projection="natural earth",
             title="Healthy Diet Cost Index by Country"
