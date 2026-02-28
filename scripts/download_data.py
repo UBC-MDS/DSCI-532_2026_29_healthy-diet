@@ -10,8 +10,13 @@ from pathlib import Path
 
 
 def download_dataset():
-    raw_data_path = Path(__file__).parent / "raw"
+    project_root = Path(__file__).resolve().parents[1]
+
+    raw_data_path = project_root / "data" / "raw"
+    lookup_data_path = project_root / "data" / "lookups"
+
     raw_data_path.mkdir(parents=True, exist_ok=True)
+    lookup_data_path.mkdir(parents=True, exist_ok=True)
 
     # download price of healthy diet dataset
     print("Downloading price-of-healthy-diet-clean from Kaggle...")
@@ -23,15 +28,15 @@ def download_dataset():
     ], check=True)
 
     # download countries-by-continent lookup dataset
-    print("Downloading countries-by-continent from Kaggle...")
+    print("Downloading countries-by-continent...")
     subprocess.run([
         "kaggle", "datasets", "download",
         "-d", "hserdaraltan/countries-by-continent",
-        "-p", str(raw_data_path),
+        "-p", str(lookup_data_path),
         "--unzip"
     ], check=True)
-
-    print(f"Done! Data saved to {raw_data_path}")
+    
+    print("Done!")
 
 
 if __name__ == "__main__":
