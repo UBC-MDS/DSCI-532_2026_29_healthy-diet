@@ -1,5 +1,6 @@
 from shiny import App, ui, render, reactive, req
 import plotly.express as px
+import os
 import pandas as pd
 from scripts.download_data import download_dataset
 from scripts.clean_data import clean_dataset
@@ -7,7 +8,8 @@ from scripts.clean_data import clean_dataset
 download_dataset()
 clean_dataset()
 
-df = pd.read_csv("data/processed/cleaned_price_of_healthy_diet.csv")
+base_dir = os.path.dirname(os.path.abspath(__file__))
+df = pd.read_csv(os.path.join(base_dir, "data/processed/cleaned_price_of_healthy_diet.csv"))
 regions = ["All"] + sorted(df["region"].dropna().unique().tolist()) #
 years = sorted(df["year"].unique().tolist())
 countries = ["All"] + sorted(df["country"].dropna().unique().tolist())
