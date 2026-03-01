@@ -14,13 +14,16 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - Sidebar with year slider, region dropdown, country dropdown, and cost category radio buttons
 - 4 KPI value boxes: number of countries, average, min, and max daily cost (USD)
 - Choropleth world map of healthy diet cost by country (`plot_map`)
+- Added color scale to world map based on theme- `rdylbu`
 - Line chart of top 10 countries with highest cost increase over selected period (`plot_trend`)
 - Bar chart of average cost by region (`bar_chart`)
 - Box plot of cost distribution by year and region (`plot_box`)
 - Dynamic country dropdown that updates based on selected region
+- General plotly-white theme added to all charts
 - `requirements.txt` and `environment.yml` with pinned versions for deployment and local dev
 - Demo GIF (`img/demo.gif`)
 - Countries-by-continent lookup data (Kaggle) and support for downloading it
+- Added lookup table for country ISO code (required by Choropleth chart)
 - Countries-by-continent lookup file stored in `data/lookups/` (snake_case filename)
 - **Complexity Enhancement:** Reset button using `@reactive.event(input.reset)` to restore all filters to defaults
 
@@ -29,6 +32,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - `cost_cat` filter changed from dropdown to radio buttons for better usability
 - Country dropdown now filters dynamically by selected region
 - Added/updated country name normalization to improve join consistency across sources
+- Minor edits to line and bar charts - data aggregations
 
 ### Fixed
 - Removed unused `__init__.py`
@@ -38,6 +42,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 
 ### Known Issues
 - `plot_trend` color map uses region names but colors by country — lines fall back to default Plotly colors
+- Data cleaning required for region and country data
 - Bar chart title says "Latest Year" but actually aggregates the full filtered year range
 - No app footer yet (authors, repo link, last updated)
 - Colorblind safety of `region_colors` and `rdylbu_r` palette not verified
