@@ -213,3 +213,5 @@ anaconda_projects/
 # Miscellaneous
 .vscode/
 .archive/
+# vscode
+.vscode/
