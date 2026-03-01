@@ -2,7 +2,7 @@
 
 |  |  |
 |--|--|
-| **Stable deployment (main)** | https://connect.posit.cloud/suryashchakravarty/content/019ca6ef-74fa-a36e-c837-851eb85c3f24 |
+| **Stable deployment (main)** | [https://connect.posit.cloud/suryashchakravarty/content/019ca6ef-74fa-a36e-c837-851eb85c3f24](https://019ca611-b9ae-8017-9eb5-09dec8e3e055.share.connect.posit.cloud/) |
 | **Preview deployment (dev)** | https://019ca57d-6583-da29-765f-1a716196111d.share.connect.posit.cloud/ |
 | Package | [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) |
 
