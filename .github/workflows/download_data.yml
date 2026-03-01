@@ -7,7 +7,7 @@ on:
       - main
       - milestone1
     paths:
-      - 'data/download_data.py'
+      - 'scripts/download_data.py'
 
 jobs:
   download-data:

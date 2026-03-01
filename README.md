@@ -1,10 +1,10 @@
 # Global Cost of a Healthy Diet Dashboard
 
-|        |        |
-|--------|--------|
-| Documentation | _Coming soon_ |
+|  |  |
+|--|--|
+| **Stable deployment (main)** | _Add main Posit URL here_ |
+| **Preview deployment (dev)** | https://019ca57d-6583-da29-765f-1a716196111d.share.connect.posit.cloud/ |
 | Package | [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) |
-| CI | _Coming soon_ |
 
 ## Contributors
 
@@ -17,6 +17,10 @@
 
 This dashboard enables cross-country and regional comparisons of the cost of a healthy diet from 2017 to 2024 using PPP-adjusted USD. Users can explore geographic patterns on a world map, compare trends over time for selected countries, and examine regional distributions to understand disparities in affordability. The app also supports quick identification of high-cost versus low-cost contexts using the dataset's `cost_category` classification. Intended users include policy analysts, public health researchers, and international development organizations.
 
+## Demo
+
+![App demo](img/demo.gif)
+
 ## Dataset
 
 The dataset contains **1,379 records** of country-year observations covering **175 countries** across **2017 to 2024**. Costs are reported in **Purchasing Power Parity (PPP) adjusted USD**, which supports cross-country comparisons by accounting for differences in cost of living.
@@ -26,53 +30,56 @@ The dataset contains **1,379 records** of country-year observations covering **1
 - `country`: country name
 - `region`: region grouping used for comparisons
 - `year`: year (2017 to 2024)
-- `cost_healthy_diet_ppp_usd`: daily cost of a healthy diet (PPP-adjusted USD). This is the primary metric used throughout the dashboard and is expected to be complete.
-- `cost_vegetables_ppp_usd`, `cost_fruits_ppp_usd`: component costs (PPP-adjusted USD). These may be sparse and are best used for exploratory checks rather than core comparisons.
-- `cost_category`: ordinal/categorical classification (for example, "High cost" vs "Low Cost"). A small fraction of values may be missing.
+- `cost_healthy_diet_ppp_usd`: daily cost of a healthy diet (PPP-adjusted USD). Primary metric, complete with no missing values.
+- `cost_vegetables_ppp_usd`, `cost_fruits_ppp_usd`: component costs (PPP-adjusted USD). Sparse — best used for exploratory checks only.
+- `cost_category`: classification ("High cost" vs "Low Cost"). ~1% missing values.
 
-## Repository structure
+## Repository Structure
 
-- `src/app.py`: Shiny for Python application entry point
-- `src/download_data.py`: helper used by the app to load and return the dataset (via `get_data()`)
-- `reports/`: project report materials (proposal, figures)
-- `img/`: figures used in the proposal and documentation
+- `src/app.py` — Shiny app entry point
+- `scripts/download_data.py` — downloads dataset from Kaggle
+- `scripts/clean_data.py` — cleans and joins with country code lookups
+- `data/raw/`, `data/processed/`, `data/lookups/` — raw, cleaned, and reference data
+- `reports/` — proposal and M2 spec
+- `img/` — figures and demo animation
+- `environment.yml` — conda environment for local development
+- `requirements.txt` — pinned pip dependencies used by Posit Connect Cloud for deployment
 
-## Setup
+## Contributing
 
-### 1) Create the conda environment
+See [CONTRIBUTING.md](CONTRIBUTING.md) for branching, commit, and pull request guidelines.
 
-From the repository root:
+## Local Setup
+
+### Option A — Conda (recommended)
+
+Installs all app dependencies plus Jupyter for notebooks.
 
 ```bash
 conda env create -f environment.yml
-````
-
-### 2) Activate the environment
-
-```bash
 conda activate 532-healthy-diet
 ```
 
-## Running the dashboard
+### Option B — pip
 
-From the repository root:
+Installs only what's needed to run the app (same packages used by Posit Connect Cloud).
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the app
 
 ```bash
 python -m shiny run --reload src/app.py
 ```
 
-Open the app in your browser at the URL printed in the terminal (for example, `http://127.0.0.1:8000`):
+Open `http://127.0.0.1:8000` in your browser.
 
-```bash
-Uvicorn running on http://127.0.0.1:8000
-```
+> **Kaggle API required:** The app downloads and cleans the dataset on first run. Set up `~/.kaggle/kaggle.json` locally, or export `KAGGLE_USERNAME` and `KAGGLE_KEY` as environment variables.
 
-* If your app relies on local data files, ensure `download_data.get_data()` can find them when run from the repository root.
+## How the App Works
 
-## How the app works (high level)
-
-* Filters: year range (slider), region, country, and cost category.
-* Outputs:
-
-  * Summary cards: number of countries, average/min/max daily cost
-  * Visuals: map, time trend line chart, average cost by region bar chart, and a boxplot over time
+- **Filters:** year range slider, region dropdown, country dropdown, cost category radio buttons — plus a Reset button to restore all defaults
+- **KPI cards:** number of countries, average, min, and max daily cost (USD/day)
+- **Visuals:** choropleth world map · top-10 cost increase line chart · average cost by region bar chart · cost distribution box plot by year
