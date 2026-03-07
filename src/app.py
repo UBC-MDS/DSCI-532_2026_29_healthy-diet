@@ -3,12 +3,63 @@ import plotly.express as px
 import pandas as pd
 from scripts.download_data import download_dataset
 from scripts.clean_data import clean_dataset
+from dotenv import load_dotenv
+import querychat
+import chatlas
+import os
 
+AI_AGENT = "claude-haiku-4-5"
+
+#Data loading
 download_dataset()
 clean_dataset()
 
 df = pd.read_csv("data/processed/cleaned_price_of_healthy_diet.csv")
-regions = ["All"] + sorted(df["region"].dropna().unique().tolist()) #
+
+#Query setup
+load_dotenv()
+anthropic_key = os.getenv("ANTHROPIC_API_KEY")
+
+GREETING = """
+ Welcome! I can help you explore the global cost of a healthy diet.
+
+Try one of these and ask:
+
+* <span class="suggestion">Which countries have the highest diet cost?</span>
+* <span class="suggestion">Show me average cost by region for 2023.</span>
+* <span class="suggestion">What is the cheapest country for a healthy diet?</span>
+* <span class="suggestion">What is the cost of healthy food in North America?</span>
+* <span class="suggestion">What is the average diet cost in Canada?</span>
+* <span class="suggestion">How has the cost of healthy food changed in Europe over time?</span>
+* <span class="suggestion">Which region has the most expensive healthy diet?</span>
+* <span class="suggestion">Compare diet costs between Africa and the Americas.</span>
+"""
+
+DATA_DESCRIPTION = """
+Global cost of a healthy diet cost dataset (2017 - 2024).
+Each row represents diet cost data for a country in a given year.
+Key columns:
+- country: country name
+- region: geographic region (Africa, Asia, Americas, Europe, Oceania)
+- year: year of observation
+- cost_category: type of food cost component
+- cost_healthy_diet_ppp_usd: cost in USD per person per day (PPP adjusted)
+- country_code: ISO country code
+"""
+
+qc = querychat.QueryChat(
+    df,
+    "healthy_diet_cost",
+    greeting=GREETING,
+    data_description=DATA_DESCRIPTION,
+    client=chatlas.ChatAnthropic(
+        api_key=anthropic_key,
+        model=AI_AGENT
+    ),
+)
+
+# Filter
+regions = ["All"] + sorted(df["region"].dropna().unique().tolist()) 
 years = sorted(df["year"].unique().tolist())
 countries = ["All"] + sorted(df["country"].dropna().unique().tolist())
 cost_cats = ["All"] + [c for c in df["cost_category"].dropna().unique().tolist()]
@@ -22,8 +73,10 @@ region_colors = {
 }
 
 # UI
-app_ui = ui.page_sidebar(
-    ui.sidebar(
+app_ui = ui.page_navbar(
+    ui.nav_panel("Dashboard",
+        ui.page_sidebar(
+            ui.sidebar(
         ui.input_slider("year", "Year", min(years), max(years), [min(years), max(years)], sep=""),
         ui.input_select("region", "Region", choices=regions),
         ui.input_select("country", "Country", choices=countries),
@@ -80,13 +133,38 @@ app_ui = ui.page_sidebar(
     
     # Row 4: Box plot
     ui.card(
-        # ui.card_header("Top 10 Countries"), 
         ui.output_ui("plot_box")
     )
+        )
+    ),
+
+    # AI Chatbot
+    ui.nav_panel("AI Chatbot",
+        ui.layout_columns(
+            ui.card(
+                ui.card_header("Ask about healthy diet cost around the world!"),
+                qc.ui(),
+            ),
+            ui.card(
+                ui.card_header("Filtered Data"),
+                ui.output_data_frame("chat_table"),
+            ),
+            col_widths=(5, 7)
+        )
+    ),
+
+    title="Global Cost of a Healthy Diet"
 )
 
 # Server
 def server(input, output, session):
+    #Chat query server
+    chat_result = qc.server()
+
+    @render.data_frame
+    def chat_table():
+        return chat_result.df()
+
     @reactive.effect
     @reactive.event(input.reset)
     def _():
@@ -158,7 +236,7 @@ def server(input, output, session):
 
         fig = px.choropleth(
             data,
-            locations=data["Alpha-3 code"],
+            locations=data["country_code"],
             color="cost_healthy_diet_ppp_usd", 
             hover_name="country", 
             color_continuous_scale="rdylbu_r",
