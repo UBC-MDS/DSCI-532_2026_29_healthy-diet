@@ -9,6 +9,8 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 ## [0.2.0] - 2026-02-28
 
 ### Added
+- App specification report (`reports/m2_spec.md`) with job stories, component inventory, reactivity diagram (Mermaid), and calculation details
+- 
 - App specification (`reports/m2_spec.md`) with job stories, component inventory, reactivity diagram, and calculation details
 - Deployed app on Posit Connect Cloud on `main` (stable) and `dev` (preview) branches
 - Sidebar with year slider, region dropdown, country dropdown, and cost category radio buttons

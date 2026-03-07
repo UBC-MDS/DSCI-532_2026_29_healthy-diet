@@ -4,7 +4,14 @@ import os
 import pandas as pd
 from scripts.download_data import download_dataset
 from scripts.clean_data import clean_dataset
+from dotenv import load_dotenv
+import querychat
+import chatlas
+import os
 
+AI_AGENT = "claude-haiku-4-5"
+
+#Data loading
 download_dataset()
 clean_dataset()
 
@@ -24,8 +31,10 @@ region_colors = {
 }
 
 # UI
-app_ui = ui.page_sidebar(
-    ui.sidebar(
+app_ui = ui.page_navbar(
+    ui.nav_panel("Dashboard",
+        ui.page_sidebar(
+            ui.sidebar(
         ui.input_slider("year", "Year", min(years), max(years), [min(years), max(years)], sep=""),
         ui.input_select("region", "Region", choices=regions),
         ui.input_select("country", "Country", choices=countries),
@@ -82,13 +91,38 @@ app_ui = ui.page_sidebar(
     
     # Row 4: Box plot
     ui.card(
-        # ui.card_header("Top 10 Countries"), 
         ui.output_ui("plot_box")
     )
+        )
+    ),
+
+    # AI Chatbot
+    ui.nav_panel("AI Chatbot",
+        ui.layout_columns(
+            ui.card(
+                ui.card_header("Ask about healthy diet cost around the world!"),
+                qc.ui(),
+            ),
+            ui.card(
+                ui.card_header("Filtered Data"),
+                ui.output_data_frame("chat_table"),
+            ),
+            col_widths=(5, 7)
+        )
+    ),
+
+    title="Global Cost of a Healthy Diet"
 )
 
 # Server
 def server(input, output, session):
+    #Chat query server
+    chat_result = qc.server()
+
+    @render.data_frame
+    def chat_table():
+        return chat_result.df()
+
     @reactive.effect
     @reactive.event(input.reset)
     def _():
@@ -160,7 +194,7 @@ def server(input, output, session):
 
         fig = px.choropleth(
             data,
-            locations=data["Alpha-3 code"],
+            locations=data["country_code"],
             color="cost_healthy_diet_ppp_usd", 
             hover_name="country", 
             color_continuous_scale="rdylbu_r",

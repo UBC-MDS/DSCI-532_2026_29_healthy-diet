@@ -24,3 +24,7 @@ dependencies:
 
   - pip:
       - kaggle==1.6.17
+      - python-dotenv
+      - anthropic
+      - chatlas
+      - querychat
