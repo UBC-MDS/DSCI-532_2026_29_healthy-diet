@@ -139,7 +139,6 @@ def clean_dataset() -> pd.DataFrame:
             "country_for_lookup",
             "Numeric",
             "Alpha-2 code",
-            "Alpha-3 code",
             "region_original",
         ],
         errors="ignore",

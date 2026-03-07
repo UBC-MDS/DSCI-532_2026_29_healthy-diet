@@ -27,25 +27,5 @@ def download_dataset():
         "--unzip"
     ], check=True)
 
-    # download countries-by-continent lookup dataset
-    print("Downloading countries-by-continent...")
-    subprocess.run([
-        "kaggle", "datasets", "download",
-        "-d", "hserdaraltan/countries-by-continent",
-        "-p", str(lookup_data_path),
-        "--unzip"
-    ], check=True)
-
-    # rename file to snake_case
-    original_file = lookup_data_path / "Countries by continents.csv"
-    renamed_file = lookup_data_path / "countries_by_continents.csv"
-
-    if original_file.exists():
-        original_file.rename(renamed_file)
-        print("Renamed to countries_by_continents.csv")
-    
-    print("Done!")
-
-
 if __name__ == "__main__":
     download_dataset()
