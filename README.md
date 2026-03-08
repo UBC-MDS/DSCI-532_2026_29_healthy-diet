@@ -10,11 +10,23 @@ An interactive dashboard for exploring the global cost of a healthy diet across 
 
 ---
 
+## Summary
+
+This dashboard enables cross-country and regional comparisons of the cost of a healthy diet from 2017 to 2024 using PPP-adjusted USD. Users can explore geographic patterns on a world map, compare trends over time for selected countries, and examine regional distributions to understand disparities in affordability. The app also supports quick identification of high-cost versus low-cost contexts using the dataset's cost_category classification. Intended users include policy analysts, public health researchers, and international development organizations.
+
+---
+
 ## Features
 
-**Dashboard** — Filter by year, region, country, and cost category. Explore a choropleth world map, regional cost comparisons, cost trends over time, and distribution by region.
+**Dashboard**: Filter by year, region, country, and cost category. Explore a choropleth world map, regional cost comparisons, cost trends over time, and distribution by region.
 
-**AI Chatbot** — Ask plain-English questions to filter and explore the data. Results update a table, bar chart, and trend line in real time. Filtered data can be downloaded as CSV.
+**AI Chatbot**: Ask plain-English questions to filter and explore the data. Results update a table, bar chart, and trend line in real time. Filtered data can be downloaded as CSV.
+
+---
+
+## Demo
+
+![App demo](img/demo.gif)
 
 ---
 
