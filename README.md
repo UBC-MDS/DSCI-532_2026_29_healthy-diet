@@ -141,3 +141,9 @@ This project uses the **Global Price of Healthy Diet Dataset** published by **FA
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for branching, commit, and pull request guidelines.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/UBC-MDS/DSCI-532_2026_29_healthy-diet?tab=MIT-1-ov-file).
