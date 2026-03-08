@@ -60,7 +60,7 @@ REGION_BOUNDS = {
 
 LABEL_MAX_COUNTRIES = 12
 
-# Chart height — fits two rows on a 13" MacBook without scrolling
+# Chart height
 # 100vh - navbar(48) - kpi(70) - gaps/padding(60) - 2×card-header(72) = ~calc
 CHART_H = "calc((100vh - 290px) / 2)"
 
@@ -319,7 +319,7 @@ app_ui = ui.page_navbar(
                 ui.tags.div(class_="sidebar-divider"),
                 ui.tags.button("Reset Filters", id="reset", class_="btn-reset",
                     onclick="Shiny.setInputValue('reset', Math.random())"),
-                # Interaction tip
+                
                 ui.tags.div(
                     ui.tags.strong("Tip"),
                     "Click any country on the map, a bar, a trend line, or a box to instantly filter the dashboard.",
@@ -333,7 +333,7 @@ app_ui = ui.page_navbar(
                 width=210,
             ),
 
-            # KPI row
+            
             ui.tags.div(
                 ui.tags.div(
                     ui.tags.p("Countries", class_="kpi-label"),
@@ -358,7 +358,7 @@ app_ui = ui.page_navbar(
                 class_="kpi-row",
             ),
 
-            # Row 1 — Map + Bar
+
             ui.layout_columns(
                 ui.card(
                     ui.card_header("Diet Cost Map"),
@@ -373,7 +373,7 @@ app_ui = ui.page_navbar(
                 col_widths=(7, 5),
             ),
 
-            # Row 2 — Trend + Box
+
             ui.layout_columns(
                 ui.card(
                     ui.card_header("Top Countries by Cost Increase"),
