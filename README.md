@@ -119,7 +119,7 @@ Dependencies install automatically from `requirements.txt`.
 
 ## Dataset
 
-This project uses the **Global Price of Healthy Diet Dataset** published by **FAO and the World Bank** and available on Kaggle.
+This project uses the Global Price of Healthy Diet Dataset published by **FAO and the World Bank** and available on Kaggle.
 
 - **Source:**  [Global Price of Healthy Diet Dataset (Kaggle)](https://www.kaggle.com/datasets/ibrahimshahrukh/global-price-of-healthy-diet-dataset)
 
