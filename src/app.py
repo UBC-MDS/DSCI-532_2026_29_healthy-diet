@@ -66,13 +66,22 @@ qc = QueryChat(
 CUSTOM_CSS = ui.tags.style("""
   /* ── Reset & Base ─────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; }
-  body {
+
+    html, body {
+    height: 100%;
+    }
+
+    body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 13px;
     color: #1a2332;
     background: #edf0f4;
     margin: 0;
-  }
+    }
+
+    .bslib-sidebar-layout {
+    height: calc(100vh - 48px);
+    }
 
   /* ── Navbar — white bg, dark text ─────────────────────── */
   .navbar {
@@ -217,9 +226,9 @@ CUSTOM_CSS = ui.tags.style("""
   .kpi-card {
     background: #1e3a5f;
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 8px 12px;
     color: #ffffff;
-    min-height: 72px;
+    min-height: 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -260,7 +269,7 @@ CUSTOM_CSS = ui.tags.style("""
     padding: 9px 14px;
     letter-spacing: 0.2px;
   }
-  .card-body { padding: 6px; }
+  .card-body { padding: 3px; }
 
   /* ── Layout columns gap ─────────────────────────────────── */
   .layout-columns { gap: 10px !important; }
@@ -273,7 +282,7 @@ CUSTOM_CSS = ui.tags.style("""
 
   /* Dashboard page padding */
   .bslib-sidebar-layout > .main {
-    padding: 14px;
+    padding: 0px 10px 10px 10px;
     overflow-y: auto;
   }
 
@@ -446,20 +455,17 @@ app_ui = ui.page_navbar(
                     class_="btn-reset",
                     onclick="Shiny.setInputValue('reset', Math.random())",
                 ),
+                ui.tags.p(
+                    " · PPP-adjusted USD",
+                    ui.tags.br(),
+                    " · Source: FAO/World Bank",
+                    ui.tags.br(),
+                    style="font-size:11px; color:#94a3b8; margin-top:0px; line-height:1",
+                ),
                 width=210,
             ),
 
             # ── Main area ───────────────────────────────────────────────────
-            # Header
-            ui.div(
-                ui.tags.h1("Global Cost of a Healthy Diet", class_="dash-title"),
-                ui.tags.p(
-                    "PPP-adjusted USD per person per day  ·  Source: FAO / World Bank",
-                    class_="dash-sub"
-                ),
-                class_="dash-header",
-            ),
-
             # KPI cards — custom HTML so we fully control colours
             ui.tags.div(
                 ui.tags.div(
@@ -566,7 +572,7 @@ app_ui = ui.page_navbar(
         )
     ),
 
-    title="Healthy Diet Dashboard",
+    title="Global Cost of a Healthy Diet",
     navbar_options=ui.navbar_options(bg="#ffffff", inverse=False),
 )
 
@@ -606,12 +612,12 @@ def server(input, output, session):
                      labels={"cost_healthy_diet_ppp_usd": "USD/day", "region": "Region"},
                      text_auto=".2f")
         fig.update_traces(textposition="outside", textfont_size=9, marker_line_width=0)
-        _apply_chart_style(fig, height=240)
+        _apply_chart_style(fig)
         fig.update_layout(
             xaxis=dict(tickangle=-30, tickfont_size=10, title=None),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn"))
+        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
 
     @output
     @render.ui
@@ -626,13 +632,13 @@ def server(input, output, session):
                       markers=True,
                       labels={"cost_healthy_diet_ppp_usd": "USD/day",
                               "year": "Year", "region": "Region"})
-        _apply_chart_style(fig, height=240)
+        _apply_chart_style(fig)
         fig.update_layout(
             legend=dict(font_size=9, x=1.01, y=1, bgcolor="rgba(0,0,0,0)"),
             xaxis=dict(tickformat="d", dtick=1, tickfont_size=10, title="Year"),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn"))
+        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
 
     # ── Reset ──────────────────────────────────────────────────────────────────
     @reactive.effect
@@ -767,7 +773,6 @@ def server(input, output, session):
             ))
 
         fig.update_layout(
-            height=330,
             margin={"r": 0, "t": 4, "l": 0, "b": 0},
             paper_bgcolor="#ffffff",
             coloraxis_colorbar=dict(
@@ -776,7 +781,7 @@ def server(input, output, session):
             ),
             font_size=11,
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn"))
+        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
 
     # ── Bar chart ──────────────────────────────────────────────────────────────
     @output
@@ -793,13 +798,13 @@ def server(input, output, session):
                      labels={"cost_healthy_diet_ppp_usd": "USD/day", "region": "Region"},
                      text_auto=".2f")
         fig.update_traces(textposition="outside", textfont_size=9, marker_line_width=0)
-        _apply_chart_style(fig, height=330)
+        _apply_chart_style(fig)
         fig.update_layout(
             showlegend=False,
             xaxis=dict(tickangle=-30, tickfont_size=10, title=None),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn"))
+        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
 
     # ── Trend line ─────────────────────────────────────────────────────────────
     @output
@@ -825,14 +830,14 @@ def server(input, output, session):
             labels={"cost_healthy_diet_ppp_usd": "Cost (USD/day)",
                     "year": "Year", "country": "Country"},
         )
-        _apply_chart_style(fig, height=300)
+        _apply_chart_style(fig)
         fig.update_layout(
             legend=dict(orientation="v", x=1.02, y=1,
                         font_size=9, bgcolor="rgba(0,0,0,0)"),
             xaxis=dict(tickformat="d", dtick=1, tickfont_size=10, title="Year"),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn"))
+        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
 
     # ── Box plot ───────────────────────────────────────────────────────────────
     @output
@@ -848,21 +853,20 @@ def server(input, output, session):
             labels={"cost_healthy_diet_ppp_usd": "Cost (USD/day)",
                     "year": "Year", "region": "Region"},
         )
-        _apply_chart_style(fig, height=300)
+        _apply_chart_style(fig)
         fig.update_layout(
             legend=dict(orientation="v", x=1.02, y=1,
                         font_size=9, bgcolor="rgba(0,0,0,0)"),
             xaxis=dict(type="category", tickfont_size=10, title="Year"),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn"))
+        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
 
 
 # ── Shared chart helpers ───────────────────────────────────────────────────────
-def _apply_chart_style(fig, height=300):
+def _apply_chart_style(fig):
     fig.update_layout(
         template="plotly_white",
-        height=height,
         margin={"t": 10, "b": 46, "l": 46, "r": 10},
         plot_bgcolor="#ffffff",
         paper_bgcolor="#ffffff",
