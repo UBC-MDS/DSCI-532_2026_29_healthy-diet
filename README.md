@@ -112,15 +112,20 @@ Dependencies install automatically from `requirements.txt`.
 
 ## Dataset
 
-**Source:** FAO / World Bank via Kaggle, 1,379 records, 175 countries, 2017–2024.
+This project uses the **Global Price of Healthy Diet Dataset** published by **FAO and the World Bank** and available on Kaggle.
+
+**Source:**  
+[Global Price of Healthy Diet Dataset (Kaggle)](https://www.kaggle.com/datasets/ibrahimshahrukh/global-price-of-healthy-diet-dataset)
+
+**Coverage:** 1,379 records across **175 countries** from **2017–2024**.
 
 | Column | Description |
 |---|---|
 | `country` | Country name |
 | `region` | Regional grouping |
-| `year` | Year (2017–2024) |
-| `cost_healthy_diet_ppp_usd` | Daily cost in PPP-adjusted USD, primary metric |
-| `cost_category` | "High Cost" or "Low Cost" classification |
+| `year` | Year of observation (2017–2024) |
+| `cost_healthy_diet_ppp_usd` | Daily cost of a healthy diet in PPP-adjusted USD |
+| `cost_category` | Classification: "High Cost" or "Low Cost" |
 
 ---
 
