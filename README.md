@@ -6,8 +6,6 @@
 | **Preview** | https://019ca57d-6583-da29-765f-1a716196111d.share.connect.posit.cloud/ |
 | **Python** | [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) |
 
-An interactive dashboard for exploring the global cost of a healthy diet across 175 countries from 2017 to 2024. All costs are PPP-adjusted USD per person per day.
-
 ---
 
 ## Summary
@@ -27,15 +25,6 @@ This dashboard enables cross-country and regional comparisons of the cost of a h
 ## Demo
 
 ![App demo](img/demo.gif)
-
----
-
-## Contributors
-
-- [Jade Chen](https://github.com/jadeeechen)
-- [Hooman Esteki](https://github.com/hoomanesteki)
-- [Luis Alvarez](https://github.com/luisalonso8)
-- [Suryash Chakravarty](https://github.com/suryashch)
 
 ---
 
@@ -132,6 +121,15 @@ Dependencies install automatically from `requirements.txt`.
 | `year` | Year (2017–2024) |
 | `cost_healthy_diet_ppp_usd` | Daily cost in PPP-adjusted USD — primary metric |
 | `cost_category` | "High Cost" or "Low Cost" classification |
+
+---
+
+## Contributors
+
+- [Jade Chen](https://github.com/jadeeechen)
+- [Hooman Esteki](https://github.com/hoomanesteki)
+- [Luis Alvarez](https://github.com/luisalonso8)
+- [Suryash Chakravarty](https://github.com/suryashch)
 
 ---
 
