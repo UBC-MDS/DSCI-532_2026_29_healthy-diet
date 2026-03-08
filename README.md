@@ -16,7 +16,7 @@ This dashboard enables cross-country and regional comparisons of the cost of a h
 
 ## Features
 
-**Dashboard**  
+### Dashboard
 Filter by year range, region, country, and cost category. Includes a Reset button to restore all defaults.
 - **KPI cards**: countries count, average, min, and max daily cost
 - **Choropleth map**: diet cost by country for the latest selected year, with region zoom
@@ -24,7 +24,7 @@ Filter by year range, region, country, and cost category. Includes a Reset butto
 - **Line chart**: top 10 countries with the highest cost increase over the selected period
 - **Box plot**: cost distribution by region over time
 
-**AI Chatbot**  
+### AI Chatbot
 Ask plain-English questions to filter and explore the data. Results update a table, bar chart, and trend line in real time. Filtered data can be downloaded as CSV.
 
 ---
