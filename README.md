@@ -52,13 +52,13 @@ pip install -r requirements.txt
 
 ### 3. API Keys
 
-**Anthropic** — required for the AI Chatbot tab. Create `src/.env`:
+**Anthropic**: required for the AI Chatbot tab. Create `src/.env`:
 ```
 ANTHROPIC_API_KEY=sk-ant-your-key-here
 ```
 > Get a key at https://console.anthropic.com. The Dashboard tab works without it.
 
-**Kaggle** — required to download the dataset on first run. Add to `~/.kaggle/kaggle.json` or set as environment variables:
+**Kaggle**: required to download the dataset on first run. Add to `~/.kaggle/kaggle.json` or set as environment variables:
 ```
 KAGGLE_USERNAME=your-username
 KAGGLE_KEY=your-key
@@ -95,7 +95,7 @@ Dependencies install automatically from `requirements.txt`.
 ├── requirements.txt      # Pip dependencies (deployment)
 ├── src/
 │   ├── app.py            # Shiny application
-│   ├── .env              # API keys — do not commit
+│   ├── .env              # API keys, do not commit
 │   ├── scripts/
 │   │   ├── download_data.py
 │   │   └── clean_data.py
@@ -112,14 +112,14 @@ Dependencies install automatically from `requirements.txt`.
 
 ## Dataset
 
-**Source:** FAO / World Bank via Kaggle — 1,379 records, 175 countries, 2017–2024.
+**Source:** FAO / World Bank via Kaggle, 1,379 records, 175 countries, 2017–2024.
 
 | Column | Description |
 |---|---|
 | `country` | Country name |
 | `region` | Regional grouping |
 | `year` | Year (2017–2024) |
-| `cost_healthy_diet_ppp_usd` | Daily cost in PPP-adjusted USD — primary metric |
+| `cost_healthy_diet_ppp_usd` | Daily cost in PPP-adjusted USD, primary metric |
 | `cost_category` | "High Cost" or "Low Cost" classification |
 
 ---
