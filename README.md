@@ -146,7 +146,7 @@ This project uses the **Global Price of Healthy Diet Dataset** published by **FA
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for branching, commit, and pull request guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING) for branching, commit, and pull request guidelines.
 
 ---
 
