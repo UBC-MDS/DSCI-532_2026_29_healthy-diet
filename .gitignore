@@ -215,3 +215,7 @@ anaconda_projects/
 .archive/
 # vscode
 .vscode/
+
+# Auto-generated data files
+src/data/raw/
+src/data/processed/

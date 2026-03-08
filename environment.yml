@@ -6,6 +6,7 @@ channels:
 
 dependencies:
   - python=3.11.9
+  - pip
 
   # Data Handling
   - pandas=2.2.3
@@ -16,11 +17,14 @@ dependencies:
 
   # Dashboard
   - shiny=1.3.0
-  - shinywidgets=0.3.4
 
-  # Development (local only — not needed for deployment)
+  # Development
   - jupyterlab=4.3.3
   - ipykernel=6.29.5
 
   - pip:
       - kaggle==1.6.17
+      - python-dotenv==0.21.0
+      - anthropic==0.84.0
+      - chatlas==0.15.2
+      - querychat==0.5.1
