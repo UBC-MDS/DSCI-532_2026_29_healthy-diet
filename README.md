@@ -2,7 +2,7 @@
 
 |  |  |
 |--|--|
-| **Stable (Main)** | https://019ca611-b9ae-8017-9eb5-09dec8e3e055.share.connect.posit.cloud/ |
+| **Stable (Main)** | https://019ccb82-c3da-5076-ba41-e24219796f3d.share.connect.posit.cloud/ |
 | **Preview (Dev)** | https://019ca57d-6583-da29-765f-1a716196111d.share.connect.posit.cloud/ |
 | **Python** | [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) |
 
