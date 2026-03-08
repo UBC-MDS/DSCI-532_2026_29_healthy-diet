@@ -2,8 +2,8 @@
 
 |  |  |
 |--|--|
-| **Stable** | https://connect.posit.cloud/suryashchakravarty/content/019ca6ef-74fa-a36e-c837-851eb85c3f24 |
-| **Preview** | https://019ca57d-6583-da29-765f-1a716196111d.share.connect.posit.cloud/ |
+| **Stable (Main)** | https://connect.posit.cloud/suryashchakravarty/content/019ca6ef-74fa-a36e-c837-851eb85c3f24 |
+| **Preview (Dev)** | https://019ca57d-6583-da29-765f-1a716196111d.share.connect.posit.cloud/ |
 | **Python** | [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) |
 
 ---
