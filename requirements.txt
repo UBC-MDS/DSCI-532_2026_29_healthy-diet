@@ -8,7 +8,7 @@ plotly==5.24.1
 # Shiny Dashboard
 shiny==1.3.0
 
-# Data Download (Kaggle API)
+# Data Download
 kaggle==1.6.17
 
 # AI Chatbot
