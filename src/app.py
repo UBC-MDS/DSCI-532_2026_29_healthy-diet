@@ -26,6 +26,9 @@ years     = sorted(df["year"].unique().tolist())
 countries = ["All"] + sorted(df["country"].dropna().unique().tolist())
 cost_cats = ["All"] + sorted(df["cost_category"].dropna().unique().tolist())
 
+# Lookup: country → region (used by click handlers)
+country_to_region = df.drop_duplicates("country").set_index("country")["region"].to_dict()
+
 DEFAULT_YEAR_MIN = min(years)
 DEFAULT_REGION   = "All"
 DEFAULT_COUNTRY  = "All"
@@ -57,33 +60,56 @@ REGION_BOUNDS = {
 
 LABEL_MAX_COUNTRIES = 12
 
+# Chart height — fits two rows on a 13" MacBook without scrolling
+# 100vh - navbar(48) - kpi(70) - gaps/padding(60) - 2×card-header(72) = ~calc
+CHART_H = "calc((100vh - 290px) / 2)"
+
 qc = QueryChat(
     df, "diet_data",
     client=chatlas.ChatAnthropic(model=AI_AGENT),
 )
 
+
+# ── JS helper: attach Plotly click handler ────────────────────────────────────
+def _click_js(div_id: str, shiny_input: str, extractor: str) -> str:
+    return f"""
+<script>
+(function() {{
+  function tryAttach() {{
+    var el = document.getElementById('{div_id}');
+    if (el && el.layout !== undefined) {{
+      el.on('plotly_click', function(d) {{
+        if (!d || !d.points || !d.points.length) return;
+        var pt = d.points[0];
+        var val = {extractor};
+        if (val) Shiny.setInputValue('{shiny_input}', String(val), {{priority: 'event'}});
+      }});
+    }} else {{
+      setTimeout(tryAttach, 150);
+    }}
+  }}
+  tryAttach();
+}})();
+</script>"""
+
+
 # ── CSS ────────────────────────────────────────────────────────────────────────
 CUSTOM_CSS = ui.tags.style("""
-  /* ── Reset & Base ─────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; }
 
-    html, body {
-    height: 100%;
-    }
+  html, body { height: 100%; }
 
-    body {
+  body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 13px;
     color: #1a2332;
     background: #edf0f4;
     margin: 0;
-    }
+  }
 
-    .bslib-sidebar-layout {
-    height: calc(100vh - 48px);
-    }
+  .bslib-sidebar-layout { height: calc(100vh - 48px); }
 
-  /* ── Navbar — white bg, dark text ─────────────────────── */
+  /* ── Navbar ─────────────────────────────────────────────── */
   .navbar {
     background: #ffffff !important;
     border-bottom: 2px solid #e2e8f0 !important;
@@ -92,16 +118,12 @@ CUSTOM_CSS = ui.tags.style("""
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   }
   .navbar .navbar-brand {
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    color: #1a2332 !important;
-    padding: 12px 0 !important;
+    font-size: 14px !important; font-weight: 700 !important;
+    color: #1a2332 !important; padding: 12px 0 !important;
   }
   .navbar .nav-link {
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    color: #4a5568 !important;
-    padding: 14px 16px !important;
+    font-size: 13px !important; font-weight: 500 !important;
+    color: #4a5568 !important; padding: 14px 16px !important;
     border-bottom: 3px solid transparent;
     transition: color 0.15s, border-color 0.15s;
   }
@@ -112,361 +134,206 @@ CUSTOM_CSS = ui.tags.style("""
     font-weight: 600 !important;
   }
 
-  /* ── Sidebar ───────────────────────────────────────────── */
+  /* ── Sidebar ────────────────────────────────────────────── */
   .bslib-sidebar-layout > .sidebar {
     background: #ffffff;
     border-right: 1px solid #dde3ea;
-    padding: 10px 12px;
+    padding: 8px 12px;
     overflow-y: auto;
     min-height: 100%;
   }
-  /* Hide default bslib "Filters" title */
   .bslib-sidebar-layout > .sidebar > .h4,
-  .bslib-sidebar-layout > .sidebar > hr {
-    display: none !important;
-  }
+  .bslib-sidebar-layout > .sidebar > hr { display: none !important; }
 
-  /* Kill ALL default spacing on input containers */
   .sidebar .shiny-input-container {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    margin-top: 0 !important; margin-bottom: 0 !important;
+    padding-top: 0 !important; padding-bottom: 0 !important;
   }
-
-  /* Filter group labels */
   .sidebar .control-label,
   .sidebar .shiny-input-container > label {
-    font-size: 10px !important;
-    font-weight: 700 !important;
-    color: #64748b !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.7px !important;
-    margin-bottom: 3px !important;
-    margin-top: 0 !important;
-    display: block !important;
-    line-height: 1.2 !important;
+    font-size: 10px !important; font-weight: 700 !important;
+    color: #64748b !important; text-transform: uppercase !important;
+    letter-spacing: 0.7px !important; margin-bottom: 3px !important;
+    margin-top: 0 !important; display: block !important; line-height: 1.2 !important;
   }
-
-  /* Radio group label */
   .sidebar .shiny-input-radiogroup > .control-label {
-    font-size: 10px !important;
-    font-weight: 700 !important;
-    color: #64748b !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.7px !important;
-    margin-bottom: 3px !important;
-    margin-top: 0 !important;
+    font-size: 10px !important; font-weight: 700 !important;
+    color: #64748b !important; text-transform: uppercase !important;
+    letter-spacing: 0.7px !important; margin-bottom: 3px !important; margin-top: 0 !important;
   }
-  /* Radio rows — tight */
-  .sidebar .radio {
-    margin: 0 !important;
-    padding: 1px 0 !important;
-    line-height: 1.35 !important;
-  }
+  .sidebar .radio { margin: 0 !important; padding: 1px 0 !important; line-height: 1.35 !important; }
   .sidebar .radio label {
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    color: #1a2332 !important;
-    text-transform: none !important;
-    letter-spacing: 0 !important;
-    cursor: pointer;
-    padding-left: 4px;
-    line-height: 1.35 !important;
+    font-size: 12px !important; font-weight: 400 !important;
+    color: #1a2332 !important; text-transform: none !important;
+    letter-spacing: 0 !important; cursor: pointer;
+    padding-left: 4px; line-height: 1.35 !important;
   }
-  .sidebar .shiny-options-group {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Select dropdowns */
+  .sidebar .shiny-options-group { margin: 0 !important; padding: 0 !important; }
   .sidebar .form-select {
-    font-size: 13px !important;
-    border: 1px solid #cbd5e0;
-    border-radius: 6px;
-    padding: 4px 10px;
-    color: #1a2332;
-    background-color: #fff;
-    margin-top: 0 !important;
+    font-size: 13px !important; border: 1px solid #cbd5e0;
+    border-radius: 6px; padding: 4px 10px;
+    color: #1a2332; background-color: #fff; margin-top: 0 !important;
   }
   .sidebar .form-select:focus {
-    border-color: #3b82f6;
-    outline: none;
+    border-color: #3b82f6; outline: none;
     box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
   }
-
-  /* Slider */
   .sidebar .js-irs-0, .sidebar .js-irs-1 { margin-bottom: 0 !important; }
-  .sidebar .irs { margin-bottom: 0 !important; }
+  .sidebar .irs { margin-bottom: 0 !important; margin-top: 0 !important; }
+  .sidebar .irs--shiny { margin: 0 !important; }
   .sidebar .irs--shiny .irs-grid-text { font-size: 10px; color: #718096; }
   .sidebar .irs--shiny .irs-single,
   .sidebar .irs--shiny .irs-from,
   .sidebar .irs--shiny .irs-to {
-    font-size: 10px !important;
-    background: #3b82f6 !important;
-    border-radius: 4px;
+    font-size: 10px !important; background: #3b82f6 !important; border-radius: 4px;
   }
   .sidebar .irs--shiny .irs-bar { background: #3b82f6; border-color: #3b82f6; }
   .sidebar .irs--shiny .irs-handle { border-color: #3b82f6; }
+  .sidebar-divider { height: 1px; background: #e8ecf0; margin: 4px 0; }
 
-  /* Thin divider between filter groups */
-  .sidebar-divider {
-    height: 1px;
-    background: #e8ecf0;
-    margin: 6px 0;
+  /* Interaction tip box */
+  .interact-tip {
+    background: #f0f4ff;
+    border: 1px solid #c7d7f9;
+    border-radius: 6px;
+    padding: 6px 9px;
+    margin-top: 4px;
+    font-size: 10px;
+    color: #3b5bdb;
+    line-height: 1.5;
   }
+  .interact-tip strong { font-weight: 700; display: block; margin-bottom: 2px; }
 
-  /* ── KPI metric cards (custom, not value-box) ──────────── */
+  /* ── KPI cards ──────────────────────────────────────────── */
   .kpi-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-bottom: 12px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 8px; margin-bottom: 8px;
   }
   .kpi-card {
-    background: #1e3a5f;
-    border-radius: 8px;
-    padding: 8px 12px;
-    color: #ffffff;
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background: #1e3a5f; border-radius: 8px; padding: 7px 12px;
+    color: #ffffff; min-height: 54px; display: flex;
+    flex-direction: column; justify-content: space-between;
   }
   .kpi-card:nth-child(2) { background: #1a5276; }
   .kpi-card:nth-child(3) { background: #1f618d; }
   .kpi-card:nth-child(4) { background: #2471a3; }
   .kpi-label {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.7px;
-    color: rgba(255,255,255,0.75);
-    margin: 0 0 4px 0;
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.7px; color: rgba(255,255,255,0.75); margin: 0 0 2px 0;
   }
-  .kpi-value {
-    font-size: 26px;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1;
-    margin: 0;
-  }
+  .kpi-value { font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1; margin: 0; }
 
-  /* ── Cards ─────────────────────────────────────────────── */
+  /* ── Cards ──────────────────────────────────────────────── */
   .card {
-    border: 1px solid #dde3ea;
-    border-radius: 8px;
+    border: 1px solid #dde3ea; border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    background: #ffffff;
-    overflow: hidden;
+    background: #ffffff; overflow: hidden;
   }
   .card-header {
-    font-size: 12px;
-    font-weight: 700;
-    color: #2d3748;
-    background: #ffffff;
-    border-bottom: 1px solid #edf2f7;
-    padding: 9px 14px;
-    letter-spacing: 0.2px;
+    font-size: 12px; font-weight: 700; color: #2d3748;
+    background: #ffffff; border-bottom: 1px solid #edf2f7;
+    padding: 7px 14px; letter-spacing: 0.2px;
   }
-  .card-body { padding: 3px; }
+  .card-body { padding: 2px; }
 
-  /* ── Layout columns gap ─────────────────────────────────── */
-  .layout-columns { gap: 10px !important; }
-
-  /* Gap between the chart rows */
+  /* ── Layout ─────────────────────────────────────────────── */
+  .layout-columns { gap: 8px !important; }
   .bslib-sidebar-layout > .main > .layout-columns + .layout-columns {
-    margin-top: 14px !important;
+    margin-top: 8px !important;
   }
-  .kpi-row + .layout-columns { margin-top: 10px !important; }
-
-  /* Dashboard page padding */
+  .kpi-row + .layout-columns { margin-top: 8px !important; }
   .bslib-sidebar-layout > .main {
-    padding: 0px 10px 10px 10px;
-    overflow-y: auto;
+    padding: 8px 10px 8px 10px; overflow-y: auto;
   }
 
-  /* Page header */
-  .dash-header {
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e2e8f0;
-  }
-  .dash-title {
-    font-size: 17px;
-    font-weight: 700;
-    color: #1a2332;
-    margin: 0 0 2px 0;
-    line-height: 1.2;
-  }
-  .dash-sub {
-    font-size: 11px;
-    color: #94a3b8;
-    margin: 0;
-  }
+  /* Clickable chart cursor */
+  .js-plotly-plot { cursor: pointer; }
 
-  /* Map hint */
-  .map-hint {
-    font-size: 11px;
-    color: #94a3b8;
-    text-align: right;
-    padding: 2px 12px 0 0;
-    margin: 0;
-    font-style: italic;
-  }
-
-  /* ── Chat tab — full viewport, no page scroll ────────────── */
+  /* ── Chat tab ───────────────────────────────────────────── */
   .chat-page {
-    height: calc(100vh - 52px);
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
-    overflow: hidden;
-    background: #edf0f4;
-    box-sizing: border-box;
+    height: calc(100vh - 52px); display: flex; flex-direction: column;
+    padding: 12px; overflow: hidden; background: #edf0f4; box-sizing: border-box;
   }
-  .chat-cols {
-    display: flex;
-    flex: 1;
-    gap: 10px;
-    overflow: hidden;
-    min-height: 0;
-  }
-  /* Left column — chat widget fills height, messages scroll */
+  .chat-cols { display: flex; flex: 1; gap: 10px; overflow: hidden; min-height: 0; }
   .chat-left {
-    flex: 0 0 38%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    min-height: 0;
+    flex: 0 0 38%; display: flex; flex-direction: column; overflow: hidden; min-height: 0;
   }
-  .chat-left > .card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    min-height: 0;
-  }
+  .chat-left > .card { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-height: 0; }
   .chat-left > .card > .card-body {
-    flex: 1;
-    overflow: hidden;
-    padding: 0 !important;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
+    flex: 1; overflow: hidden; padding: 0 !important;
+    display: flex; flex-direction: column; min-height: 0;
   }
-  /* querychat inner wrapper — let it scroll */
   .chat-left .shiny-html-output,
   .chat-left [class*="querychat"],
   .chat-left [class*="chat"] {
-    flex: 1;
-    overflow-y: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    min-height: 0;
+    flex: 1; overflow-y: auto !important;
+    display: flex !important; flex-direction: column !important; min-height: 0;
   }
-  /* Right column — scrollable */
   .chat-right {
-    flex: 0 0 calc(62% - 10px);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    min-height: 0;
+    flex: 0 0 calc(62% - 10px); overflow-y: auto;
+    display: flex; flex-direction: column; gap: 10px; min-height: 0;
   }
 
   /* Reset button */
   .btn-reset {
-    width: 100%;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1.5px solid #e53e3e;
-    color: #e53e3e;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.15s;
+    width: 100%; font-size: 12px; font-weight: 600;
+    padding: 6px 12px; border-radius: 6px;
+    border: 1.5px solid #e53e3e; color: #e53e3e;
+    background: transparent; cursor: pointer; transition: all 0.15s;
   }
-  .btn-reset:hover {
-    background: #e53e3e;
-    color: #fff;
-  }
+  .btn-reset:hover { background: #e53e3e; color: #fff; }
 """)
-
-
-# ── helper: custom KPI row ─────────────────────────────────────────────────────
-def kpi_card(label, output_id):
-    return ui.tags.div(
-        ui.tags.p(label, class_="kpi-label"),
-        ui.output_text(output_id),
-        class_="kpi-card",
-        # wrap value in a p tag via CSS; output_text renders inline
-    )
 
 
 # ── UI ─────────────────────────────────────────────────────────────────────────
 app_ui = ui.page_navbar(
 
-    # ── Dashboard ──────────────────────────────────────────────────────────────
     ui.nav_panel("Dashboard",
         CUSTOM_CSS,
         ui.page_sidebar(
-            # ── Sidebar ─────────────────────────────────────────────────────
             ui.sidebar(
-                # Year Range
                 ui.tags.div(
-                    ui.input_slider(
-                        "year", "Year Range",
+                    ui.input_slider("year", "Year Range",
                         min=min(years), max=max(years),
-                        value=[DEFAULT_YEAR_MIN, max(years)],
-                        sep="", step=1,
-                    ),
+                        value=[DEFAULT_YEAR_MIN, max(years)], sep="", step=1),
                     style="margin-bottom:0;",
                 ),
                 ui.tags.div(class_="sidebar-divider"),
-                # Cost Category
                 ui.tags.div(
-                    ui.input_radio_buttons(
-                        "cost_cat", "Cost Category",
-                        choices=cost_cats, selected="All",
-                    ),
+                    ui.input_radio_buttons("cost_cat", "Cost Category",
+                        choices=cost_cats, selected="All"),
                     style="margin-bottom:0;",
                 ),
                 ui.tags.div(class_="sidebar-divider"),
-                # Region + Country
                 ui.tags.div(
                     ui.input_select("region", "Region",
-                                    choices=regions, selected=DEFAULT_REGION),
-                    style="margin-bottom:6px;",
+                        choices=regions, selected=DEFAULT_REGION),
+                    style="margin-bottom:4px;",
                 ),
                 ui.tags.div(
                     ui.input_select("country", "Country",
-                                    choices=["All"] + sorted(
-                                        df["country"].dropna().unique().tolist()
-                                    ),
-                                    selected=DEFAULT_COUNTRY),
+                        choices=["All"] + sorted(df["country"].dropna().unique().tolist()),
+                        selected=DEFAULT_COUNTRY),
                     style="margin-bottom:0;",
                 ),
                 ui.tags.div(class_="sidebar-divider"),
-                ui.tags.button(
-                    "Reset Filters",
-                    id="reset",
-                    class_="btn-reset",
-                    onclick="Shiny.setInputValue('reset', Math.random())",
+                ui.tags.button("Reset Filters", id="reset", class_="btn-reset",
+                    onclick="Shiny.setInputValue('reset', Math.random())"),
+                # Interaction tip
+                ui.tags.div(
+                    ui.tags.strong("Tip"),
+                    "Click any country on the map, a bar, a trend line, or a box to instantly filter the dashboard.",
+                    class_="interact-tip",
                 ),
                 ui.tags.p(
-                    " · PPP-adjusted USD",
-                    ui.tags.br(),
-                    " · Source: FAO/World Bank",
-                    ui.tags.br(),
-                    style="font-size:11px; color:#94a3b8; margin-top:0px; line-height:1",
+                    " · PPP-adjusted USD", ui.tags.br(),
+                    " · Source: FAO/World Bank", ui.tags.br(),
+                    style="font-size:11px; color:#94a3b8; margin-top:4px; line-height:1.4",
                 ),
                 width=210,
             ),
 
-            # ── Main area ───────────────────────────────────────────────────
-            # KPI cards — custom HTML so we fully control colours
+            # KPI row
             ui.tags.div(
                 ui.tags.div(
                     ui.tags.p("Countries", class_="kpi-label"),
@@ -491,11 +358,10 @@ app_ui = ui.page_navbar(
                 class_="kpi-row",
             ),
 
-            # Row 2 — Map 60% + Bar 40%
+            # Row 1 — Map + Bar
             ui.layout_columns(
                 ui.card(
                     ui.card_header("Diet Cost Map"),
-                    ui.output_ui("map_hint"),
                     ui.output_ui("plot_map"),
                     full_screen=True,
                 ),
@@ -507,7 +373,7 @@ app_ui = ui.page_navbar(
                 col_widths=(7, 5),
             ),
 
-            # Row 3 — Trend 60% + Box 40%
+            # Row 2 — Trend + Box
             ui.layout_columns(
                 ui.card(
                     ui.card_header("Top Countries by Cost Increase"),
@@ -520,17 +386,14 @@ app_ui = ui.page_navbar(
                     full_screen=True,
                 ),
                 col_widths=(7, 5),
-                style="margin-top:14px;",
+                style="margin-top:8px;",
             ),
         )
     ),
 
-    # ── AI Chatbot ─────────────────────────────────────────────────────────────
     ui.nav_panel("AI Chatbot",
         ui.div(
-            # Two-column flex layout — no page scroll
             ui.div(
-                # Left: chat
                 ui.div(
                     ui.card(
                         ui.card_header("Ask about healthy diet costs around the world"),
@@ -538,30 +401,20 @@ app_ui = ui.page_navbar(
                     ),
                     class_="chat-left",
                 ),
-                # Right: data table + charts
                 ui.div(
                     ui.card(
                         ui.card_header("Query Results"),
                         ui.output_data_frame("chat_table"),
                         ui.tags.div(
-                            ui.download_button(
-                                "download_chat",
-                                "Download filtered data as CSV",
+                            ui.download_button("download_chat", "Download filtered data as CSV",
                                 class_="btn btn-sm btn-outline-secondary",
-                                style="margin: 6px 0 4px 0; font-size:12px;",
-                            ),
+                                style="margin: 6px 0 4px 0; font-size:12px;"),
                             style="padding: 0 8px 6px 8px;",
                         ),
                     ),
                     ui.layout_columns(
-                        ui.card(
-                            ui.card_header("Avg Cost by Region"),
-                            ui.output_ui("chat_bar"),
-                        ),
-                        ui.card(
-                            ui.card_header("Cost Over Time"),
-                            ui.output_ui("chat_trend"),
-                        ),
+                        ui.card(ui.card_header("Avg Cost by Region"), ui.output_ui("chat_bar")),
+                        ui.card(ui.card_header("Cost Over Time"),     ui.output_ui("chat_trend")),
                         col_widths=(6, 6),
                     ),
                     class_="chat-right",
@@ -600,10 +453,8 @@ def server(input, output, session):
     def chat_bar():
         data = chat_result.df()
         if data is None or data.empty:
-            return ui.tags.p(
-                "Ask a question above — charts will update automatically.",
-                style="color:#94a3b8; font-size:12px; padding:18px 14px;"
-            )
+            return ui.tags.p("Ask a question above — charts will update automatically.",
+                style="color:#94a3b8; font-size:12px; padding:18px 14px;")
         agg = (data.groupby("region")["cost_healthy_diet_ppp_usd"]
                .mean().reset_index()
                .sort_values("cost_healthy_diet_ppp_usd", ascending=False))
@@ -613,10 +464,8 @@ def server(input, output, session):
                      text_auto=".2f")
         fig.update_traces(textposition="outside", textfont_size=9, marker_line_width=0)
         _apply_chart_style(fig)
-        fig.update_layout(
-            xaxis=dict(tickangle=-30, tickfont_size=10, title=None),
-            yaxis=dict(title="USD/day", tickfont_size=10),
-        )
+        fig.update_layout(xaxis=dict(tickangle=-30, tickfont_size=10, title=None),
+                          yaxis=dict(title="USD/day", tickfont_size=10))
         return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
 
     @output
@@ -628,8 +477,7 @@ def server(input, output, session):
         agg = (data.groupby(["year", "region"])["cost_healthy_diet_ppp_usd"]
                .mean().reset_index())
         fig = px.line(agg, x="year", y="cost_healthy_diet_ppp_usd",
-                      color="region", color_discrete_map=region_colors,
-                      markers=True,
+                      color="region", color_discrete_map=region_colors, markers=True,
                       labels={"cost_healthy_diet_ppp_usd": "USD/day",
                               "year": "Year", "region": "Region"})
         _apply_chart_style(fig)
@@ -644,9 +492,9 @@ def server(input, output, session):
     @reactive.effect
     @reactive.event(input.reset)
     def _():
-        ui.update_slider("year",         value=[DEFAULT_YEAR_MIN, max(years)])
-        ui.update_select("region",       selected=DEFAULT_REGION)
-        ui.update_select("country",      selected=DEFAULT_COUNTRY)
+        ui.update_slider("year",            value=[DEFAULT_YEAR_MIN, max(years)])
+        ui.update_select("region",          selected=DEFAULT_REGION)
+        ui.update_select("country",         selected=DEFAULT_COUNTRY)
         ui.update_radio_buttons("cost_cat", selected="All")
 
     # ── Cascade countries ──────────────────────────────────────────────────────
@@ -688,24 +536,6 @@ def server(input, output, session):
         v = filtered()["cost_healthy_diet_ppp_usd"]
         return f"${v.max():.2f}" if not v.empty else "—"
 
-    # ── Map hint ───────────────────────────────────────────────────────────────
-    @output
-    @render.ui
-    def map_hint():
-        sc, sr = input.country(), input.region()
-        if sc != "All":
-            msg = f"Showing: {sc}  ·  hover for cost details"
-        elif sr != "All":
-            n = filtered()
-            n = n[n["year"] == n["year"].max()]["country"].nunique() if not n.empty else 0
-            if n <= LABEL_MAX_COUNTRIES:
-                msg = f"{sr}  ·  {n} countries  ·  labels shown"
-            else:
-                msg = f"{sr}  ·  {n} countries  ·  hover any country for details"
-        else:
-            msg = "World view  ·  hover any country for cost details"
-        return ui.tags.p(msg, class_="map-hint")
-
     # ── Map ────────────────────────────────────────────────────────────────────
     @output
     @render.ui
@@ -725,7 +555,7 @@ def server(input, output, session):
             showland=True,        landcolor="#eef0f2",
             showocean=True,       oceancolor="#dce9f5",
             showlakes=False,      showframe=False,
-            showcountries=True,   countrycolor="#c8d0da",   countrywidth=0.4,
+            showcountries=True,   countrycolor="#c8d0da", countrywidth=0.4,
         )
 
         fig = px.choropleth(
@@ -765,15 +595,12 @@ def server(input, output, session):
                 locationmode="ISO-3",
                 text=map_data["country"],
                 mode="text",
-                textfont=dict(
-                    size=13 if sc != "All" else 9,
-                    color="#1e2a3a",
-                ),
+                textfont=dict(size=13 if sc != "All" else 9, color="#1e2a3a"),
                 hoverinfo="skip", showlegend=False,
             ))
 
         fig.update_layout(
-            margin={"r": 0, "t": 4, "l": 0, "b": 0},
+            margin={"r": 0, "t": 0, "l": 0, "b": 0},
             paper_bgcolor="#ffffff",
             coloraxis_colorbar=dict(
                 title=dict(text="USD/day", font=dict(size=10)),
@@ -781,7 +608,12 @@ def server(input, output, session):
             ),
             font_size=11,
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
+
+        html = fig.to_html(include_plotlyjs="cdn", default_height=CHART_H,
+                           div_id="map_plot")
+        html += _click_js("map_plot", "map_click",
+                          "pt.hovertext || (pt.customdata && pt.customdata[0])")
+        return ui.HTML(html)
 
     # ── Bar chart ──────────────────────────────────────────────────────────────
     @output
@@ -804,7 +636,10 @@ def server(input, output, session):
             xaxis=dict(tickangle=-30, tickfont_size=10, title=None),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
+        html = fig.to_html(include_plotlyjs="cdn", default_height=CHART_H,
+                           div_id="bar_plot")
+        html += _click_js("bar_plot", "bar_click", "pt.x")
+        return ui.HTML(html)
 
     # ── Trend line ─────────────────────────────────────────────────────────────
     @output
@@ -837,7 +672,10 @@ def server(input, output, session):
             xaxis=dict(tickformat="d", dtick=1, tickfont_size=10, title="Year"),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
+        html = fig.to_html(include_plotlyjs="cdn", default_height=CHART_H,
+                           div_id="trend_plot")
+        html += _click_js("trend_plot", "trend_click", "pt.data.name")
+        return ui.HTML(html)
 
     # ── Box plot ───────────────────────────────────────────────────────────────
     @output
@@ -860,14 +698,65 @@ def server(input, output, session):
             xaxis=dict(type="category", tickfont_size=10, title="Year"),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
+        html = fig.to_html(include_plotlyjs="cdn", default_height=CHART_H,
+                           div_id="box_plot")
+        html += _click_js("box_plot", "box_click", "pt.data.name")
+        return ui.HTML(html)
+
+    # ── Click-to-filter handlers ───────────────────────────────────────────────
+
+    @reactive.effect
+    @reactive.event(input.map_click)
+    def _():
+        clicked = input.map_click()
+        if not clicked:
+            return
+        if clicked not in df["country"].dropna().unique().tolist():
+            return
+        region = country_to_region.get(clicked, "All")
+        if region in df["region"].dropna().unique().tolist():
+            ui.update_select("region", selected=region)
+        ui.update_select("country", selected=clicked)
+
+    @reactive.effect
+    @reactive.event(input.bar_click)
+    def _():
+        clicked = input.bar_click()
+        if not clicked:
+            return
+        if clicked in df["region"].dropna().unique().tolist():
+            ui.update_select("region",  selected=clicked)
+            ui.update_select("country", selected="All")
+
+    @reactive.effect
+    @reactive.event(input.trend_click)
+    def _():
+        clicked = input.trend_click()
+        if not clicked:
+            return
+        if clicked not in df["country"].dropna().unique().tolist():
+            return
+        region = country_to_region.get(clicked, "All")
+        if region in df["region"].dropna().unique().tolist():
+            ui.update_select("region", selected=region)
+        ui.update_select("country", selected=clicked)
+
+    @reactive.effect
+    @reactive.event(input.box_click)
+    def _():
+        clicked = input.box_click()
+        if not clicked:
+            return
+        if clicked in df["region"].dropna().unique().tolist():
+            ui.update_select("region",  selected=clicked)
+            ui.update_select("country", selected="All")
 
 
 # ── Shared chart helpers ───────────────────────────────────────────────────────
 def _apply_chart_style(fig):
     fig.update_layout(
         template="plotly_white",
-        margin={"t": 10, "b": 46, "l": 46, "r": 10},
+        margin={"t": 8, "b": 40, "l": 44, "r": 8},
         plot_bgcolor="#ffffff",
         paper_bgcolor="#ffffff",
         font=dict(size=11, color="#2d3748"),
