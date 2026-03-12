@@ -31,6 +31,8 @@ cost_cats = ["All"] + con.execute("SELECT DISTINCT cost_category FROM diet WHERE
 
 country_to_region = dict(con.execute("SELECT DISTINCT country, region FROM diet WHERE country IS NOT NULL").fetchall())
 
+df = con.execute("SELECT * FROM diet").df()
+
 DEFAULT_YEAR_MIN = min(years)
 DEFAULT_REGION   = "All"
 DEFAULT_COUNTRY  = "All"
