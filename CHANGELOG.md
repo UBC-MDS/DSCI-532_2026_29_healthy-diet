@@ -11,6 +11,8 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 ### Added
 - **Parquet + DuckDB** (#94): processed dataset now exported as `data/processed/cleaned_price_of_healthy_diet.parquet` alongside existing CSV (`src/scripts/clean_data.py`)
 - **Parquet + DuckDB** (#94): `duckdb==1.1.3` and `pyarrow==14.0.2` added to `requirements.txt`, `src/requirements.txt`, and `environment.yml`
+- **Docs** (#95): `README.md` updated with Data Pipeline section showing the full data flow from Kaggle through DuckDB; repository structure updated to reflect parquet file and inline descriptions
+
 
 ### Changed
 - **Parquet + DuckDB** (#94): data loading switched from `pd.read_csv` to DuckDB `CREATE VIEW` over parquet; metadata queries now run as SQL (`src/app.py` lines 23-44)
