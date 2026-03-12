@@ -109,7 +109,7 @@ CUSTOM_CSS = ui.tags.style("""
 
   .bslib-sidebar-layout { height: calc(100vh - 48px); }
 
-  /* ── Navbar */
+  /* Navbar */
   .navbar {
     background: #ffffff !important;
     border-bottom: 2px solid #e2e8f0 !important;
@@ -134,7 +134,7 @@ CUSTOM_CSS = ui.tags.style("""
     font-weight: 600 !important;
   }
 
-  /* ── Sidebar */
+  /* Sidebar */
   .bslib-sidebar-layout > .sidebar {
     background: #ffffff;
     border-right: 1px solid #dde3ea;
@@ -204,7 +204,7 @@ CUSTOM_CSS = ui.tags.style("""
   }
   .interact-tip strong { font-weight: 700; display: block; margin-bottom: 2px; }
 
-  /* ── KPI cards */
+  /* KPI cards */
   .kpi-row {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 8px; margin-bottom: 8px;
@@ -223,7 +223,7 @@ CUSTOM_CSS = ui.tags.style("""
   }
   .kpi-value { font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1; margin: 0; }
 
-  /* ── Cards */
+  /* Cards */
   .card {
     border: 1px solid #dde3ea; border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06);
@@ -236,7 +236,7 @@ CUSTOM_CSS = ui.tags.style("""
   }
   .card-body { padding: 2px; }
 
-  /* ── Layout */
+  /* Layout */
   .layout-columns { gap: 8px !important; }
   .bslib-sidebar-layout > .main > .layout-columns + .layout-columns {
     margin-top: 8px !important;
@@ -249,7 +249,7 @@ CUSTOM_CSS = ui.tags.style("""
   /* Clickable chart cursor */
   .js-plotly-plot { cursor: pointer; }
 
-  /* ── Chat tab */
+  /* Chat tab */
   .chat-page {
     height: calc(100vh - 52px); display: flex; flex-direction: column;
     padding: 12px; overflow: hidden; background: #edf0f4; box-sizing: border-box;
