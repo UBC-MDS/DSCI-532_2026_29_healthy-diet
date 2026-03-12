@@ -151,6 +151,7 @@ def clean_dataset() -> pd.DataFrame:
     # ensure the directory exists
     output_dir.mkdir(parents=True, exist_ok=True)
 
+
     # save the dataframe
     df_clean.to_csv(output_path, index=False)
     print(f"CSV saved to: {output_path}")
