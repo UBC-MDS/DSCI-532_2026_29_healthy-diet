@@ -153,7 +153,11 @@ def clean_dataset() -> pd.DataFrame:
 
     # save the dataframe
     df_clean.to_csv(output_path, index=False)
-    print(f"File saved to: {output_path}")
+    print(f"CSV saved to: {output_path}")
+
+    parquet_path = output_dir / "cleaned_price_of_healthy_diet.parquet"
+    df_clean.to_parquet(parquet_path, index=False)
+    print(f"Parquet saved to: {parquet_path}")
 
     return df_clean
 
