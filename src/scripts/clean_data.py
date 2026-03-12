@@ -8,7 +8,6 @@ import unicodedata
 
 import pandas as pd
 
-
 def _normalize_country_names(country_series: pd.Series) -> pd.Series:
     """standardize country names to match countries_by_continents lookup"""
 
