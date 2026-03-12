@@ -121,10 +121,10 @@ Dependencies install automatically from `requirements.txt`.
 
 ```
 Kaggle API
-  → data/raw/price_of_healthy_diet_clean.csv            (download_data.py)
-  → data/processed/cleaned_price_of_healthy_diet.csv    (clean_data.py)
-  → data/processed/cleaned_price_of_healthy_diet.parquet (clean_data.py)
-  → DuckDB CREATE VIEW -> SQL WHERE filter -> .df()        (app.py)
+  -> data/raw/price_of_healthy_diet_clean.csv              (download_data.py)
+  -> data/processed/cleaned_price_of_healthy_diet.csv      (clean_data.py)
+  -> data/processed/cleaned_price_of_healthy_diet.parquet  (clean_data.py)
+  -> DuckDB VIEW -> SQL WHERE filter -> .df()               (app.py)
 ```
 
 Raw data is downloaded and cleaned automatically on app startup. All dashboard filters are applied at the DuckDB level before data enters a pandas DataFrame.
