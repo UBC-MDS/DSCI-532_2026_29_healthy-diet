@@ -6,6 +6,15 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 
 ---
 
+## [0.4.0] - 2026-03-12
+
+### Fixed
+- All 4 chart panels (Diet Cost Map, Average Cost by Region, Top Countries by Cost Increase, Cost Distribution by Region) rendered blank on initial page load — KPI cards were unaffected
+  - Root cause: `fig.to_html(include_plotlyjs="cdn")` embedded a `<script src="cdn.plot.ly/...">` inside each `@render.ui` block; Shiny injects these dynamically via jQuery so the CDN script loads async while `Plotly.newPlot()` fires sync — Plotly not yet defined, silent crash
+  - Fix: added `PLOTLY_CDN_SCRIPT` as a static page-level `<script>` tag in `app_ui` so Plotly loads once at parse time; changed all 6 `fig.to_html()` calls to `include_plotlyjs=False` (`src/app.py` lines 469, 489, 612, 639, 675, 701)
+
+---
+
 ## [0.3.0] - 2026-03-08
 
 ### Added
