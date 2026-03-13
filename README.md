@@ -2,9 +2,9 @@
 
 |  |  |
 |--|--|
-| **Stable (Main)** | https://019ccb82-c3da-5076-ba41-e24219796f3d.share.connect.posit.cloud/ |
-| **Preview (Dev)** | https://019ca57d-6583-da29-765f-1a716196111d.share.connect.posit.cloud/ |
-| **Python** | [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) |
+| **Stable deployment (main)** | https://019ccb82-c3da-5076-ba41-e24219796f3d.share.connect.posit.cloud/ |
+| **Preview deployment (dev)** | https://019ca57d-6583-da29-765f-1a716196111d.share.connect.posit.cloud/ |
+| Package | [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) |
 
 ---
 
@@ -54,7 +54,7 @@ conda activate 532-healthy-diet
 
 **pip**
 ```bash
-pip install -r requirements.txt
+pip install -r src/requirements.txt
 ```
 
 ### 3. API Keys
@@ -104,16 +104,30 @@ Dependencies install automatically from `requirements.txt`.
 │   ├── app.py            # Shiny application
 │   ├── .env              # API keys, do not commit
 │   ├── scripts/
-│   │   ├── download_data.py
-│   │   └── clean_data.py
+│   │   ├── download_data.py   # downloads raw data from Kaggle on startup
+│   │   └── clean_data.py      # cleans data and exports CSV + parquet
 │   └── data/
-│       ├── raw/
-│       ├── processed/
-│       └── lookups/
+│       ├── raw/               # downloaded from Kaggle on startup
+│       ├── processed/         # cleaned_price_of_healthy_diet.csv + .parquet
+│       └── lookups/           # country codes and continent mappings
 ├── reports/
 ├── img/
 └── CHANGELOG.md
 ```
+
+---
+
+## Data Pipeline
+
+```
+Kaggle API
+  -> data/raw/price_of_healthy_diet_clean.csv              (download_data.py)
+  -> data/processed/cleaned_price_of_healthy_diet.csv      (clean_data.py)
+  -> data/processed/cleaned_price_of_healthy_diet.parquet  (clean_data.py)
+  -> DuckDB VIEW -> SQL WHERE filter -> .df()               (app.py)
+```
+
+Raw data is downloaded and cleaned automatically on app startup. All dashboard filters are applied at the DuckDB level before data enters a pandas DataFrame.
 
 ---
 

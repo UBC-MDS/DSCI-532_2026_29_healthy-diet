@@ -3,6 +3,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import os
 import pandas as pd
+import duckdb
 from scripts.download_data import download_dataset
 from scripts.clean_data import clean_dataset
 from dotenv import load_dotenv
@@ -13,30 +14,34 @@ load_dotenv()
 
 AI_AGENT = "claude-haiku-4-5"
 
-# ── Data ───────────────────────────────────────────────────────────────────────
+# Data
 download_dataset()
 clean_dataset()
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-df = pd.read_csv(os.path.join(base_dir, "data/processed/cleaned_price_of_healthy_diet.csv"))
-df["year"] = df["year"].astype(int)
 
-regions   = ["All"] + sorted(df["region"].dropna().unique().tolist())
-years     = sorted(df["year"].unique().tolist())
-countries = ["All"] + sorted(df["country"].dropna().unique().tolist())
-cost_cats = ["All"] + sorted(df["cost_category"].dropna().unique().tolist())
+PARQUET_PATH = os.path.join(base_dir, "data/processed/cleaned_price_of_healthy_diet.parquet")
+con = duckdb.connect()
+con.execute(f"CREATE VIEW diet AS SELECT * FROM read_parquet('{PARQUET_PATH}')")
 
-# Lookup: country → region (used by click handlers)
-country_to_region = df.drop_duplicates("country").set_index("country")["region"].to_dict()
+regions   = ["All"] + con.execute("SELECT DISTINCT region FROM diet WHERE region IS NOT NULL ORDER BY region").df()["region"].tolist()
+years     = con.execute("SELECT DISTINCT year FROM diet ORDER BY year").df()["year"].astype(int).tolist()
+countries = ["All"] + con.execute("SELECT DISTINCT country FROM diet WHERE country IS NOT NULL ORDER BY country").df()["country"].tolist()
+cost_cats = ["All"] + con.execute("SELECT DISTINCT cost_category FROM diet WHERE cost_category IS NOT NULL ORDER BY cost_category").df()["cost_category"].tolist()
+
+country_to_region = dict(con.execute("SELECT DISTINCT country, region FROM diet WHERE country IS NOT NULL").fetchall())
+
+df = con.execute("SELECT * FROM diet").df()
 
 DEFAULT_YEAR_MIN = min(years)
 DEFAULT_REGION   = "All"
 DEFAULT_COUNTRY  = "All"
 
-COST_RANGE = [
-    df["cost_healthy_diet_ppp_usd"].quantile(0.05),
-    df["cost_healthy_diet_ppp_usd"].quantile(0.95),
-]
+COST_RANGE = con.execute("""
+    SELECT PERCENTILE_CONT(0.05) WITHIN GROUP (ORDER BY cost_healthy_diet_ppp_usd),
+           PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY cost_healthy_diet_ppp_usd)
+    FROM diet
+""").fetchone()
 
 region_colors = {
     "Africa":        "#C0392B",
@@ -70,7 +75,7 @@ qc = QueryChat(
 )
 
 
-# ── JS helper: attach Plotly click handler ────────────────────────────────────
+# JS helper: attach Plotly click handler
 def _click_js(div_id: str, shiny_input: str, extractor: str) -> str:
     return f"""
 <script>
@@ -93,7 +98,7 @@ def _click_js(div_id: str, shiny_input: str, extractor: str) -> str:
 </script>"""
 
 
-# ── CSS ────────────────────────────────────────────────────────────────────────
+# CSS
 CUSTOM_CSS = ui.tags.style("""
   *, *::before, *::after { box-sizing: border-box; }
 
@@ -109,7 +114,7 @@ CUSTOM_CSS = ui.tags.style("""
 
   .bslib-sidebar-layout { height: calc(100vh - 48px); }
 
-  /* ── Navbar ─────────────────────────────────────────────── */
+  /* Navbar */
   .navbar {
     background: #ffffff !important;
     border-bottom: 2px solid #e2e8f0 !important;
@@ -134,7 +139,7 @@ CUSTOM_CSS = ui.tags.style("""
     font-weight: 600 !important;
   }
 
-  /* ── Sidebar ────────────────────────────────────────────── */
+  /* Sidebar */
   .bslib-sidebar-layout > .sidebar {
     background: #ffffff;
     border-right: 1px solid #dde3ea;
@@ -204,7 +209,7 @@ CUSTOM_CSS = ui.tags.style("""
   }
   .interact-tip strong { font-weight: 700; display: block; margin-bottom: 2px; }
 
-  /* ── KPI cards ──────────────────────────────────────────── */
+  /* KPI cards */
   .kpi-row {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 8px; margin-bottom: 8px;
@@ -223,7 +228,7 @@ CUSTOM_CSS = ui.tags.style("""
   }
   .kpi-value { font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1; margin: 0; }
 
-  /* ── Cards ──────────────────────────────────────────────── */
+  /* Cards */
   .card {
     border: 1px solid #dde3ea; border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06);
@@ -236,7 +241,7 @@ CUSTOM_CSS = ui.tags.style("""
   }
   .card-body { padding: 2px; }
 
-  /* ── Layout ─────────────────────────────────────────────── */
+  /* Layout */
   .layout-columns { gap: 8px !important; }
   .bslib-sidebar-layout > .main > .layout-columns + .layout-columns {
     margin-top: 8px !important;
@@ -249,7 +254,7 @@ CUSTOM_CSS = ui.tags.style("""
   /* Clickable chart cursor */
   .js-plotly-plot { cursor: pointer; }
 
-  /* ── Chat tab ───────────────────────────────────────────── */
+  /* Chat tab */
   .chat-page {
     height: calc(100vh - 52px); display: flex; flex-direction: column;
     padding: 12px; overflow: hidden; background: #edf0f4; box-sizing: border-box;
@@ -285,11 +290,18 @@ CUSTOM_CSS = ui.tags.style("""
 """)
 
 
-# ── UI ─────────────────────────────────────────────────────────────────────────
+PLOTLY_CDN_SCRIPT = ui.tags.script(
+    src="https://cdn.plot.ly/plotly-latest.min.js",
+    charset="utf-8",
+)
+
+
+# UI
 app_ui = ui.page_navbar(
 
     ui.nav_panel("Dashboard",
         CUSTOM_CSS,
+        PLOTLY_CDN_SCRIPT,
         ui.page_sidebar(
             ui.sidebar(
                 ui.tags.div(
@@ -312,7 +324,7 @@ app_ui = ui.page_navbar(
                 ),
                 ui.tags.div(
                     ui.input_select("country", "Country",
-                        choices=["All"] + sorted(df["country"].dropna().unique().tolist()),
+                        choices=countries,
                         selected=DEFAULT_COUNTRY),
                     style="margin-bottom:0;",
                 ),
@@ -430,12 +442,12 @@ app_ui = ui.page_navbar(
 )
 
 
-# ── Server ─────────────────────────────────────────────────────────────────────
+# Server
 def server(input, output, session):
 
     chat_result = qc.server()
 
-    # ── Chat outputs ───────────────────────────────────────────────────────────
+    # Chat outputs
     @render.data_frame
     def chat_table():
         return render.DataGrid(chat_result.df(), height="175px")
@@ -466,7 +478,7 @@ def server(input, output, session):
         _apply_chart_style(fig)
         fig.update_layout(xaxis=dict(tickangle=-30, tickfont_size=10, title=None),
                           yaxis=dict(title="USD/day", tickfont_size=10))
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
+        return ui.HTML(fig.to_html(include_plotlyjs=False, default_height="28vh"))
 
     @output
     @render.ui
@@ -486,9 +498,9 @@ def server(input, output, session):
             xaxis=dict(tickformat="d", dtick=1, tickfont_size=10, title="Year"),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        return ui.HTML(fig.to_html(include_plotlyjs="cdn", default_height="28vh"))
+        return ui.HTML(fig.to_html(include_plotlyjs=False, default_height="28vh"))
 
-    # ── Reset ──────────────────────────────────────────────────────────────────
+    # Reset
     @reactive.effect
     @reactive.event(input.reset)
     def _():
@@ -497,27 +509,29 @@ def server(input, output, session):
         ui.update_select("country",         selected=DEFAULT_COUNTRY)
         ui.update_radio_buttons("cost_cat", selected="All")
 
-    # ── Cascade countries ──────────────────────────────────────────────────────
+    # Cascade countries
     @reactive.effect
     def _():
         sel = input.region()
-        fc = sorted(df["country"].dropna().unique().tolist()) if sel == "All" else \
-             sorted(df[df["region"] == sel]["country"].dropna().unique().tolist())
+        if sel == "All":
+            fc = con.execute("SELECT DISTINCT country FROM diet WHERE country IS NOT NULL ORDER BY country").df()["country"].tolist()
+        else:
+            fc = con.execute(f"SELECT DISTINCT country FROM diet WHERE region = '{sel}' AND country IS NOT NULL ORDER BY country").df()["country"].tolist()
         cur = input.country()
         ui.update_select("country", choices=["All"] + fc,
                          selected=cur if cur in fc else "All")
 
-    # ── Core filter ────────────────────────────────────────────────────────────
+    # Core filter
     @reactive.calc
     def filtered():
         yr = input.year()
-        d  = df[(df["year"] >= int(yr[0])) & (df["year"] <= int(yr[1]))]
-        if input.region()   != "All": d = d[d["region"]        == input.region()]
-        if input.country()  != "All": d = d[d["country"]       == input.country()]
-        if input.cost_cat() != "All": d = d[d["cost_category"] == input.cost_cat()]
-        return d
+        conditions = [f"year >= {int(yr[0])}", f"year <= {int(yr[1])}"]
+        if input.region()   != "All": conditions.append(f"region        = '{input.region()}'")
+        if input.country()  != "All": conditions.append(f"country       = '{input.country()}'")
+        if input.cost_cat() != "All": conditions.append(f"cost_category = '{input.cost_cat()}'")
+        return con.execute(f"SELECT * FROM diet WHERE {' AND '.join(conditions)}").df()
 
-    # ── KPIs ───────────────────────────────────────────────────────────────────
+    # KPIs
     @render.text
     def n_countries(): return str(filtered()["country"].nunique())
 
@@ -536,7 +550,7 @@ def server(input, output, session):
         v = filtered()["cost_healthy_diet_ppp_usd"]
         return f"${v.max():.2f}" if not v.empty else "—"
 
-    # ── Map ────────────────────────────────────────────────────────────────────
+    # Map
     @output
     @render.ui
     def plot_map():
@@ -609,13 +623,13 @@ def server(input, output, session):
             font_size=11,
         )
 
-        html = fig.to_html(include_plotlyjs="cdn", default_height=CHART_H,
+        html = fig.to_html(include_plotlyjs=False, default_height=CHART_H,
                            div_id="map_plot")
         html += _click_js("map_plot", "map_click",
                           "pt.hovertext || (pt.customdata && pt.customdata[0])")
         return ui.HTML(html)
 
-    # ── Bar chart ──────────────────────────────────────────────────────────────
+    # Bar chart
     @output
     @render.ui
     def bar_chart():
@@ -636,12 +650,12 @@ def server(input, output, session):
             xaxis=dict(tickangle=-30, tickfont_size=10, title=None),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        html = fig.to_html(include_plotlyjs="cdn", default_height=CHART_H,
+        html = fig.to_html(include_plotlyjs=False, default_height=CHART_H,
                            div_id="bar_plot")
         html += _click_js("bar_plot", "bar_click", "pt.x")
         return ui.HTML(html)
 
-    # ── Trend line ─────────────────────────────────────────────────────────────
+    # Trend line
     @output
     @render.ui
     def plot_trend():
@@ -672,12 +686,12 @@ def server(input, output, session):
             xaxis=dict(tickformat="d", dtick=1, tickfont_size=10, title="Year"),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        html = fig.to_html(include_plotlyjs="cdn", default_height=CHART_H,
+        html = fig.to_html(include_plotlyjs=False, default_height=CHART_H,
                            div_id="trend_plot")
         html += _click_js("trend_plot", "trend_click", "pt.data.name")
         return ui.HTML(html)
 
-    # ── Box plot ───────────────────────────────────────────────────────────────
+    # Box plot
     @output
     @render.ui
     def plot_box():
@@ -698,12 +712,12 @@ def server(input, output, session):
             xaxis=dict(type="category", tickfont_size=10, title="Year"),
             yaxis=dict(title="USD/day", tickfont_size=10),
         )
-        html = fig.to_html(include_plotlyjs="cdn", default_height=CHART_H,
+        html = fig.to_html(include_plotlyjs=False, default_height=CHART_H,
                            div_id="box_plot")
         html += _click_js("box_plot", "box_click", "pt.data.name")
         return ui.HTML(html)
 
-    # ── Click-to-filter handlers ───────────────────────────────────────────────
+    # Click-to-filter handlers
 
     @reactive.effect
     @reactive.event(input.map_click)
@@ -711,10 +725,10 @@ def server(input, output, session):
         clicked = input.map_click()
         if not clicked:
             return
-        if clicked not in df["country"].dropna().unique().tolist():
+        if clicked not in countries[1:]:
             return
         region = country_to_region.get(clicked, "All")
-        if region in df["region"].dropna().unique().tolist():
+        if region in regions[1:]:
             ui.update_select("region", selected=region)
         ui.update_select("country", selected=clicked)
 
@@ -724,7 +738,7 @@ def server(input, output, session):
         clicked = input.bar_click()
         if not clicked:
             return
-        if clicked in df["region"].dropna().unique().tolist():
+        if clicked in regions[1:]:
             ui.update_select("region",  selected=clicked)
             ui.update_select("country", selected="All")
 
@@ -734,10 +748,10 @@ def server(input, output, session):
         clicked = input.trend_click()
         if not clicked:
             return
-        if clicked not in df["country"].dropna().unique().tolist():
+        if clicked not in countries[1:]:
             return
         region = country_to_region.get(clicked, "All")
-        if region in df["region"].dropna().unique().tolist():
+        if region in regions[1:]:
             ui.update_select("region", selected=region)
         ui.update_select("country", selected=clicked)
 
@@ -747,12 +761,12 @@ def server(input, output, session):
         clicked = input.box_click()
         if not clicked:
             return
-        if clicked in df["region"].dropna().unique().tolist():
+        if clicked in regions[1:]:
             ui.update_select("region",  selected=clicked)
             ui.update_select("country", selected="All")
 
 
-# ── Shared chart helpers ───────────────────────────────────────────────────────
+# Shared chart helpers
 def _apply_chart_style(fig):
     fig.update_layout(
         template="plotly_white",
