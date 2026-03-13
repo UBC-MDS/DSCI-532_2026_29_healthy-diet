@@ -18,6 +18,8 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Parquet + DuckDB** (#94): data loading switched from `pd.read_csv` to DuckDB `CREATE VIEW` over parquet; metadata queries now run as SQL (`src/app.py` lines 23-44)
 - **Parquet + DuckDB** (#94): `filtered()` builds a SQL `WHERE` clause before `.df()` — filtering happens at DB level, not in memory (`src/app.py` lines 525-532)
 - **Parquet + DuckDB** (#94): cascade dropdown and click handlers use DuckDB queries and pre-built lists instead of the global pandas DataFrame (`src/app.py` lines 513-522, 722-766)
+- **Dependency setup** (#97): removed duplicate repo-root `requirements.txt` so `src/requirements.txt` is the single maintained dependency file for the deployed app
+- **Docs** (#97): `README.md` pip installation instructions updated from `pip install -r requirements.txt` to `pip install -r src/requirements.txt`
 
 ### Fixed
 - **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected
