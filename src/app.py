@@ -3,6 +3,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import os
 import pandas as pd
+import duckdb
 from scripts.download_data import download_dataset
 from scripts.clean_data import clean_dataset
 from dotenv import load_dotenv
@@ -18,25 +19,29 @@ download_dataset()
 clean_dataset()
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-df = pd.read_csv(os.path.join(base_dir, "data/processed/cleaned_price_of_healthy_diet.csv"))
-df["year"] = df["year"].astype(int)
 
-regions   = ["All"] + sorted(df["region"].dropna().unique().tolist())
-years     = sorted(df["year"].unique().tolist())
-countries = ["All"] + sorted(df["country"].dropna().unique().tolist())
-cost_cats = ["All"] + sorted(df["cost_category"].dropna().unique().tolist())
+PARQUET_PATH = os.path.join(base_dir, "data/processed/cleaned_price_of_healthy_diet.parquet")
+con = duckdb.connect()
+con.execute(f"CREATE VIEW diet AS SELECT * FROM read_parquet('{PARQUET_PATH}')")
 
-# Lookup: country -> region (used by click handlers)
-country_to_region = df.drop_duplicates("country").set_index("country")["region"].to_dict()
+regions   = ["All"] + con.execute("SELECT DISTINCT region FROM diet WHERE region IS NOT NULL ORDER BY region").df()["region"].tolist()
+years     = con.execute("SELECT DISTINCT year FROM diet ORDER BY year").df()["year"].astype(int).tolist()
+countries = ["All"] + con.execute("SELECT DISTINCT country FROM diet WHERE country IS NOT NULL ORDER BY country").df()["country"].tolist()
+cost_cats = ["All"] + con.execute("SELECT DISTINCT cost_category FROM diet WHERE cost_category IS NOT NULL ORDER BY cost_category").df()["cost_category"].tolist()
+
+country_to_region = dict(con.execute("SELECT DISTINCT country, region FROM diet WHERE country IS NOT NULL").fetchall())
+
+df = con.execute("SELECT * FROM diet").df()
 
 DEFAULT_YEAR_MIN = min(years)
 DEFAULT_REGION   = "All"
 DEFAULT_COUNTRY  = "All"
 
-COST_RANGE = [
-    df["cost_healthy_diet_ppp_usd"].quantile(0.05),
-    df["cost_healthy_diet_ppp_usd"].quantile(0.95),
-]
+COST_RANGE = con.execute("""
+    SELECT PERCENTILE_CONT(0.05) WITHIN GROUP (ORDER BY cost_healthy_diet_ppp_usd),
+           PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY cost_healthy_diet_ppp_usd)
+    FROM diet
+""").fetchone()
 
 region_colors = {
     "Africa":        "#C0392B",
@@ -319,7 +324,7 @@ app_ui = ui.page_navbar(
                 ),
                 ui.tags.div(
                     ui.input_select("country", "Country",
-                        choices=["All"] + sorted(df["country"].dropna().unique().tolist()),
+                        choices=countries,
                         selected=DEFAULT_COUNTRY),
                     style="margin-bottom:0;",
                 ),
@@ -508,8 +513,10 @@ def server(input, output, session):
     @reactive.effect
     def _():
         sel = input.region()
-        fc = sorted(df["country"].dropna().unique().tolist()) if sel == "All" else \
-             sorted(df[df["region"] == sel]["country"].dropna().unique().tolist())
+        if sel == "All":
+            fc = con.execute("SELECT DISTINCT country FROM diet WHERE country IS NOT NULL ORDER BY country").df()["country"].tolist()
+        else:
+            fc = con.execute(f"SELECT DISTINCT country FROM diet WHERE region = '{sel}' AND country IS NOT NULL ORDER BY country").df()["country"].tolist()
         cur = input.country()
         ui.update_select("country", choices=["All"] + fc,
                          selected=cur if cur in fc else "All")
@@ -518,11 +525,11 @@ def server(input, output, session):
     @reactive.calc
     def filtered():
         yr = input.year()
-        d  = df[(df["year"] >= int(yr[0])) & (df["year"] <= int(yr[1]))]
-        if input.region()   != "All": d = d[d["region"]        == input.region()]
-        if input.country()  != "All": d = d[d["country"]       == input.country()]
-        if input.cost_cat() != "All": d = d[d["cost_category"] == input.cost_cat()]
-        return d
+        conditions = [f"year >= {int(yr[0])}", f"year <= {int(yr[1])}"]
+        if input.region()   != "All": conditions.append(f"region        = '{input.region()}'")
+        if input.country()  != "All": conditions.append(f"country       = '{input.country()}'")
+        if input.cost_cat() != "All": conditions.append(f"cost_category = '{input.cost_cat()}'")
+        return con.execute(f"SELECT * FROM diet WHERE {' AND '.join(conditions)}").df()
 
     # KPIs
     @render.text
@@ -718,10 +725,10 @@ def server(input, output, session):
         clicked = input.map_click()
         if not clicked:
             return
-        if clicked not in df["country"].dropna().unique().tolist():
+        if clicked not in countries[1:]:
             return
         region = country_to_region.get(clicked, "All")
-        if region in df["region"].dropna().unique().tolist():
+        if region in regions[1:]:
             ui.update_select("region", selected=region)
         ui.update_select("country", selected=clicked)
 
@@ -731,7 +738,7 @@ def server(input, output, session):
         clicked = input.bar_click()
         if not clicked:
             return
-        if clicked in df["region"].dropna().unique().tolist():
+        if clicked in regions[1:]:
             ui.update_select("region",  selected=clicked)
             ui.update_select("country", selected="All")
 
@@ -741,10 +748,10 @@ def server(input, output, session):
         clicked = input.trend_click()
         if not clicked:
             return
-        if clicked not in df["country"].dropna().unique().tolist():
+        if clicked not in countries[1:]:
             return
         region = country_to_region.get(clicked, "All")
-        if region in df["region"].dropna().unique().tolist():
+        if region in regions[1:]:
             ui.update_select("region", selected=region)
         ui.update_select("country", selected=clicked)
 
@@ -754,7 +761,7 @@ def server(input, output, session):
         clicked = input.box_click()
         if not clicked:
             return
-        if clicked in df["region"].dropna().unique().tolist():
+        if clicked in regions[1:]:
             ui.update_select("region",  selected=clicked)
             ui.update_select("country", selected="All")
 

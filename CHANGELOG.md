@@ -8,11 +8,21 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 
 ## [0.4.0] - 2026-03-12
 
-### Fixed
-- All 4 chart panels (Diet Cost Map, Average Cost by Region, Top Countries by Cost Increase, Cost Distribution by Region) rendered blank on initial page load — KPI cards were unaffected
-  - Root cause: `fig.to_html(include_plotlyjs="cdn")` embedded a `<script src="cdn.plot.ly/...">` inside each `@render.ui` block; Shiny injects these dynamically via jQuery so the CDN script loads async while `Plotly.newPlot()` fires sync — Plotly not yet defined, silent crash
-  - Fix: added `PLOTLY_CDN_SCRIPT` as a static page-level `<script>` tag in `app_ui` so Plotly loads once at parse time; changed all 6 `fig.to_html()` calls to `include_plotlyjs=False` (`src/app.py` lines 469, 489, 612, 639, 675, 701)
+### Added
+- **Parquet + DuckDB** (#94): processed dataset now exported as `data/processed/cleaned_price_of_healthy_diet.parquet` alongside existing CSV (`src/scripts/clean_data.py`)
+- **Parquet + DuckDB** (#94): `duckdb==1.1.3` and `pyarrow==14.0.2` added to `requirements.txt`, `src/requirements.txt`, and `environment.yml`
 
+### Changed
+- **Parquet + DuckDB** (#94): data loading switched from `pd.read_csv` to DuckDB `CREATE VIEW` over parquet; metadata queries now run as SQL (`src/app.py` lines 23-44)
+- **Parquet + DuckDB** (#94): `filtered()` builds a SQL `WHERE` clause before `.df()` — filtering happens at DB level, not in memory (`src/app.py` lines 525-532)
+- **Parquet + DuckDB** (#94): cascade dropdown and click handlers use DuckDB queries and pre-built lists instead of the global pandas DataFrame (`src/app.py` lines 513-522, 722-766)
+
+### Fixed
+- **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected
+  - Root cause: `include_plotlyjs="cdn"` embedded a CDN `<script>` inside each dynamically injected `@render.ui` block — Plotly loaded async but `Plotly.newPlot()` fired sync
+  - Fix: `PLOTLY_CDN_SCRIPT` added as a static page-level tag; all 6 `fig.to_html()` calls changed to `include_plotlyjs=False` (`src/app.py` lines 469, 489, 612, 639, 675, 701)
+
+---
 ---
 
 ## [0.3.0] - 2026-03-08

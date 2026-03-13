@@ -1,6 +1,8 @@
 # Data Handling
 pandas==2.2.3
 numpy==1.26.4
+duckdb==1.1.3
+pyarrow==14.0.2
 
 # Visualization
 plotly==5.24.1
