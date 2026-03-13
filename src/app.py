@@ -474,7 +474,7 @@ def server(input, output, session):
                      color="region", color_discrete_map=region_colors,
                      labels={"cost_healthy_diet_ppp_usd": "USD/day", "region": "Region"},
                      text_auto=".2f")
-        fig.update_traces(textposition="outside", textfont_size=9, marker_line_width=0)
+        fig.update_traces(textposition="inside", textfont_size=9, marker_line_width=0)
         _apply_chart_style(fig)
         fig.update_layout(xaxis=dict(tickangle=-30, tickfont_size=10, title=None),
                           yaxis=dict(title="USD/day", tickfont_size=10))
@@ -643,7 +643,7 @@ def server(input, output, session):
                      color="region", color_discrete_map=region_colors,
                      labels={"cost_healthy_diet_ppp_usd": "USD/day", "region": "Region"},
                      text_auto=".2f")
-        fig.update_traces(textposition="outside", textfont_size=9, marker_line_width=0)
+        fig.update_traces(textposition="inside", textfont_size=9, marker_line_width=0)
         _apply_chart_style(fig)
         fig.update_layout(
             showlegend=False,
