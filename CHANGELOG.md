@@ -20,6 +20,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Parquet + DuckDB** (#94): cascade dropdown and click handlers use DuckDB queries and pre-built lists instead of the global pandas DataFrame (`src/app.py` lines 513-522, 722-766)
 - **Dependency setup** (#97): removed duplicate repo-root `requirements.txt` so `src/requirements.txt` is the single maintained dependency file for the deployed app
 - **Docs** (#97): `README.md` pip installation instructions updated from `pip install -r requirements.txt` to `pip install -r src/requirements.txt`
+- TODO
 
 ### Fixed
 - **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected
