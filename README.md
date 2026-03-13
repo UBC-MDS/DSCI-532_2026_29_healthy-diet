@@ -54,7 +54,7 @@ conda activate 532-healthy-diet
 
 **pip**
 ```bash
-pip install -r requirements.txt
+pip install -r src/requirements.txt
 ```
 
 ### 3. API Keys
