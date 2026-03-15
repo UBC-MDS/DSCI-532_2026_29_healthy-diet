@@ -373,7 +373,13 @@ app_ui = ui.page_navbar(
 
             ui.layout_columns(
                 ui.card(
-                    ui.card_header("Diet Cost Map"),
+                    ui.card_header(
+                        ui.div(
+                            ui.tags.span("Diet Cost Map"),
+                            ui.output_text("map_year_label"),
+                            style="display:flex; justify-content:space-between; align-items:center; width:100%;"
+                        )
+                    ),
                     ui.output_ui("plot_map"),
                     full_screen=True,
                 ),
@@ -638,7 +644,16 @@ def server(input, output, session):
         html += _click_js("map_plot", "map_click",
                           "pt.hovertext || (pt.customdata && pt.customdata[0])")
         return ui.HTML(html)
-
+    
+    @output
+    @render.text
+    def map_year_label():
+        data = filtered ()
+        if data.empty:
+            return ""
+        latest_year = int(data["year"].max())
+        return(f"Showing data for {latest_year}")
+     
     # Bar chart
     @output
     @render.ui
