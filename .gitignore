@@ -209,3 +209,13 @@ __marimo__/
 .virtual_documents/
 Untitled.ipynb
 anaconda_projects/
+
+# Miscellaneous
+.vscode/
+.archive/
+# vscode
+.vscode/
+
+# Auto-generated data files
+src/data/raw/
+src/data/processed/
