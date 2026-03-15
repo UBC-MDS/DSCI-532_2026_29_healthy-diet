@@ -239,7 +239,7 @@ CUSTOM_CSS = ui.tags.style("""
     background: #ffffff; border-bottom: 1px solid #edf2f7;
     padding: 7px 14px; letter-spacing: 0.2px;
   }
-  .card-body { padding: 2px; }
+  .card-body { padding: 0px; }
 
   /* Layout */
   .layout-columns { gap: 8px !important; }
@@ -600,8 +600,9 @@ def server(input, output, session):
                 fig.update_geos(**geo_base, fitbounds="locations", visible=True)
         else:
             fig.update_geos(**geo_base,
-                            lonaxis_range=[-168, 178],
-                            lataxis_range=[-58, 82], visible=True)
+                            lonaxis_range=[-180, 180],
+                            lataxis_range=[-5, 75],
+                            visible=True)
 
         if show_labels:
             fig.add_trace(go.Scattergeo(
@@ -614,13 +615,22 @@ def server(input, output, session):
             ))
 
         fig.update_layout(
-            margin={"r": 0, "t": 0, "l": 0, "b": 0},
+            margin=dict(l=0, r=0, t=0, b=0),
             paper_bgcolor="#ffffff",
+            font_size=11,
+            geo=dict(
+                domain=dict(x=[0, 0.97], y=[0, 1])
+            ),
             coloraxis_colorbar=dict(
                 title=dict(text="USD/day", font=dict(size=10)),
-                thickness=10, len=0.6, tickfont=dict(size=9), x=1.0,
+                thickness=10,
+                len=0.9,
+                tickfont=dict(size=9),
+                x=0.98,
+                xanchor="left",
+                y=0.5,
+                yanchor="middle"
             ),
-            font_size=11,
         )
 
         html = fig.to_html(include_plotlyjs=False, default_height=CHART_H,

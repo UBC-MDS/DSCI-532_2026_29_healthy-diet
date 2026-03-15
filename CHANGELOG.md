@@ -21,6 +21,10 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Dependency setup** (#97): removed duplicate repo-root `requirements.txt` so `src/requirements.txt` is the single maintained dependency file for the deployed app
 - **Docs** (#97): `README.md` pip installation instructions updated from `pip install -r requirements.txt` to `pip install -r src/requirements.txt`
 - **app.py** (#101): Bar chart values were being cut off at the top- changed location of values to be inside of bar visual.
+- **Map layout** (#100): Diet Cost Map now fills the dashboard tile with reduced whitespace
+  - `.card-body` padding set to `0` so Plotly charts use the full card area (`src/app.py` line 239)
+  - Default world map bounds widened horizontally and trimmed vertically (`lonaxis_range=[-180,180]`, `lataxis_range=[-5,75]`) to better match Mercator projection proportions (`src/app.py` lines 600-603)
+  - Plotly layout adjusted so the geo domain uses almost the full figure width and the colorbar sits closer to the map (`src/app.py` lines 615-628)
 
 ### Fixed
 - **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected
