@@ -44,3 +44,16 @@ def test_cost_category_filter(page: Page, app: ShinyAppProc):
     cost_cat = controller.InputRadioButtons(page, "cost_cat")
     cost_cat.set("high")
     cost_cat.expect_selected("high")
+
+def test_reset_button(page: Page, app: ShinyAppProc):
+    """Test that reset button restores all filters to defaults."""
+    page.goto(app.url)
+    go_dashboard(page)
+    region = controller.InputSelect(page, "region")
+    region.set("Asia")
+    cost_cat = controller.InputRadioButtons(page, "cost_cat")
+    cost_cat.set("high")
+    page.locator("#reset").click()
+    page.wait_for_timeout(500)
+    region.expect_selected("All")
+    cost_cat.expect_selected("All")
