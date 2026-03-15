@@ -9,11 +9,18 @@ def go_dashboard(page):
     page.get_by_role("tab", name="Dashboard").click()
     page.wait_for_timeout(400)
 
-# Test year slider
 
 def test_year_slider(page: Page, app: ShinyAppProc):
-    """Test that the year range slider updates correctly."""
+    """Test that the year range slider loads with the correct default range."""
     page.goto(app.url)
     go_dashboard(page)
     year = controller.InputSlider(page, "year")
     year.expect_value(("2017", "2024"))
+
+def test_region_filter(page: Page, app: ShinyAppProc):
+    """Test that selecting a region updates the input correctly."""
+    page.goto(app.url)
+    go_dashboard(page)
+    region = controller.InputSelect(page, "region")
+    region.set("Asia")
+    region.expect_selected("Asia")
