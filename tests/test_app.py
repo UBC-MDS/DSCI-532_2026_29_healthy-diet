@@ -15,7 +15,7 @@ def test_year_slider(page: Page, app: ShinyAppProc):
     page.goto(app.url)
     go_dashboard(page)
     year = controller.InputSlider(page, "year")
-    year.expect_value(("2017", "2024"))
+    year.expect_value("2017 — 2024")
 
 def test_region_filter(page: Page, app: ShinyAppProc):
     """Test that selecting a region updates the input correctly."""
@@ -42,8 +42,8 @@ def test_cost_category_filter(page: Page, app: ShinyAppProc):
     page.goto(app.url)
     go_dashboard(page)
     cost_cat = controller.InputRadioButtons(page, "cost_cat")
-    cost_cat.set("high")
-    cost_cat.expect_selected("high")
+    cost_cat.set("High Cost")
+    cost_cat.expect_selected("High Cost")
 
 def test_reset_button(page: Page, app: ShinyAppProc):
     """Test that reset button restores all filters to defaults."""
@@ -52,7 +52,7 @@ def test_reset_button(page: Page, app: ShinyAppProc):
     region = controller.InputSelect(page, "region")
     region.set("Asia")
     cost_cat = controller.InputRadioButtons(page, "cost_cat")
-    cost_cat.set("high")
+    cost_cat.set("High Cost")
     page.locator("#reset").click()
     page.wait_for_timeout(500)
     region.expect_selected("All")
