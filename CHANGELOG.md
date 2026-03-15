@@ -6,7 +6,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 
 ---
 
-## [0.4.0] - 2026-03-12
+## [0.4.0] - 2026-03-15
 
 ### Added
 - **Parquet + DuckDB** (#94): processed dataset now exported as `data/processed/cleaned_price_of_healthy_diet.parquet` alongside existing CSV (`src/scripts/clean_data.py`)
@@ -30,6 +30,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected
   - Root cause: `include_plotlyjs="cdn"` embedded a CDN `<script>` inside each dynamically injected `@render.ui` block — Plotly loaded async but `Plotly.newPlot()` fired sync
   - Fix: `PLOTLY_CDN_SCRIPT` added as a static page-level tag; all 6 `fig.to_html()` calls changed to `include_plotlyjs=False` (`src/app.py` lines 469, 489, 612, 639, 675, 701)
+  -- **Map year label** (#102) (#XX): map card header now displays "Showing data for {year}" dynamically, clarifying that the map always shows the latest year in the selected range (`src/app.py`)
 
 ---
 ---
@@ -38,7 +39,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 
 ### Added
 - **AI Chatbot tab** powered by Claude (Anthropic) via `querychat`:
-  - Plain-English chat interface to query and filter the dataset
+  - Plain-English chat interface to query and filter the dataset (also available in Spanish)
   - Filtered dataframe displayed as an interactive table
   - Two reactive visualizations (bar chart + trend line) that update from chatbot output
   - Download button to export chatbot-filtered data as CSV
