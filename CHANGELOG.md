@@ -12,7 +12,9 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Parquet + DuckDB** (#94): processed dataset now exported as `data/processed/cleaned_price_of_healthy_diet.parquet` alongside existing CSV (`src/scripts/clean_data.py`)
 - **Parquet + DuckDB** (#94): `duckdb==1.1.3` and `pyarrow==14.0.2` added to `requirements.txt`, `src/requirements.txt`, and `environment.yml`
 - **Docs** (#95): `README.md` updated with Data Pipeline section showing the full data flow from Kaggle through DuckDB; repository structure updated to reflect parquet file and inline descriptions
--- **Playwright tests** (`tests/test_app.py`): end-to-end tests for dashboard filters covering year range slider default values, region dropdown, country dropdown, cost category radio buttons, and reset button
+-- **Playwright tests** (#85) (`tests/test_app.py`) : end-to-end tests for dashboard filters covering year range slider default values, region dropdown, country dropdown, cost category radio buttons, and reset button
+- **Unit tests** (#85) (`tests/test_utils.py`): unit tests for `format_cost` helper (mean, min, max, empty series) and `_click_js` JavaScript generator, plus data integrity checks on the parquet file
+- **Refactor** (#85) (`src/app.py`): extracted KPI formatting logic into `format_cost` pure function to improve testability and reduce code duplication
 
 
 ### Changed
