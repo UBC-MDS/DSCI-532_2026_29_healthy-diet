@@ -24,3 +24,15 @@ def test_region_filter(page: Page, app: ShinyAppProc):
     region = controller.InputSelect(page, "region")
     region.set("Asia")
     region.expect_selected("Asia")
+
+
+def test_country_filter(page: Page, app: ShinyAppProc):
+    """Test that selecting a country updates after region is set."""
+    page.goto(app.url)
+    go_dashboard(page)
+    region = controller.InputSelect(page, "region")
+    region.set("Asia")
+    page.wait_for_timeout(400)
+    country = controller.InputSelect(page, "country")
+    country.set("India")
+    country.expect_selected("India")
