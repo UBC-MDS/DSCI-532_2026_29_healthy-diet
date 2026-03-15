@@ -36,3 +36,11 @@ def test_country_filter(page: Page, app: ShinyAppProc):
     country = controller.InputSelect(page, "country")
     country.set("India")
     country.expect_selected("India")
+
+def test_cost_category_filter(page: Page, app: ShinyAppProc):
+    """Test that cost category radio buttons update correctly."""
+    page.goto(app.url)
+    go_dashboard(page)
+    cost_cat = controller.InputRadioButtons(page, "cost_cat")
+    cost_cat.set("high")
+    cost_cat.expect_selected("high")
