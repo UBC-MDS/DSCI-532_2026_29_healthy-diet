@@ -441,6 +441,16 @@ app_ui = ui.page_navbar(
     navbar_options=ui.navbar_options(bg="#ffffff", inverse=False),
 )
 
+# Function format cost
+
+def format_cost(value, agg="mean"):
+    """Format a cost series as a USD string or dash if empty."""
+    if value.empty:
+        return "—"
+    if agg == "mean": return f"${value.mean():.2f}"
+    if agg == "min":  return f"${value.min():.2f}"
+    if agg == "max":  return f"${value.max():.2f}"
+
 
 # Server
 def server(input, output, session):
@@ -538,17 +548,17 @@ def server(input, output, session):
     @render.text
     def avg_cost():
         v = filtered()["cost_healthy_diet_ppp_usd"]
-        return f"${v.mean():.2f}" if not v.empty else "—"
+        return format_cost(filtered()["cost_healthy_diet_ppp_usd"], "mean")
 
     @render.text
     def min_cost():
         v = filtered()["cost_healthy_diet_ppp_usd"]
-        return f"${v.min():.2f}" if not v.empty else "—"
+        return format_cost(filtered()["cost_healthy_diet_ppp_usd"], "min")
 
     @render.text
     def max_cost():
         v = filtered()["cost_healthy_diet_ppp_usd"]
-        return f"${v.max():.2f}" if not v.empty else "—"
+        return format_cost(filtered()["cost_healthy_diet_ppp_usd"], "max")
 
     # Map
     @output
