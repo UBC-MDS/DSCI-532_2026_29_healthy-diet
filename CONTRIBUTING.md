@@ -86,3 +86,24 @@ Before you submit a pull request, check that it meets these guidelines:
    new functionality into a function with a docstring.
 3. Your pull request will automatically be checked by the full test suite.
    It needs to pass all of them before it can be considered for merging.
+
+## M3 retrospective
+
+## What worked well
+
+- Decent pull request hygiene by configuring branch protection rules that required at least one reviewer before merging into the dev branch.
+- Used exclusive branches for task.
+
+
+## What did not work well
+
+- Need more communication through GitHub issues and team check ins, which could help clarify requirements and ensure steady progress toward milestone goals.
+
+## M4 Collaboration norms
+
+We agreed on:
+- Work on improvements right away and let the team know about them in order to fix the critical issues of the dashboard.
+- Prioritise specification and design discussions before beginning the code and implementation of improvements.
+- Break down complex features into modular tasks with low dependencies.
+- Improve communication through Github issues.
+
