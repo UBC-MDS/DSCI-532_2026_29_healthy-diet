@@ -124,6 +124,14 @@ The chatbot tab uses `querychat` and `chatlas` to connect the dashboard's datase
 | `querychat.chat_ui()` | UI renderer | Renders the chat interface (message history + input box) in the chatbot tab. |
 | `querychat.chat_server()` | Server logic | Handles user input: translates questions into SQL via the LLM, runs queries against DuckDB, and returns natural language responses. |
 
+### 4.4 Data Pipeline: Parquet + DuckDB
+
+The processed dataset is stored as `data/processed/cleaned_price_of_healthy_diet.parquet`.
+On app startup, a DuckDB `CREATE VIEW` is opened over the parquet file.
+All sidebar filters are applied as SQL `WHERE` clauses inside `filtered()` 
+(@reactive.calc) before any data enters a pandas DataFrame, avoiding full 
+in-memory loads on every filter change.
+
 ---
 
 ## 5. Changes from M2 to M4
