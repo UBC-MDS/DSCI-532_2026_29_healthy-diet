@@ -58,12 +58,20 @@ Selecting a country in the map acts as an interactive filter for the rest of the
 - PR: [#78](https://github.com/UBC-MDS/DSCI-532_2026_29_healthy-diet/pull/78)
 - Why this option over others: Selecting a country in the map feels intuitive as a user, and is often the first element that a user will look at on the page. As well, since the map is color coded, the user can immediately infer from the map which areas have a high cost of healthy diet and apply the filter from there. This change was made to improve the UI/UX aspect of the dashboard.
 
-## Reflection
+### Collaboration
+
+- **CONTRIBUTING.md:** [PR#112](https://github.com/UBC-MDS/DSCI-532_2026_29_healthy-diet/pull/112)
+- **M3 retrospective:** Pull request hygiene standards were upped- All changes to be reviewed prior to approval and immediate deletion of branch once merged.
+- **M4:** Enforcement of PR reviewing by team members.
+
+### Reflection
 
 The dashboard provides a high level view of the cost of a healthy diet across countries of the world. The data is normalized to $USD, and measured in Purchase Power Parity (PPP), ensuring an apples to apples comparison of vegetables, fruits and general items.
 
-- The visal is aesthetically pleasing, and immediately draws the user's attention. The map visual could be used as the primary mode of interaction with the chart, as it also filters other visuals in the dashboard.
-- 
+- What works well: The visal is aesthetically pleasing, and immediately draws the user's attention. The map visual could be used as the primary mode of interaction with the chart, as it also filters other visuals in the dashboard.
+- Current limitations: Multiple countries currently cannot be selected.
+- Deviations from best practices: None
+- Lecture 5 and 6 with the querychat implementation was extremely useful.
 
 ---
 ---
