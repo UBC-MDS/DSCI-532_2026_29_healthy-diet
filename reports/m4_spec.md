@@ -128,9 +128,26 @@ The chatbot tab uses `querychat` and `chatlas` to connect the dashboard's datase
 
 The processed dataset is stored as `data/processed/cleaned_price_of_healthy_diet.parquet`.
 On app startup, a DuckDB `CREATE VIEW` is opened over the parquet file.
-All sidebar filters are applied as SQL `WHERE` clauses inside `filtered()` 
-(@reactive.calc) before any data enters a pandas DataFrame, avoiding full 
+All sidebar filters are applied as SQL `WHERE` clauses inside `filtered()`
+(`@reactive.calc`) before any data enters a pandas DataFrame, avoiding full
 in-memory loads on every filter change.
+
+### 4.5 Advanced Feature: Option D — Component Click Events
+
+**Option chosen:** D — Component click event interaction
+
+Users can click directly on any chart to filter the entire dashboard:
+
+| Chart | Click target | Effect |
+|-------|-------------|--------|
+| Choropleth map | Country | Sets country + region dropdowns |
+| Bar chart | Region bar | Sets region dropdown |
+| Trend line chart | Country line | Sets country + region dropdowns |
+| Box plot | Region box | Sets region dropdown |
+
+**Implementation:** A `_click_js()` helper attaches a `plotly_click` JavaScript listener to each chart div, which calls `Shiny.setInputValue()` to pass the clicked value as a reactive input. Four `@reactive.event` handlers (`map_click`, `bar_click`, `trend_click`, `box_click`) update the sidebar dropdowns via `ui.update_select()`.
+
+**Why Option D over others:** Option D added the most value to the core dashboard experience — users already explore charts visually, so making them clickable reduces friction. Options A/B/C would have extended the AI chatbot which was already functional. Full motivation in issue #88.
 
 ---
 
