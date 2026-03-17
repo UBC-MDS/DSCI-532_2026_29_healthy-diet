@@ -24,6 +24,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Dependency setup** (#97): removed duplicate repo-root `requirements.txt` so `src/requirements.txt` is the single maintained dependency file for the deployed app
 - **Docs** (#97): `README.md` pip installation instructions updated from `pip install -r requirements.txt` to `pip install -r src/requirements.txt`
 - **app.py** (#101): Bar chart values were being cut off at the top- changed location of values to be inside of bar visual.
+- **app.py**: Aesthetic updates to match color palette of Bar and Box plots
 - **Map layout** (#100): Diet Cost Map now fills the dashboard tile with reduced whitespace
   - `.card-body` padding set to `0` so Plotly charts use the full card area (`src/app.py` line 239)
   - Default world map bounds widened horizontally and trimmed vertically (`lonaxis_range=[-180,180]`, `lataxis_range=[-5,75]`) to better match Mercator projection proportions (`src/app.py` lines 600-603)
@@ -48,6 +49,21 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 | `test_click_js_returns_valid_script` | Unit       | Proves that the click Javascript helper returns a valid string         | Refactor breaks output format, returns None or malformed string |
 | `test_parquet_data_loads_correctly`  | Unit       | Checks that the parquet data file loads with the expected structure       | File path changes, schema mismatch, corrupted or missing file      |
 | `test_cost_return_values_after_refactor` | Unit   | Proves that cost-related functions return correct values after refactoring | Refactor introduces wrong values or types returned     |
+
+### Release Highlight: [Interactive Map Visual]
+
+Selecting a country in the map acts as an interactive filter for the rest of the dashboard. Selecting the country will also center it on the map and zoom to fill.
+
+- Option chosen: `D`
+- PR: [#78](https://github.com/UBC-MDS/DSCI-532_2026_29_healthy-diet/pull/78)
+- Why this option over others: Selecting a country in the map feels intuitive as a user, and is often the first element that a user will look at on the page. As well, since the map is color coded, the user can immediately infer from the map which areas have a high cost of healthy diet and apply the filter from there. This change was made to improve the UI/UX aspect of the dashboard.
+
+## Reflection
+
+The dashboard provides a high level view of the cost of a healthy diet across countries of the world. The data is normalized to $USD, and measured in Purchase Power Parity (PPP), ensuring an apples to apples comparison of vegetables, fruits and general items.
+
+- The visal is aesthetically pleasing, and immediately draws the user's attention. The map visual could be used as the primary mode of interaction with the chart, as it also filters other visuals in the dashboard.
+- 
 
 ---
 ---
