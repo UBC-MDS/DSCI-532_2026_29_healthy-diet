@@ -28,6 +28,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
   - `.card-body` padding set to `0` so Plotly charts use the full card area (`src/app.py` line 239)
   - Default world map bounds widened horizontally and trimmed vertically (`lonaxis_range=[-180,180]`, `lataxis_range=[-5,75]`) to better match Mercator projection proportions (`src/app.py` lines 600-603)
   - Plotly layout adjusted so the geo domain uses almost the full figure width and the colorbar sits closer to the map (`src/app.py` lines 615-628)
+- **Docs** (#112): Added reflection to `CONTRIBUTING.md` 
 
 ### Fixed
 - **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected
