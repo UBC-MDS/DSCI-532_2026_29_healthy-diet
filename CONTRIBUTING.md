@@ -100,6 +100,7 @@ Before you submit a pull request, check that it meets these guidelines:
 - Need more communication through GitHub issues and team check ins, which could help clarify requirements and ensure steady progress toward milestone goals.
 - We had some dirty branches (branches were sometimes not rebased or cleaned before opening a PR), which makes the `git diff` harder to read.
 - Did not complete relevant `CHANGELOG.md` additions/changes with each PR.
+- Issues with final merge conflicts when pushing to main always seem to slow things down before submission. Better file management and commit isolation could be beneficial.
 
 ## M4 Collaboration norms
 
@@ -108,4 +109,6 @@ We agreed on:
 - Prioritise specification and design discussions before beginning the code and implementation of improvements.
 - Break down complex features into modular tasks with low dependencies.
 - Improve communication through Github issues.
+- Implement detailed review on PR's assigned to the person.
+- Enforced deletion of branches once PR's merged.
 
