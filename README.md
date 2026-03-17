@@ -97,26 +97,25 @@ Dependencies install automatically from `requirements.txt`.
 
 ## To run the tests
 
-To run the tests, first install the environment if you have not already done so:
+First install the environment if you have not already done so:
 ```bash
 conda env create -f environment.yml
 conda activate 532-healthy-diet
-playwright install
+python -m playwright install chromium
 ```
 
-Then run the unit tests with:
-```bash
-pytest tests/test_utils.py -v
-```
-
-And the end-to-end tests with:
-```bash
-pytest tests/test_app.py -v
-```
-
-Or run all tests at once:
+Run all tests with a single command:
 ```bash
 pytest tests/ -v
+```
+
+To run test suites individually:
+```bash
+# Unit tests (format_cost, _click_js, parquet integrity)
+pytest tests/test_utils.py -v
+
+# End-to-end Playwright tests (filters, reset button)
+pytest tests/test_app.py -v
 ```
 
 ## Repository Structure
