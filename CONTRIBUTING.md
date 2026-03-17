@@ -98,6 +98,8 @@ Before you submit a pull request, check that it meets these guidelines:
 ## What did not work well
 
 - Need more communication through GitHub issues and team check ins, which could help clarify requirements and ensure steady progress toward milestone goals.
+- We had some dirty branches (branches were sometimes not rebased or cleaned before opening a PR), which makes the `git diff` harder to read.
+- Did not complete relevant `CHANGELOG.md` additions/changes with each PR.
 
 ## M4 Collaboration norms
 
