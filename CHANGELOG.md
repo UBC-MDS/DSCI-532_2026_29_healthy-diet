@@ -6,11 +6,84 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 
 ---
 
+## [0.4.0] - 2026-03-15
+
+### Added
+- **Parquet + DuckDB** (#94): processed dataset now exported as `data/processed/cleaned_price_of_healthy_diet.parquet` alongside existing CSV (`src/scripts/clean_data.py`)
+- **Parquet + DuckDB** (#94): `duckdb==1.1.3` and `pyarrow==14.0.2` added to `requirements.txt`, `src/requirements.txt`, and `environment.yml`
+- **Docs** (#95): `README.md` updated with Data Pipeline section showing the full data flow from Kaggle through DuckDB; repository structure updated to reflect parquet file and inline descriptions
+- **Playwright tests** (#85) (`tests/test_app.py`) : end-to-end tests for dashboard filters covering year range slider default values, region dropdown, country dropdown, cost category radio buttons, and reset button
+- **Unit tests** (#85) (`tests/test_utils.py`): unit tests for `format_cost` helper (mean, min, max, empty series) and `_click_js` JavaScript generator, plus data integrity checks on the parquet file. One sentence description of test funtionality and expected outputs listed.
+- **Refactor** (#85) (`src/app.py`): extracted KPI formatting logic into `format_cost` pure function to improve testability and reduce code duplication
+
+
+### Changed
+- **Parquet + DuckDB** (#94): data loading switched from `pd.read_csv` to DuckDB `CREATE VIEW` over parquet; metadata queries now run as SQL (`src/app.py` lines 23-44)
+- **Parquet + DuckDB** (#94): `filtered()` builds a SQL `WHERE` clause before `.df()` — filtering happens at DB level, not in memory (`src/app.py` lines 525-532)
+- **Parquet + DuckDB** (#94): cascade dropdown and click handlers use DuckDB queries and pre-built lists instead of the global pandas DataFrame (`src/app.py` lines 513-522, 722-766)
+- **Dependency setup** (#97): removed duplicate repo-root `requirements.txt` so `src/requirements.txt` is the single maintained dependency file for the deployed app
+- **Docs** (#97): `README.md` pip installation instructions updated from `pip install -r requirements.txt` to `pip install -r src/requirements.txt`
+- **app.py** (#101): Bar chart values were being cut off at the top- changed location of values to be inside of bar visual.
+- **app.py**: Aesthetic updates to match color palette of Bar and Box plots
+- **Map layout** (#100): Diet Cost Map now fills the dashboard tile with reduced whitespace
+  - `.card-body` padding set to `0` so Plotly charts use the full card area (`src/app.py` line 239)
+  - Default world map bounds widened horizontally and trimmed vertically (`lonaxis_range=[-180,180]`, `lataxis_range=[-5,75]`) to better match Mercator projection proportions (`src/app.py` lines 600-603)
+  - Plotly layout adjusted so the geo domain uses almost the full figure width and the colorbar sits closer to the map (`src/app.py` lines 615-628)
+- **Docs** (#112): Added reflection to `CONTRIBUTING.md`
+
+### Fixed
+- **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected
+  - Root cause: `include_plotlyjs="cdn"` embedded a CDN `<script>` inside each dynamically injected `@render.ui` block — Plotly loaded async but `Plotly.newPlot()` fired sync
+  - Fix: `PLOTLY_CDN_SCRIPT` added as a static page-level tag; all 6 `fig.to_html()` calls changed to `include_plotlyjs=False` (`src/app.py` lines 469, 489, 612, 639, 675, 701)
+- **Map year label** (#102): map card header now displays "Showing data for {year}" dynamically, clarifying that the map always shows the latest year in the selected range (`src/app.py`)
+
+### Testing plan
+
+| Test Function             | Test Type   |Description                                                                                       | What Could Break                                              |
+|---------------------------|-------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| `test_year_slider`        | End to end  | Verifies the year range slider loads with the  range (2017–2024)                   | Slider default values change, widget fails to render          |
+| `test_region_filter`      | End to end  | Checks that selecting a region updates the dropdown correctly                                   | Dropdown options don't update         |
+| `test_country_filter`     | End to end  | Proves that selecting a region first updates the country dropdown, then a country can be selected | Chained dependency breaks, countries list not filtered by region |
+| `test_cost_category_filter` | End to end | Verifies that selecting a cost category radio button updates correctly                            | Radio button state not reflected in the app, callback fails   |
+| `test_reset_button`       | End to end  | Checks that clicking Reset restores region and cost category filters to "All"                   | Reset logic incomplete
+| `test_click_js_returns_valid_script` | Unit       | Proves that the click Javascript helper returns a valid string         | Refactor breaks output format, returns None or malformed string |
+| `test_parquet_data_loads_correctly`  | Unit       | Checks that the parquet data file loads with the expected structure       | File path changes, schema mismatch, corrupted or missing file      |
+| `test_cost_return_values_after_refactor` | Unit   | Proves that cost-related functions return correct values after refactoring | Refactor introduces wrong values or types returned     |
+
+### Known Issues
+- The AI chatbot queries the full dataset independently of sidebar filters — chatbot results do not reflect the user's active filter state
+- Map zoom for single-country selection may include surrounding ocean for island nations
+- Colorblind safety of `region_colors` and `rdylbu_r` palette not fully verified
+
+### Release Highlight: Interactive Click Events on Dashboard Charts
+
+Users can now click directly on any chart — map, bar chart, trend line, or box plot — to filter the entire dashboard, just like using the sidebar dropdowns. Clicking a country on the map sets the country filter; clicking a region bar filters by region; clicking a line or box filters by country or region respectively.
+
+- **Option chosen:** D
+- **PR:** #88
+- **Why this option over the others:** Option D extended the dashboard's existing interactivity naturally — users already explore charts visually, so making them clickable reduces friction. Options A/B/C would have extended the AI chatbot which was already functional. See #88.
+- **Feature prioritization issue link:** #88
+
+### Collaboration
+
+All M4 work followed branch-per-feature workflow with peer review required before merging into `dev`.
+
+- **CONTRIBUTING.md:** Updated with M3 retrospective and M4 norms via PR #112
+- **M3 retrospective:** Improved GitHub issue communication; spec documents updated before code; CHANGELOG updated with each PR
+- **M4:** Each team member resolved at least one feedback item; PRs kept scoped to single features
+
+### Reflection
+
+The dashboard does well at enabling cross-country and regional comparisons through coordinated filtering — sidebar controls, click events, and the AI chatbot all operate on the same underlying data. Current limitations include the chatbot not reflecting sidebar filter state and the map showing averages across years rather than animating year-by-year. Critical bugs (blank charts on load, bar label clipping, map year label) were prioritized over non-critical polish items — full rationale in #98. The DuckDB/parquet migration and Playwright testing lectures were most directly applicable this milestone.
+
+---
+---
+
 ## [0.3.0] - 2026-03-08
 
 ### Added
 - **AI Chatbot tab** powered by Claude (Anthropic) via `querychat`:
-  - Plain-English chat interface to query and filter the dataset
+  - Plain-English chat interface to query and filter the dataset (also available in Spanish)
   - Filtered dataframe displayed as an interactive table
   - Two reactive visualizations (bar chart + trend line) that update from chatbot output
   - Download button to export chatbot-filtered data as CSV

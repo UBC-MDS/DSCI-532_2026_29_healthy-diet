@@ -11,6 +11,8 @@ dependencies:
   # Data Handling
   - pandas=2.2.3
   - numpy=1.26.4
+  - duckdb>=1.1.0
+  - pyarrow>=14.0.0
 
   # Visualization
   - plotly=5.24.1
@@ -27,4 +29,7 @@ dependencies:
       - python-dotenv==0.21.0
       - anthropic==0.84.0
       - chatlas==0.15.2
-      - querychat==0.5.1
+      - querychat==0.5.1      
+      - shinywidgets==0.3.4
+      - playwright
+      - pytest-playwright

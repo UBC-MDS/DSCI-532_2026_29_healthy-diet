@@ -8,7 +8,6 @@ import unicodedata
 
 import pandas as pd
 
-
 def _normalize_country_names(country_series: pd.Series) -> pd.Series:
     """standardize country names to match countries_by_continents lookup"""
 
@@ -151,9 +150,14 @@ def clean_dataset() -> pd.DataFrame:
     # ensure the directory exists
     output_dir.mkdir(parents=True, exist_ok=True)
 
+
     # save the dataframe
     df_clean.to_csv(output_path, index=False)
-    print(f"File saved to: {output_path}")
+    print(f"CSV saved to: {output_path}")
+
+    parquet_path = output_dir / "cleaned_price_of_healthy_diet.parquet"
+    df_clean.to_parquet(parquet_path, index=False)
+    print(f"Parquet saved to: {parquet_path}")
 
     return df_clean
 

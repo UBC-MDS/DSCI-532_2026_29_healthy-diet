@@ -31,7 +31,7 @@ Ask plain-English questions to filter and explore the data. Results update a tab
 
 ## Demo
 
-![App demo](img/demo.gif)
+![App demo](img/dashboard.gif)
 
 ---
 
@@ -54,7 +54,7 @@ conda activate 532-healthy-diet
 
 **pip**
 ```bash
-pip install -r requirements.txt
+pip install -r src/requirements.txt
 ```
 
 ### 3. API Keys
@@ -95,6 +95,31 @@ Dependencies install automatically from `requirements.txt`.
 
 ---
 
+## To run the tests
+
+First install the environment if you have not already done so:
+```bash
+conda env create -f environment.yml
+conda activate 532-healthy-diet
+python -m playwright install chromium
+```
+
+Run all tests with a single command:
+```bash
+pytest tests/ -v
+```
+
+To run test suites individually:
+```bash
+# Unit tests (format_cost, _click_js, parquet integrity)
+pytest tests/test_utils.py -v
+
+# End-to-end Playwright tests (filters, reset button)
+pytest tests/test_app.py -v
+```
+
+---
+
 ## Repository Structure
 
 ```
@@ -104,16 +129,33 @@ Dependencies install automatically from `requirements.txt`.
 │   ├── app.py            # Shiny application
 │   ├── .env              # API keys, do not commit
 │   ├── scripts/
-│   │   ├── download_data.py
-│   │   └── clean_data.py
+│   │   ├── download_data.py   # downloads raw data from Kaggle on startup
+│   │   └── clean_data.py      # cleans data and exports CSV + parquet
 │   └── data/
-│       ├── raw/
-│       ├── processed/
-│       └── lookups/
+│       ├── raw/               # downloaded from Kaggle on startup
+│       ├── processed/         # cleaned_price_of_healthy_diet.csv + .parquet
+│       └── lookups/           # country codes and continent mappings
+├── tests/
+│   ├── test_app.py       # Playwright end-to-end tests
+│   └── test_utils.py     # Unit tests for Python functions
 ├── reports/
 ├── img/
 └── CHANGELOG.md
 ```
+
+---
+
+## Data Pipeline
+
+```
+Kaggle API
+  -> data/raw/price_of_healthy_diet_clean.csv              (download_data.py)
+  -> data/processed/cleaned_price_of_healthy_diet.csv      (clean_data.py)
+  -> data/processed/cleaned_price_of_healthy_diet.parquet  (clean_data.py)
+  -> DuckDB VIEW -> SQL WHERE filter -> .df()               (app.py)
+```
+
+Raw data is downloaded and cleaned automatically on app startup. All dashboard filters are applied at the DuckDB level before data enters a pandas DataFrame.
 
 ---
 
