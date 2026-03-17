@@ -30,7 +30,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected
   - Root cause: `include_plotlyjs="cdn"` embedded a CDN `<script>` inside each dynamically injected `@render.ui` block — Plotly loaded async but `Plotly.newPlot()` fired sync
   - Fix: `PLOTLY_CDN_SCRIPT` added as a static page-level tag; all 6 `fig.to_html()` calls changed to `include_plotlyjs=False` (`src/app.py` lines 469, 489, 612, 639, 675, 701)
-  -- **Map year label** (#102) (#XX): map card header now displays "Showing data for {year}" dynamically, clarifying that the map always shows the latest year in the selected range (`src/app.py`)
+- **Map year label** (#102): map card header now displays "Showing data for {year}" dynamically, clarifying that the map always shows the latest year in the selected range (`src/app.py`)
 
 ---
 ---
