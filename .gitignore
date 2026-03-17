@@ -218,4 +218,4 @@ anaconda_projects/
 
 # Auto-generated data files
 src/data/raw/
-src/data/processed/
+src/data/processed/*.csv
