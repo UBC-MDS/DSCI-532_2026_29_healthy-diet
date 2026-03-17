@@ -31,7 +31,7 @@ Ask plain-English questions to filter and explore the data. Results update a tab
 
 ## Demo
 
-![App demo](img/demo.gif)
+![App demo](img/dashboard.gif)
 
 ---
 
