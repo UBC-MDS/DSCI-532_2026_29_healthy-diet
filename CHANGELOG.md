@@ -50,28 +50,31 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 | `test_parquet_data_loads_correctly`  | Unit       | Checks that the parquet data file loads with the expected structure       | File path changes, schema mismatch, corrupted or missing file      |
 | `test_cost_return_values_after_refactor` | Unit   | Proves that cost-related functions return correct values after refactoring | Refactor introduces wrong values or types returned     |
 
-### Release Highlight: [Interactive Map Visual]
+### Known Issues
+- The AI chatbot queries the full dataset independently of sidebar filters — chatbot results do not reflect the user's active filter state
+- Map zoom for single-country selection may include surrounding ocean for island nations
+- Colorblind safety of `region_colors` and `rdylbu_r` palette not fully verified
 
-Selecting a country in the map acts as an interactive filter for the rest of the dashboard. Selecting the country will also center it on the map and zoom to fill.
+### Release Highlight: Interactive Click Events on Dashboard Charts
 
-- Option chosen: `D`
-- PR: [#78](https://github.com/UBC-MDS/DSCI-532_2026_29_healthy-diet/pull/78)
-- Why this option over others: Selecting a country in the map feels intuitive as a user, and is often the first element that a user will look at on the page. As well, since the map is color coded, the user can immediately infer from the map which areas have a high cost of healthy diet and apply the filter from there. This change was made to improve the UI/UX aspect of the dashboard.
+Users can now click directly on any chart — map, bar chart, trend line, or box plot — to filter the entire dashboard, just like using the sidebar dropdowns. Clicking a country on the map sets the country filter; clicking a region bar filters by region; clicking a line or box filters by country or region respectively.
+
+- **Option chosen:** D
+- **PR:** #88
+- **Why this option over the others:** Option D extended the dashboard's existing interactivity naturally — users already explore charts visually, so making them clickable reduces friction. Options A/B/C would have extended the AI chatbot which was already functional. See #88.
+- **Feature prioritization issue link:** #88
 
 ### Collaboration
 
-- **CONTRIBUTING.md:** [PR#112](https://github.com/UBC-MDS/DSCI-532_2026_29_healthy-diet/pull/112)
-- **M3 retrospective:** Pull request hygiene standards were upped- All changes to be reviewed prior to approval and immediate deletion of branch once merged.
-- **M4:** Enforcement of PR reviewing by team members.
+All M4 work followed branch-per-feature workflow with peer review required before merging into `dev`.
+
+- **CONTRIBUTING.md:** Updated with M3 retrospective and M4 norms via PR #112
+- **M3 retrospective:** Improved GitHub issue communication; spec documents updated before code; CHANGELOG updated with each PR
+- **M4:** Each team member resolved at least one feedback item; PRs kept scoped to single features
 
 ### Reflection
 
-The dashboard provides a high level view of the cost of a healthy diet across countries of the world. The data is normalized to $USD, and measured in Purchase Power Parity (PPP), ensuring an apples to apples comparison of vegetables, fruits and general items.
-
-- What works well: The visal is aesthetically pleasing, and immediately draws the user's attention. The map visual could be used as the primary mode of interaction with the chart, as it also filters other visuals in the dashboard.
-- Current limitations: Multiple countries currently cannot be selected.
-- Deviations from best practices: None
-- Lecture 5 and 6 with the querychat implementation was extremely useful.
+The dashboard does well at enabling cross-country and regional comparisons through coordinated filtering — sidebar controls, click events, and the AI chatbot all operate on the same underlying data. Current limitations include the chatbot not reflecting sidebar filter state and the map showing averages across years rather than animating year-by-year. Critical bugs (blank charts on load, bar label clipping, map year label) were prioritized over non-critical polish items — full rationale in #98. The DuckDB/parquet migration and Playwright testing lectures were most directly applicable this milestone.
 
 ---
 ---

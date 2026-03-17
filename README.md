@@ -118,6 +118,8 @@ pytest tests/test_utils.py -v
 pytest tests/test_app.py -v
 ```
 
+---
+
 ## Repository Structure
 
 ```
