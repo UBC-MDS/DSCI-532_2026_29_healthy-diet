@@ -34,6 +34,19 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
   - Root cause: `include_plotlyjs="cdn"` embedded a CDN `<script>` inside each dynamically injected `@render.ui` block — Plotly loaded async but `Plotly.newPlot()` fired sync
   - Fix: `PLOTLY_CDN_SCRIPT` added as a static page-level tag; all 6 `fig.to_html()` calls changed to `include_plotlyjs=False` (`src/app.py` lines 469, 489, 612, 639, 675, 701)
 
+### Testing plan
+
+| Test Function             | Test Type   |Description                                                                                       | What Could Break                                              |
+|---------------------------|-------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| `test_year_slider`        | End to end  | Verifies the year range slider loads with the  range (2017–2024)                   | Slider default values change, widget fails to render          |
+| `test_region_filter`      | End to end  | Checks that selecting a region updates the dropdown correctly                                   | Dropdown options don't update         |
+| `test_country_filter`     | End to end  | Proves that selecting a region first updates the country dropdown, then a country can be selected | Chained dependency breaks, countries list not filtered by region |
+| `test_cost_category_filter` | End to end | Verifies that selecting a cost category radio button updates correctly                            | Radio button state not reflected in the app, callback fails   |
+| `test_reset_button`       | End to end  | Checks that clicking Reset restores region and cost category filters to "All"                   | Reset logic incomplete
+| `test_click_js_returns_valid_script` | Unit       | Proves that the click Javascript helper returns a valid string         | Refactor breaks output format, returns None or malformed string |
+| `test_parquet_data_loads_correctly`  | Unit       | Checks that the parquet data file loads with the expected structure       | File path changes, schema mismatch, corrupted or missing file      |
+| `test_cost_return_values_after_refactor` | Unit   | Proves that cost-related functions return correct values after refactoring | Refactor introduces wrong values or types returned     |
+
 ---
 ---
 
