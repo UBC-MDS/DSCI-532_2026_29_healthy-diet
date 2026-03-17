@@ -95,6 +95,30 @@ Dependencies install automatically from `requirements.txt`.
 
 ---
 
+## To run the tests
+
+To run the tests, first install the environment if you have not already done so:
+```bash
+conda env create -f environment.yml
+conda activate 532-healthy-diet
+playwright install
+```
+
+Then run the unit tests with:
+```bash
+pytest tests/test_utils.py -v
+```
+
+And the end-to-end tests with:
+```bash
+pytest tests/test_app.py -v
+```
+
+Or run all tests at once:
+```bash
+pytest tests/ -v
+```
+
 ## Repository Structure
 
 ```
@@ -110,6 +134,9 @@ Dependencies install automatically from `requirements.txt`.
 │       ├── raw/               # downloaded from Kaggle on startup
 │       ├── processed/         # cleaned_price_of_healthy_diet.csv + .parquet
 │       └── lookups/           # country codes and continent mappings
+├── tests/
+│   ├── test_app.py       # Playwright end-to-end tests
+│   └── test_utils.py     # Unit tests for Python functions
 ├── reports/
 ├── img/
 └── CHANGELOG.md
