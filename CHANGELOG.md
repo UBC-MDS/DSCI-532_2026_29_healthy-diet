@@ -13,7 +13,7 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Parquet + DuckDB** (#94): `duckdb==1.1.3` and `pyarrow==14.0.2` added to `requirements.txt`, `src/requirements.txt`, and `environment.yml`
 - **Docs** (#95): `README.md` updated with Data Pipeline section showing the full data flow from Kaggle through DuckDB; repository structure updated to reflect parquet file and inline descriptions
 - **Playwright tests** (#85) (`tests/test_app.py`) : end-to-end tests for dashboard filters covering year range slider default values, region dropdown, country dropdown, cost category radio buttons, and reset button
-- **Unit tests** (#85) (`tests/test_utils.py`): unit tests for `format_cost` helper (mean, min, max, empty series) and `_click_js` JavaScript generator, plus data integrity checks on the parquet file
+- **Unit tests** (#85) (`tests/test_utils.py`): unit tests for `format_cost` helper (mean, min, max, empty series) and `_click_js` JavaScript generator, plus data integrity checks on the parquet file. One sentence description of test funtionality and expected outputs listed.
 - **Refactor** (#85) (`src/app.py`): extracted KPI formatting logic into `format_cost` pure function to improve testability and reduce code duplication
 
 
@@ -24,11 +24,12 @@ The format follows semantic versioning (MAJOR.MINOR.PATCH).
 - **Dependency setup** (#97): removed duplicate repo-root `requirements.txt` so `src/requirements.txt` is the single maintained dependency file for the deployed app
 - **Docs** (#97): `README.md` pip installation instructions updated from `pip install -r requirements.txt` to `pip install -r src/requirements.txt`
 - **app.py** (#101): Bar chart values were being cut off at the top- changed location of values to be inside of bar visual.
+- **app.py**: Aesthetic updates to match color palette of Bar and Box plots
 - **Map layout** (#100): Diet Cost Map now fills the dashboard tile with reduced whitespace
   - `.card-body` padding set to `0` so Plotly charts use the full card area (`src/app.py` line 239)
   - Default world map bounds widened horizontally and trimmed vertically (`lonaxis_range=[-180,180]`, `lataxis_range=[-5,75]`) to better match Mercator projection proportions (`src/app.py` lines 600-603)
   - Plotly layout adjusted so the geo domain uses almost the full figure width and the colorbar sits closer to the map (`src/app.py` lines 615-628)
-- **Docs** (#112): Added reflection to `CONTRIBUTING.md` 
+- **Docs** (#112): Added reflection to `CONTRIBUTING.md`
 
 ### Fixed
 - **Blank charts on load** (#93): all 4 chart panels rendered blank on initial page load while KPI cards were unaffected

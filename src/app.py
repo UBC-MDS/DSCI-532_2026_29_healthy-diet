@@ -44,13 +44,13 @@ COST_RANGE = con.execute("""
 """).fetchone()
 
 region_colors = {
-    "Africa":        "#C0392B",
-    "Asia":          "#D4860A",
-    "Americas":      "#2471A3",
-    "Europe":        "#1A3A6B",
-    "Oceania":       "#E67E22",
-    "North America": "#2471A3",
-    "South America": "#17A589",
+    "Africa":        "#86D4EE",
+    "Asia":          "#E7E67F",
+    "Americas":      "#9824A3",
+    "Europe":        "#7EB5D5",
+    "Oceania":       "#36459D",
+    "North America": "#B20D27",
+    "South America": "#F8864F",
 }
 
 REGION_BOUNDS = {
